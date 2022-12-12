@@ -9,6 +9,7 @@
   <title>This is Title</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
   <!-- Favicons -->
   <link href="assets/img/favicon.ico" rel="icon">
