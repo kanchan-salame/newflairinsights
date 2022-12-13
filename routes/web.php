@@ -25,3 +25,7 @@ Route::get('/latestReport', [App\Http\Controllers\Home\HomeController::class, 'l
 Route::get('/contactUs', [App\Http\Controllers\Home\HomeController::class, 'contactUs'])->name('contactUs');
 Route::get('/news', [App\Http\Controllers\Home\HomeController::class, 'news'])->name('news');
 Route::get('/caseStudy', [App\Http\Controllers\Home\HomeController::class, 'caseStudy'])->name('caseStudy');
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
