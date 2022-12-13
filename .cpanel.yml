@@ -2,4 +2,4 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home4/flair8gg/newflair.flairinsights.com
-    - /bin/cp index.php $DEPLOYPATH
+    - /bin/cp server.php $DEPLOYPATH
