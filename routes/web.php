@@ -26,6 +26,6 @@ Route::get('/contactUs', [App\Http\Controllers\Home\HomeController::class, 'cont
 Route::get('/news', [App\Http\Controllers\Home\HomeController::class, 'news'])->name('news');
 Route::get('/caseStudy', [App\Http\Controllers\Home\HomeController::class, 'caseStudy'])->name('caseStudy');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/admin/home', [App\Http\Controllers\HomeController::class, 'index'])->name('admin.home');
 
 Auth::routes();
