@@ -9,7 +9,7 @@
 # General
 --------------------------------------------------------------*/
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Poppins";
   color: #444444;
 }
 
@@ -29,7 +29,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Jost", sans-serif;
+  font-family: "Poppins";
 }
 
 /*--------------------------------------------------------------
@@ -121,12 +121,10 @@ h6 {
   transition: all 0.5s;
   z-index: 997;
   padding: 15px 0;
+  background-color: #ffff;
 }
 
-#header.header-scrolled,
-#header.header-inner-pages {
-  background: rgba(40, 58, 90, 0.9);
-}
+
 
 #header .logo {
   font-size: 30px;
@@ -139,7 +137,7 @@ h6 {
 }
 
 #header .logo a {
-  color: #fff;
+  color: rgb(0, 0, 0);
 }
 
 #header .logo img {
@@ -150,7 +148,7 @@ h6 {
 # Navigation Menu
 --------------------------------------------------------------*/
 /**
-* Desktop Navigation 
+* Desktop Navigation
 */
 .navbar {
   padding: 0;
@@ -176,7 +174,7 @@ h6 {
   padding: 10px 0 10px 30px;
   font-size: 15px;
   font-weight: 500;
-  color: #fff;
+  color: rgb(0, 0, 0);
   white-space: nowrap;
   transition: 0.3s;
 }
@@ -200,7 +198,7 @@ h6 {
   padding: 8px 20px;
   margin-left: 30px;
   border-radius: 50px;
-  color: #fff;
+  color:rgb(0, 0, 0);
   font-size: 14px;
   border: 2px solid #47b2e4;
   font-weight: 600;
@@ -280,7 +278,7 @@ h6 {
 }
 
 /**
-* Mobile Navigation 
+* Mobile Navigation
 */
 .mobile-nav-toggle {
   color: #fff;
@@ -395,8 +393,8 @@ h6 {
 --------------------------------------------------------------*/
 #hero {
   width: 100%;
-  height: 80vh;
-  background: #37517e;
+  height: 60vh;
+  background: #3976EF;
 }
 
 #hero .container {
@@ -418,7 +416,7 @@ h6 {
 }
 
 #hero .btn-get-started {
-  font-family: "Jost", sans-serif;
+  font-family: "Poppins";
   font-weight: 500;
   font-size: 16px;
   letter-spacing: 1px;
@@ -1238,7 +1236,7 @@ section {
   font-size: 48px;
   color: #37517e;
   font-weight: 400;
-  font-family: "Jost", sans-serif;
+  font-family: "Poppins";
   margin-bottom: 25px;
 }
 
@@ -1293,7 +1291,7 @@ section {
   transition: none;
   font-size: 16px;
   font-weight: 500;
-  font-family: "Jost", sans-serif;
+  font-family: "Poppins";
   transition: 0.3s;
   border: 1px solid #47b2e4;
 }
@@ -1363,7 +1361,7 @@ section {
 .faq .faq-list a {
   display: block;
   position: relative;
-  font-family: "Poppins", sans-serif;
+  font-family: "Poppins";
   font-size: 16px;
   line-height: 24px;
   font-weight: 500;
@@ -1726,7 +1724,7 @@ section {
 
 #footer .footer-top {
   padding: 60px 0 30px 0;
-  background: #fff;
+  background: #3976EF;
 }
 
 #footer .footer-top .footer-contact {
@@ -1740,21 +1738,21 @@ section {
   line-height: 1;
   text-transform: uppercase;
   font-weight: 600;
-  color: #37517e;
+  color: #fff;
 }
 
 #footer .footer-top .footer-contact p {
   font-size: 14px;
   line-height: 24px;
   margin-bottom: 0;
-  font-family: "Jost", sans-serif;
-  color: #5e5e5e;
+  font-family: "Poppins";
+  color: #fff;
 }
 
 #footer .footer-top h4 {
   font-size: 16px;
   font-weight: bold;
-  color: #37517e;
+  color: #ffffff;
   position: relative;
   padding-bottom: 12px;
 }
@@ -1771,9 +1769,14 @@ section {
 
 #footer .footer-top .footer-links ul i {
   padding-right: 2px;
-  color: #47b2e4;
+  color: #ffffff;
   font-size: 18px;
   line-height: 1;
+}
+
+#footer p {
+color: #ffffff;
+
 }
 
 #footer .footer-top .footer-links ul li {
@@ -1787,7 +1790,7 @@ section {
 }
 
 #footer .footer-top .footer-links ul a {
-  color: #777777;
+  color: #ffffff;
   transition: 0.3s;
   display: inline-block;
   line-height: 1;
@@ -1801,7 +1804,7 @@ section {
 #footer .footer-top .social-links a {
   font-size: 18px;
   display: inline-block;
-  background: #47b2e4;
+  background: #FF7700;
   color: #fff;
   line-height: 1;
   padding: 8px 0;
@@ -1853,4 +1856,8 @@ section {
   #footer .credits {
     padding-top: 4px;
   }
+}
+
+.container {
+  display:row;
 }
