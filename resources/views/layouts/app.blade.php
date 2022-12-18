@@ -4,6 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <title>{{ config('app.name') }}</title>
+    <!-- Favicons -->
+    <link href="assets/img/favicon.ico" rel="icon">
+    <link href="assets/img/favicon.ico" rel="apple-touch-icon">
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
@@ -32,14 +35,14 @@
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item dropdown user-menu">
                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
-                        <img src="https://infyom.com/images/logo/blue_logo_150x150.jpg"
+                        <img src="assets/img/flairInsightslogo.jpg"
                             class="user-image img-circle elevation-2" alt="User Image">
                         <span class="d-none d-md-inline">{{ Auth::user()->name }}</span>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                         <!-- User image -->
                         <li class="user-header bg-primary">
-                            <img src="https://infyom.com/images/logo/blue_logo_150x150.jpg"
+                            <img src="assets/img/flairInsightslogo.jpg"
                                 class="img-circle elevation-2" alt="User Image">
                             <p>
                                 {{ Auth::user()->name }}

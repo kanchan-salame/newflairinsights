@@ -44,22 +44,60 @@
                 <ul>
                     <li class="dropdown"><a href="#"><span>Report Categories</span> <i
                                 class="bi bi-chevron-down"></i></a>
-                        <ul>
-                            <li><a href="#">Semiconductor & Electronics</a></li>
-                            <li><a href="#">Automotive & Transportation</a></li>
-                            <li><a href="#">Food and Beverages</a></li>
-                            <li><a href="#">Energy</a></li>
-                            <li><a href="#">Aerospace & Defense</a></li>
-                            <li><a href="#">Manufacturing & Construction</a></li>
-                            <li><a href="#">Chemicals & Materials</a></li>
-                            <li><a href="#">ICT & Automation</a></li>
-                            <li><a href="#">Healthcare</a></li>
-                            <li><a href="#">Consumer Goods</a></li>
-                        </ul>
+                        <div style="width: auto;left: -200px;padding:30px;text-align: center;">
+                            <ul>
+                                <li width="33.33%">
+                                    <img src="assets/img/flairInsightslogo.jpg" alt="" class="img-fluid"><a
+                                        href="#">Semiconductor & Electronics</a>
+                                </li>
+                                <li width="33.33%">
+                                    <img src="assets/img/flairInsightslogo.jpg" alt="" class="img-fluid"><a
+                                        href="#">Automotive & Transportation</a>
+                                </li>
+                                <li width="33.33%">
+                                    <img src="assets/img/flairInsightslogo.jpg" alt="" class="img-fluid"><a
+                                        href="#">Food and Beverages</a>
+                                </li>
+                            </ul>
+                            <ul>
+                                <li width="33.33%">
+                                    <img src="assets/img/flairInsightslogo.jpg" alt="" class="img-fluid"><a
+                                        href="#">Energy</a>
+                                </li>
+                                <li width="33.33%">
+                                    <img src="assets/img/flairInsightslogo.jpg" alt="" class="img-fluid"><a
+                                        href="#">Aerospace & Defense</a>
+                                </li>
+                                <li width="33.33%">
+                                    <img src="assets/img/flairInsightslogo.jpg" alt="" class="img-fluid"><a
+                                        href="#">Manufacturing & Construction</a>
+                                </li>
+                            </ul>
+                            <ul>
+                                <li width="33.33%">
+                                    <img src="assets/img/flairInsightslogo.jpg" alt="" class="img-fluid"><a
+                                        href="#">Chemicals &amp; Materials</a>
+                                </li>
+                                <li width="33.33%">
+                                    <img src="assets/img/flairInsightslogo.jpg" alt="" class="img-fluid"><a
+                                        href="#">ICT &amp; Automation</a>
+                                </li>
+                                <li width="33.33%">
+                                    <img src="assets/img/flairInsightslogo.jpg" alt="" class="img-fluid"><a
+                                        href="#">Healthcare</a>
+                                </li>
+                            </ul>
+                            <ul>
+                                <li width="33.33%">
+                                    <img src="assets/img/flairInsightslogo.jpg" alt="" class="img-fluid"><a
+                                        href="#">Consumer Goods</a>
+                                </li>
+                            </ul>
+                        </div>
                     </li>
                     <li><a class="nav-link" href="{{ route('latestReport') }}">Latest Report</a></li>
                     <li><a class="nav-link" href="{{ route('caseStudy') }}">Case Study</a></li>
-                    <li><a class="nav-link" href="{{ route('news') }}">News</a></li>
+                    <li><a class="nav-link" href="{{ route('blog') }}">News</a></li>
                     <li><a class="nav-link" href="{{ route('aboutUs') }}">About</a></li>
                     <li><a class="nav-link" href="{{ route('contactUs') }}">Contact Us</a></li>
                     <li><a class="getstarted" href="#ClientLogin">Client Login</a></li>

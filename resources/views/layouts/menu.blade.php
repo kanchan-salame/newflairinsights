@@ -1,13 +1,13 @@
 <!-- need to remove -->
 <li class="nav-item">
-    <a href="{{ route('home') }}" class="nav-link {{ route('home') ? 'active' : '' }}">
+    <a href="{{ route('admin.home') }}" class="nav-link {{ (Route::currentRouteName() == 'admin.home') ? 'active' : ''  }}">
         <i class="nav-icon fas fa-home"></i>
         <p>Home</p>
     </a>
 </li>
 <!-- need to remove -->
-<li class="nav-item">
-    <a href="{{ route('home') }}" class="nav-link">
+<li class="nav-item {{ (Route::currentRouteName() == 'category.index') ? 'menu-open' : ''  }}">
+    <a href="{{ route('report.index') }}" class="nav-link {{ (Route::currentRouteName() == 'category.index') ? 'active' : ''  }}">
         <i class="nav-icon fas fa-copy"></i>
         <p>
             Reports
@@ -28,13 +28,13 @@
             </a>
         </li>
         <li class="nav-item">
-            <a href="pages/layout/top-nav.html" class="nav-link">
+            <a href="{{ route('category.index') }}" class="nav-link  {{ (Route::currentRouteName() == 'category.index') ? 'active' : '' }}">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Categories</p>
             </a>
         </li>
         <li class="nav-item">
-            <a href="pages/layout/fixed-sidebar-custom.html" class="nav-link">
+            <a href="{{ route('category.create') }}" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Add Category</p>
             </a>
