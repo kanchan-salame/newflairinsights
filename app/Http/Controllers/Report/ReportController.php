@@ -14,7 +14,7 @@ class ReportController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.Report.list');
     }
 
     /**
@@ -24,7 +24,7 @@ class ReportController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.Report.create');
     }
 
     /**
