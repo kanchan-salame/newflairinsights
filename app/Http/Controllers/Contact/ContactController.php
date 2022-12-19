@@ -14,7 +14,7 @@ class ContactController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.Contact.list');
     }
 
     /**
@@ -24,7 +24,7 @@ class ContactController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.Contact.create');
     }
 
     /**
@@ -46,7 +46,7 @@ class ContactController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('admin.Contact.list');
     }
 
     /**
@@ -57,7 +57,7 @@ class ContactController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('admin.Contact.create');
     }
 
     /**

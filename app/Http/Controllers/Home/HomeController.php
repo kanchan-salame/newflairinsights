@@ -42,7 +42,7 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function blog()
+    public function news()
     {
         return view('news');
     }

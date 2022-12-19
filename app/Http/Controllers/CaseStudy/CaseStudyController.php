@@ -14,7 +14,7 @@ class CaseStudyController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.CaseStudy.list');
     }
 
     /**
@@ -24,7 +24,7 @@ class CaseStudyController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.CaseStudy.create');
     }
 
     /**
