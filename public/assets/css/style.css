@@ -642,13 +642,13 @@ section {
   margin-bottom: 0;
 }
 
-.about .content .btn-learn-more {
+.btn-learn-more {
   font-family: "Poppins", sans-serif;
   font-weight: 500;
   font-size: 14px;
   letter-spacing: 1px;
   display: inline-block;
-  padding: 12px 32px;
+  padding: 6px 6px;
   border-radius: 4px;
   transition: 0.3s;
   line-height: 1;
@@ -659,7 +659,7 @@ section {
   border: 2px solid #47b2e4;
 }
 
-.about .content .btn-learn-more:hover {
+.btn-learn-more:hover {
   background: #47b2e4;
   color: #fff;
   text-decoration: none;
@@ -1113,6 +1113,115 @@ section {
 }
 
 /*--------------------------------------------------------------
+# Sidebar
+--------------------------------------------------------------*/
+.categories,.sidebar,.why-us,.side-contact-us {
+    position: relative;
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    background: #fff;
+    transition: 0.5s;
+    margin: 20px 0px 0px 0px;
+padding-bottom: 40px;
+  }
+  .categories {
+    text-align: center;
+  }
+  .categories-info {
+    /* text-align: center; */
+    width: 100%;
+  }
+
+  .categories-info h4{
+    background: #0869B1;
+    border-radius: 5px;
+    height: 50px;
+    padding: 10px;
+    color: #fff;
+    text-transform: uppercase;
+font-weight: bold;
+margin: 0px;
+}
+.customBtn {
+    width: 93%;
+height: 50px;
+padding: 12px;
+text-align: left;
+margin: 10px 0px 0px 0px;
+max-width: 100%;
+}
+.customBtn a:hover {
+    color: #0869B1;
+}
+  .options {
+    text-align: center;
+  }
+  .options button{
+    margin: 20px 0px 0px 0px;
+  }
+
+  .side-contact-us h6,.why-us h6,.sidebar h6{
+    position: relative;
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    background: #0869B1;
+    transition: 0.5s;
+  }
+  .speak-to-analyst{
+    position: relative;
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 200px;
+    background: #fff;
+    transition: 0.5s;
+  }
+
+  .speak-to-analyst img{
+    width: 100px;
+height: 100px;
+padding: 10px 10px 10px 10px;
+}
+.speak-to-analyst p{
+    padding: 15px 10px 15px 10px;
+font-size: 14px;
+font-weight: bold;
+margin: 0px;
+text-align: center;
+}
+
+.request-additional{
+    position: relative;
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    background: #F37735;
+    transition: 0.5s;
+    padding: 20px 0px 20px 0px;
+  }
+  .request-additional h6{
+    color: #fff;
+    text-transform: uppercase;
+  }
+
+  /* .sidebar :hover {
+    transform: translateY(-10px);
+  } */
+  .options h6 {
+    /* padding-left: 30px; */
+    color: #fff;
+    text-transform: uppercase;
+    padding: 10px 10px 10px 10px;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .options button {
+    /* padding-left: 30px; */
+    color: #fff;
+    text-transform: uppercase;
+    padding: 10px 10px 10px 10px;
+    text-align: center;
+    font-weight: bold;
+  }
+/*--------------------------------------------------------------
 # Team
 --------------------------------------------------------------*/
 .team .member {
@@ -1126,8 +1235,8 @@ section {
 
 .team .member .pic {
   overflow: hidden;
-  width: 180px;
-  border-radius: 50%;
+  width: 140px;
+  /* border-radius: 50%; */
 }
 
 .team .member .pic img {

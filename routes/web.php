@@ -18,15 +18,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('home');
-// });
 
 Auth::routes();
 
 Route::get('/', [App\Http\Controllers\Home\HomeController::class, 'index'])->name('home');
 Route::get('/aboutUs', [App\Http\Controllers\Home\HomeController::class, 'aboutUs'])->name('aboutUs');
 Route::get('/latestReport', [App\Http\Controllers\Home\HomeController::class, 'latestReport'])->name('latestReport');
+Route::get('/reportDescription', [App\Http\Controllers\Home\HomeController::class, 'reportDescription'])->name('reportDescription');
 Route::get('/contactUs', [App\Http\Controllers\Home\HomeController::class, 'contactUs'])->name('contactUs');
 Route::get('/blog', [App\Http\Controllers\Home\HomeController::class, 'news'])->name('blog');
 Route::get('/caseStudy', [App\Http\Controllers\Home\HomeController::class, 'caseStudy'])->name('caseStudy');
@@ -37,5 +35,3 @@ Route::resource('report', ReportController::class);
 Route::resource('news', NewsController::class);
 Route::resource('contact', ContactController::class);
 Route::resource('casestudy', CaseStudyController::class);
-
-// Auth::routes();

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Report;
 
 use App\Http\Controllers\Controller;
+use App\Models\Report\Category;
+use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -14,7 +16,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        return view('admin.Category.list');
+        $categories = Category::all();
+        return view('admin.Category.list', compact('categories'));
     }
 
     /**
@@ -35,7 +38,9 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Category::create($request->all());
+        // Session::flash('message', 'This is a message!');
+        return redirect()->route('category.index');
     }
 
     /**
