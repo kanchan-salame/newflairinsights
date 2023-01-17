@@ -27,6 +27,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
+
         return view('admin.Category.create');
     }
 
@@ -39,7 +40,7 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         Category::create($request->all());
-        // Session::flash('message', 'This is a message!');
+        $request->session()->flash('message', 'Category Created.');
         return redirect()->route('category.index');
     }
 
@@ -60,9 +61,9 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request, Category $category)
     {
-        //
+        return view('admin.Category.edit', compact('category'));
     }
 
     /**
@@ -72,9 +73,15 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Category $category)
     {
-        //
+
+        if ($category->update($request->all())) {
+            $request->session()->flash('message', 'Category Updated.');
+        } else {
+            $request->session()->flash('error', 'Something Went Wrong.');
+        }
+        return redirect()->route('category.index');
     }
 
     /**
@@ -83,8 +90,13 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, Category $category)
     {
-        //
+        if ($category->delete()) {
+            $request->session()->flash('message', 'Category Deleted.');
+        } else {
+            $request->session()->flash('error', 'Something Went Wrong.');
+        }
+        return redirect()->route('category.index');
     }
 }

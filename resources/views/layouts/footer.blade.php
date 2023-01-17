@@ -37,7 +37,7 @@
 
                 <div class="col-lg-4 col-md-6 footer-links">
                     <h4>Payment Options</h4>
-                    <img src="assets/img/payments.png" class="paddingTop10 mb-3">
+                    <img src="{{ route('home') }}/assets/img/payments.png" class="paddingTop10 mb-3">
                     <h4 class="mt-2">Social Links</h4>
                     <div class="social-links mt-3">
                         <a href="https://www.facebook.com/flairinsights/" target="_blank" class="facebook"><i
@@ -68,16 +68,16 @@
         class="bi bi-arrow-up-short"></i></a>
 
 <!-- Vendor JS Files -->
-<script src="assets/vendor/aos/aos.js"></script>
-<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-<script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-<script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-<script src="assets/vendor/php-email-form/validate.js"></script>
+<script src="{{ route('home') }}/assets/vendor/aos/aos.js"></script>
+<script src="{{ route('home') }}/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="{{ route('home') }}/assets/vendor/glightbox/js/glightbox.min.js"></script>
+<script src="{{ route('home') }}/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+<script src="{{ route('home') }}/assets/vendor/swiper/swiper-bundle.min.js"></script>
+<script src="{{ route('home') }}/assets/vendor/waypoints/noframework.waypoints.js"></script>
+<script src="{{ route('home') }}/assets/vendor/php-email-form/validate.js"></script>
 
 <!-- Template Main JS File -->
-<script src="assets/js/main.js"></script>
+<script src="{{ route('home') }}/assets/js/main.js"></script>
 
 </body>
 

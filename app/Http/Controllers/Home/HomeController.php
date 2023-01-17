@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Home;
 
 use App\Http\Controllers\Controller;
+use App\Models\Report\Category;
+use App\Models\Report\Report;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -14,7 +16,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $categories = Category::all();
+        return view('home', compact('categories'));
     }
 
     /**
@@ -24,7 +27,8 @@ class HomeController extends Controller
      */
     public function aboutUs()
     {
-        return view('about_us');
+        $categories = Category::all();
+        return view('about_us', compact('categories'));
     }
 
     /**
@@ -34,7 +38,8 @@ class HomeController extends Controller
      */
     public function caseStudy()
     {
-        return view('case_study');
+        $categories = Category::all();
+        return view('case_study', compact('categories'));
     }
 
     /**
@@ -44,7 +49,8 @@ class HomeController extends Controller
      */
     public function news()
     {
-        return view('news');
+        $categories = Category::all();
+        return view('news', compact('categories'));
     }
 
     /**
@@ -54,7 +60,8 @@ class HomeController extends Controller
      */
     public function contactUs()
     {
-        return view('contact_us');
+        $categories = Category::all();
+        return view('contact_us', compact('categories'));
     }
 
     /**
@@ -64,7 +71,9 @@ class HomeController extends Controller
      */
     public function latestReport()
     {
-        return view('latest_report');
+        $categories = Category::all();
+        $reports = Report::paginate(10);
+        return view('latest_report', compact('categories', 'reports'));
     }
 
     /**
@@ -72,8 +81,22 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function reportDescription()
+    public function reportDescription($id)
     {
-        return view('reportDescription');
+        $categories = Category::all();
+        $report = Report::find($id);
+        return view('reportDescription', compact('categories', 'report'));
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function reports($id)
+    {
+        $categories = Category::all();
+        $reports = Report::where('category_id', $id)->paginate(10);
+        return view('reports', compact('categories', 'reports'));
     }
 }

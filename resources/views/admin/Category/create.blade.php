@@ -56,10 +56,10 @@
                             </div>
                             <div class="row">
                                 <div class="col-12">
-                                  <a href="{{ route('category.index') }}" class="btn btn-secondary">Cancel</a>
-                                  <input type="submit" value="Save" class="btn btn-success float-right">
+                                    <a href="{{ route('category.index') }}" class="btn btn-secondary">Cancel</a>
+                                    <input type="submit" value="Save" class="btn btn-success float-right">
                                 </div>
-                              </div>
+                            </div>
                         </form>
                     </div>
                     <!-- /.card-body -->
@@ -69,12 +69,4 @@
         </div>
         <!-- /.row -->
     </div>
-    <!-- Toastr -->
-    <!-- jQuery -->
-<script src="{{  route('home') }}/adminltejs/jquery/jquery.min.js"></script>
-<script src="{{  route('home') }}/adminltejs/toastr/toastr.min.js"></script>
-    <script>
-
-        toastr.success('Lorem ipsum dolor sit amet, consetetur sadipscing elitr.')
-    </script>
 @endsection

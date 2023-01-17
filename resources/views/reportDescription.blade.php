@@ -1,5 +1,10 @@
 @extends('layouts.applayout')
 @section('content')
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <style>
         .tab-content>.active {
             display: block;
@@ -9,23 +14,63 @@
         }
 
         .container .tab-pane .active {}
+        .report-img{
+            max-width: 100%;
+            height: 200px;
+            box-shadow: 5px 6px rgb(0 0 0 / 10%);
+        }
+        #hero {
+            height: 400px;
+            padding-top: 20px !important;
+        }
+        .breadcrumbs {
+            padding: 15px 0;
+            min-height: 40px;
+            background: transparent;
+            margin-top: 0px;
+        }
+        .breadcrumbs ol li a{
+            color: #000;
+        }
+        .icon-style {
+            font-size: 40px;
+            padding: 10px;
+            color: #0869B1;
+        }
     </style>
     <!-- ======= Hero Section ======= -->
     <section id="hero" class="d-flex align-items-center">
 
+
         <div class="container">
+            <section id="breadcrumbs" class="breadcrumbs">
+                <div class="">
+
+                  <ol>
+                    <li><a href="{{ route('home') }}">Home</a></li>
+                    <li>Inner Page</li>
+                  </ol>
+
+                </div>
+              </section><!-- End Breadcrumbs -->
             <div class="row">
-                <div class="col-lg-2 order-1 order-lg-1 hero-img" data-aos="zoom-in" data-aos-delay="200">
-                    <img src="assets/img/hero-img.png" class="img-fluid animated" alt="">
+                <div class="col-lg-2 order-1 order-lg-1 hero-img">
+                    <img src="{{ route('home') }}/assets/img/hero-img.png" class="img-fluid report-img" alt="">
                 </div>
                 <div class="col-lg-10 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1"
                     data-aos="fade-up" data-aos-delay="200">
-                    <h1>Better Solutions For Your Business</h1>
-                    <h2>We are team of talented designers making websites with Bootstrap</h2>
+                    <h1>{!! Str::limit($report->title, 50) !!}</h1>
+                    <p>
+                        <strong>Report Id: </strong>{{ $report->id }} |
+                        <strong>Published Date: </strong>{{ $report->created_at }} |
+                        <strong>No. of Pages: </strong>{{ $report->pages }} |
+                        <strong>Base Year for Estimate: </strong>{{ $report->created_at }} |
+                        <strong>Format: </strong>{{ $report->created_at }} |
+                    </p>
                     <div class="d-flex justify-content-center justify-content-lg-start">
-                        <a href="#about" class="btn-get-started scrollto">Get Started</a>
-                        <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="glightbox btn-watch-video"><i
-                                class="bi bi-play-circle"></i><span>Watch Video</span></a>
+                        <a href="#about" class="btn-get-started scrollto">
+                            <i class="fas fa-download"></i> Download PDF Sample
+                        </a>
                     </div>
                 </div>
             </div>
@@ -37,7 +82,7 @@
         <section id="team" class="team section-bg">
             <div class="container aos-init aos-animate" data-aos="fade-up">
                 <div class="row">
-                    <div class="col-md-9">
+                    <div class="col-md-8">
                         <!-- Nav tabs -->
                         <ul class="nav nav-tabs" role="tablist">
                             <li class="nav-item">
@@ -54,24 +99,26 @@
                         <!-- Tab panes -->
                         <div class="tab-content">
                             <div id="home" class="container tab-pane active"><br>
-                                <h3>HOME</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                    incididunt ut labore et dolore magna aliqua.</p>
+                                {!! $report->description_one !!}
+                                <img src="{{ route('home') . '/storage/' . $report->image_one }}" alt="" style="width: 100%;height: 300px;">
+                                {!! $report->image_one !!}
+                                {!! $report->description_one !!}
+                                <img src="{{ route('home') . '/storage/' . $report->image_two }}" alt="" style="width: 100%;height: 300px;">
+                                {!! $report->image_two !!}
+                                {!! $report->description_one !!}
+                                <img src="{{ route('home') . '/storage/' . $report->image_three }}" alt="" style="width: 100%;height: 300px;">
+                                {!! $report->image_three !!}
                             </div>
                             <div id="menu1" class="container tab-pane fade"><br>
-                                <h3>Menu 1</h3>
-                                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                                    commodo consequat.</p>
+                                {!! $report->description_one !!}
                             </div>
                             <div id="menu2" class="container tab-pane fade"><br>
-                                <h3>Menu 2</h3>
-                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-                                    laudantium, totam rem aperiam.</p>
+                                {!! $report->description_one !!}
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-md-3">
+                    <div class="col-md-4">
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="sidebar">
@@ -82,7 +129,7 @@
                                 </div>
                                 <br>
                                 <div class="speak-to-analyst d-flex">
-                                    <img src="assets/img/hero-img.png" class="" alt="">
+                                    <img src="{{ route('home') }}/assets/img/hero-img.png" class="" alt="">
                                     <p>Speak to analyst and have exclusive insights tailored for your needs</p>
                                 </div>
                                 <br>
@@ -91,46 +138,62 @@
                                     <a href="#">Click here</a>
                                 </div>
                                 <br>
-                                <div class="why-us">
-                                    <div class="options">
+                                <div class="why-us text-left">
+                                    <div class="options" style="
+                                    text-align: left;
+                                ">
                                         <h6>Why Choose Us</h6>
                                         <div class="row">
                                             <div class="col-md-3">
-                                                <i class="bx bxl-facebook"></i>
+                                                <span class="icon-style">
+                                                    <i class="fas fa-wallet"></i>
+                                                </span>
                                             </div>
                                             <div class="col-md-9">
-                                                <h3>Lorem </h3>
-                                                <p>Lorem sit amet consectetur adipisicing elit. Neque, alias.</p>
+                                                <h5>Insured Buying </h5>
+                                                <p>This Report Has A Service
+                                                    Guarantee. We Stand By Our
+                                                    Report Quality.</p>
                                             </div>
                                         </div>
 
                                         <div class="row">
                                             <div class="col-md-3">
-                                                <i class="bx bxl-facebook"></i>
+                                                <span class="icon-style">
+                                                    <i class="fas fa-fan"></i>
+                                                </span>
                                             </div>
                                             <div class="col-md-9">
-                                                <h3>Lorem </h3>
-                                                <p>Lorem sit amet consectetur adipisicing elit. Neque, alias.</p>
+                                                <h5>Confidentiality </h5>
+                                                <p>This Report Has A Service
+                                                    Guarantee. We Stand By Our
+                                                    Report Quality.</p>
                                             </div>
                                         </div>
 
                                         <div class="row">
                                             <div class="col-md-3">
-                                                <i class="bx bxl-facebook"></i>
+                                                <span class="icon-style">
+                                                    <i class="fab fa-searchengin"></i>
+                                                </span>
                                             </div>
                                             <div class="col-md-9">
-                                                <h3>Lorem </h3>
-                                                <p>Lorem sit amet consectetur adipisicing elit. Neque, alias.</p>
+                                                <h5>Custom Research Service </h5>
+                                                <p>We Are In Compliance With
+                                                    GDPR & CCPA Norms. All
+                                                    Interactions Are Confidential.</p>
                                             </div>
                                         </div>
 
                                         <div class="row">
                                             <div class="col-md-3">
-                                                <i class="bx bxl-facebook"></i>
+                                                <span class="icon-style">
+                                                    <i class="fas fa-phone-alt"></i>
+                                                </span>
                                             </div>
                                             <div class="col-md-9">
-                                                <h3>Lorem </h3>
-                                                <p>Lorem sit amet consectetur adipisicing elit. Neque, alias.</p>
+                                                <h5>24/5 Research Support </h5>
+                                                <p>Get Your Queries Resolved From An Industry Expert.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -144,19 +207,46 @@
 
                                                 <div class="form-group">
                                                     <div class="col-sm-12">
-                                                        <input type="text" class="form-control" id="pwd"
-                                                            placeholder="Enter password" name="pwd">
+                                                        <input type="text" class="form-control" id="fname"
+                                                            placeholder="Full Name" name="fname">
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
-                                                    <div class="col-sm-10">
+                                                    <div class="col-sm-12">
                                                         <input type="email" class="form-control" id="email"
-                                                            placeholder="Enter email" name="email">
+                                                            placeholder="Business Email" name="email">
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
-                                                    <div class="col-sm-offset-2 col-sm-10">
-                                                        <button type="submit" class="btn btn-default">Submit</button>
+                                                    <div class="col-sm-12">
+                                                        <select class="form-control" id="country" name="country">
+                                                            <option value="1">Country 1</option>
+                                                            <option value="2">Country 2</option>
+                                                            <option value="3">Country 3</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="col-sm-12">
+                                                        <input type="text" class="form-control" id="contact_no"
+                                                            placeholder="Contact Number" name="contact_no">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="col-sm-12">
+                                                        <input type="text" class="form-control" id="job_title"
+                                                            placeholder="Job Title" name="job_title">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="col-sm-12">
+                                                        <input type="text" class="form-control" id="company_name"
+                                                            placeholder="Company Name" name="company_name">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="col-sm-12">
+                                                        <button type="submit" class="btn btn-primary form-control">Submit</button>
                                                     </div>
                                                 </div>
                                             </form>

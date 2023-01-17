@@ -11,14 +11,16 @@
     class="nav-item {{ Route::currentRouteName() == 'category.index' ||
     Route::currentRouteName() == 'category.create' ||
     Route::currentRouteName() == 'report.index' ||
-    Route::currentRouteName() == 'report.create'
+    Route::currentRouteName() == 'report.create' ||
+    Route::currentRouteName() == 'category.edit'
         ? 'menu-open'
         : '' }}">
     <a href="{{ route('report.index') }}"
         class="nav-link {{ Route::currentRouteName() == 'category.index' ||
         Route::currentRouteName() == 'category.create' ||
         Route::currentRouteName() == 'report.index' ||
-        Route::currentRouteName() == 'report.create'
+        Route::currentRouteName() == 'report.create' ||
+        Route::currentRouteName() == 'category.edit'
             ? 'active'
             : '' }}">
         <i class="nav-icon fas fa-copy"></i>
@@ -44,7 +46,7 @@
         </li>
         <li class="nav-item">
             <a href="{{ route('category.index') }}"
-                class="nav-link  {{ Route::currentRouteName() == 'category.index' ? 'active' : '' }}">
+                class="nav-link  {{ Route::currentRouteName() == 'category.index' || Route::currentRouteName() == 'category.edit' ? 'active' : '' }}">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Categories</p>
             </a>

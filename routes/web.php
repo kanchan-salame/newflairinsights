@@ -24,10 +24,12 @@ Auth::routes();
 Route::get('/', [App\Http\Controllers\Home\HomeController::class, 'index'])->name('home');
 Route::get('/aboutUs', [App\Http\Controllers\Home\HomeController::class, 'aboutUs'])->name('aboutUs');
 Route::get('/latestReport', [App\Http\Controllers\Home\HomeController::class, 'latestReport'])->name('latestReport');
-Route::get('/reportDescription', [App\Http\Controllers\Home\HomeController::class, 'reportDescription'])->name('reportDescription');
+Route::get('/reportDescription/{id}', [App\Http\Controllers\Home\HomeController::class, 'reportDescription'])->name('reportDescription');
 Route::get('/contactUs', [App\Http\Controllers\Home\HomeController::class, 'contactUs'])->name('contactUs');
 Route::get('/blog', [App\Http\Controllers\Home\HomeController::class, 'news'])->name('blog');
 Route::get('/caseStudy', [App\Http\Controllers\Home\HomeController::class, 'caseStudy'])->name('caseStudy');
+Route::get('/reports/{id}', [App\Http\Controllers\Home\HomeController::class, 'reports'])->name('reports');
+
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('admin.home');
 Route::resource('category', CategoryController::class);

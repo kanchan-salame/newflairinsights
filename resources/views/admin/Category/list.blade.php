@@ -32,8 +32,13 @@
                                         <td>{{ $category->slug }}</td>
                                         <td>
                                             <div class="btn-group">
-                                                <button type="button" class="btn btn-sm btn-info"><i class="fas fa-edit"></i></button>
-                                                <button type="button" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>
+                                                <a href="{{ route('category.edit', $category) }}" type="button" class="btn btn-sm btn-info"><i class="fas fa-edit"></i></a>
+
+                                                <form method="post" action="{{route('category.destroy', $category)}}">
+                                                    @method('delete')
+                                                    @csrf
+                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button>
+                                                </form>
                                               </div>
                                         </td>
                                     </tr>
@@ -49,24 +54,4 @@
         </div>
         <!-- /.row -->
     </div>
-
-    <script>
-        $(function() {
-            $("#example1").DataTable({
-                "responsive": true,
-                "lengthChange": false,
-                "autoWidth": false,
-                "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-            }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-            $('#example2').DataTable({
-                "paging": true,
-                "lengthChange": false,
-                "searching": false,
-                "ordering": true,
-                "info": true,
-                "autoWidth": false,
-                "responsive": true,
-            });
-        });
-    </script>
 @endsection
