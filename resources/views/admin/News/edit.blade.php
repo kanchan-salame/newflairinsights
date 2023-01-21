@@ -21,28 +21,31 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <form action="{{ route('news.store') }}" method="post" enctype="multipart/form-data">
+                        <form action="{{ route('news.update', $news->id) }}" method="post"
+                            enctype="multipart/form-data">
+                            @method('put')
                             @csrf
                             <div class="form-group">
                                 <label for="title">Title</label>
                                 <input type="text" name="title" id="title"
-                                    class="form-control @error('title') is-invalid @enderror" value="{{ old('title') }}">
+                                    class="form-control @error('title') is-invalid @enderror"
+                                    value="{{ $news->title }}">
                                 @error('title')
                                     <p class="text-danger">{{ $message }}</p>
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <label for="short_description">Short Description</label>
+                                <label for="short_description">Description One</label>
                                 <textarea id="short_description" class="form-control @error('short_description') is-invalid @enderror"
-                                    value="{{ old('short_description') }}" name="short_description"></textarea>
+                                    value="{{ old('short_description') }}" name="short_description">{{ $news->short_description }}</textarea>
                                 @error('short_description')
                                     <p class="text-danger">{{ $message }}</p>
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <label for="long_description">Long Description</label>
+                                <label for="long_description">Description Two</label>
                                 <textarea id="long_description" class="form-control @error('long_description') is-invalid @enderror"
-                                    value="{{ old('long_description') }}" name="long_description"></textarea>
+                                    value="{{ old('long_description') }}" name="long_description">{{ $news->long_description }}</textarea>
                                 @error('long_description')
                                     <p class="text-danger">{{ $message }}</p>
                                 @enderror
@@ -50,14 +53,15 @@
                             <div class="form-group">
                                 <label for="slug">Slug</label>
                                 <input type="text" name="slug" id="slug"
-                                    class="form-control @error('slug') is-invalid @enderror">
+                                    class="form-control @error('slug') is-invalid @enderror"
+                                    value="{{ $news->slug }}">
                                 @error('slug')
                                     <p class="text-danger">{{ $message }}</p>
                                 @enderror
                             </div>
                             <div class="row">
                                 <div class="col-12">
-                                    <a href="{{ route('news.index') }}" class="btn btn-secondary">Cancel</a>
+                                    <a href="{{ route('casestudy.index') }}" class="btn btn-secondary">Cancel</a>
                                     <input type="submit" value="Save" class="btn btn-success float-right">
                                 </div>
                             </div>
@@ -70,7 +74,6 @@
         </div>
         <!-- /.row -->
     </div>
-
     <!-- summernote css/js -->
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>

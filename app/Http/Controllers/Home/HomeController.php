@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Home;
 
 use App\Http\Controllers\Controller;
+use App\Models\CaseStudy\CaseStudy;
+use App\Models\News\News;
 use App\Models\Report\Category;
 use App\Models\Report\Report;
 use Illuminate\Http\Request;
@@ -39,7 +41,8 @@ class HomeController extends Controller
     public function caseStudy()
     {
         $categories = Category::all();
-        return view('case_study', compact('categories'));
+        $caseStudies = CaseStudy::paginate(10);
+        return view('case_study', compact('categories', 'caseStudies'));
     }
 
     /**
@@ -50,7 +53,8 @@ class HomeController extends Controller
     public function news()
     {
         $categories = Category::all();
-        return view('news', compact('categories'));
+        $blogs = News::paginate(10);
+        return view('news', compact('categories', 'blogs'));
     }
 
     /**
@@ -132,5 +136,19 @@ class HomeController extends Controller
     {
         $categories = Category::all();
         return view('term_of_services', compact('categories'));
+    }
+
+    public function blogDetail($slug)
+    {
+        $categories = Category::all();
+        $blog = News::where('slug', $slug)->first();
+        return view('blogDetail', compact('categories', 'blog'));
+    }
+
+    public function caseStudyDetail($slug)
+    {
+        $categories = Category::all();
+        $caseStudy = CaseStudy::where('slug', $slug)->first();
+        return view('caseStudyDetail', compact('categories', 'caseStudy'));
     }
 }

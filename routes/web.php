@@ -32,6 +32,8 @@ Route::get('/reports/{slug}', [App\Http\Controllers\Home\HomeController::class, 
 Route::get('/faq', [App\Http\Controllers\Home\HomeController::class, 'faq'])->name('faq');
 Route::get('/privacyPolicy', [App\Http\Controllers\Home\HomeController::class, 'privacyPolicy'])->name('privacyPolicy');
 Route::get('/termOfServices', [App\Http\Controllers\Home\HomeController::class, 'termOfServices'])->name('termOfServices');
+Route::get('/caseStudyDetail/{slug}', [App\Http\Controllers\Home\HomeController::class, 'caseStudyDetail'])->name('caseStudyDetail');
+Route::get('/blogDetail/{slug}', [App\Http\Controllers\Home\HomeController::class, 'caseStudyDetail'])->name('caseStudyDetail');
 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('admin.home');

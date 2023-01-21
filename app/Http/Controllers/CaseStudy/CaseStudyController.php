@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\CaseStudy;
 
 use App\Http\Controllers\Controller;
+use App\Models\CaseStudy\CaseStudy;
 use Illuminate\Http\Request;
 
 class CaseStudyController extends Controller
@@ -14,7 +15,8 @@ class CaseStudyController extends Controller
      */
     public function index()
     {
-        return view('admin.CaseStudy.list');
+        $caseStudies = CaseStudy::all();
+        return view('admin.CaseStudy.list', compact('caseStudies'));
     }
 
     /**
@@ -35,7 +37,37 @@ class CaseStudyController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if ($request->file('image_one')) {
+            $imageOne = time().'.'.$request->file('image_one')->getClientOriginalName();
+            $imageOneStore = $request->file('image_one')->store('public/case_study_images');
+            $imageOnePath = str_replace('public/', '', $imageOneStore);
+        }
+        if ($request->file('image_two')) {
+            $imageTwo = time().'.'.$request->file('image_two')->getClientOriginalName();
+            $imageTwoStore = $request->file('image_two')->store('public/case_study_images');
+            $imageTwoPath = str_replace('public/', '', $imageTwoStore);
+        }
+        if ($request->file('image_three')) {
+            $imageThree = time().'.'.$request->file('image_three')->getClientOriginalName();
+            $imageThreeStore = $request->file('image_three')->store('public/case_study_images');
+            $imageThreePath = str_replace('public/', '', $imageThreeStore);
+        }
+        $data = [
+            'title' => $request->title ?? '',
+            'description_one' => $request->description_one ?? '',
+            'image_one' => $imageOnePath ?? '',
+            'description_two' => $request->description_two ?? '',
+            'image_two' => $imageTwoPath ?? '',
+            'description_three' => $request->description_three ?? '',
+            'image_three' => $imageThreePath ?? '',
+            'slug' => $request->slug ?? '',
+        ];
+        if (CaseStudy::create($data)) {
+            $request->session()->flash('message', 'Case Study Created.');
+        } else {
+            $request->session()->flash('error', 'Something Went Wrong.');
+        }
+        return redirect()->route('casestudy.index');
     }
 
     /**
@@ -57,7 +89,8 @@ class CaseStudyController extends Controller
      */
     public function edit($id)
     {
-        //
+        $caseStudy = CaseStudy::where('id', $id)->first();
+        return view('admin.CaseStudy.edit', compact('caseStudy'));
     }
 
     /**
@@ -69,7 +102,38 @@ class CaseStudyController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $caseStudy = CaseStudy::find($id);
+        if ($request->file('image_one')) {
+            $imageOne = time().'.'.$request->file('image_one')->getClientOriginalName();
+            $imageOneStore = $request->file('image_one')->store('public/case_study_images');
+            $imageOnePath = str_replace('public/', '', $imageOneStore);
+        }
+        if ($request->file('image_two')) {
+            $imageTwo = time().'.'.$request->file('image_two')->getClientOriginalName();
+            $imageTwoStore = $request->file('image_two')->store('public/case_study_images');
+            $imageTwoPath = str_replace('public/', '', $imageTwoStore);
+        }
+        if ($request->file('image_three')) {
+            $imageThree = time().'.'.$request->file('image_three')->getClientOriginalName();
+            $imageThreeStore = $request->file('image_three')->store('public/case_study_images');
+            $imageThreePath = str_replace('public/', '', $imageThreeStore);
+        }
+        $data = [
+            'title' => $request->title ?? '',
+            'description_one' => $request->description_one ?? '',
+            'image_one' => $imageOnePath ?? '',
+            'description_two' => $request->description_two ?? '',
+            'image_two' => $imageTwoPath ?? '',
+            'description_three' => $request->description_three ?? '',
+            'image_three' => $imageThreePath ?? '',
+            'slug' => $request->slug ?? '',
+        ];
+        if ($caseStudy->update($data)) {
+            $request->session()->flash('message', 'Case Study Updated.');
+        } else {
+            $request->session()->flash('error', 'Something Went Wrong.');
+        }
+        return redirect()->route('casestudy.index');
     }
 
     /**
@@ -78,8 +142,14 @@ class CaseStudyController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id, Request $request)
     {
-        //
+        $caseStudy = CaseStudy::find($id);
+        if ($caseStudy->delete()) {
+            $request->session()->flash('message', 'Case Study Deleted.');
+        } else {
+            $request->session()->flash('error', 'Something Went Wrong.');
+        }
+        return redirect()->route('casestudy.index');
     }
 }

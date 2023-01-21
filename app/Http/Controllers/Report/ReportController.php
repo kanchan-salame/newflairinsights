@@ -123,7 +123,6 @@ class ReportController extends Controller
         if ($request->file('image_one')) {
             $imageOne = time().'.'.$request->file('image_one')->getClientOriginalName();
             $imageOneStore = $request->file('image_one')->store('public/report_image');
-
             $imageOnePath = str_replace('public/', '', $imageOneStore);
         }
         if ($request->file('image_two')) {
