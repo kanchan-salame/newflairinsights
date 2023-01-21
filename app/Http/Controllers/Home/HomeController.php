@@ -81,10 +81,10 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function reportDescription($id)
+    public function reportDescription($slug)
     {
         $categories = Category::all();
-        $report = Report::find($id);
+        $report = Report::where('slug', $slug)->first();
         return view('reportDescription', compact('categories', 'report'));
     }
 
@@ -93,10 +93,44 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function reports($id)
+    public function reports($slug)
     {
         $categories = Category::all();
-        $reports = Report::where('category_id', $id)->paginate(10);
-        return view('reports', compact('categories', 'reports'));
+        $categoyData = Category::where('slug', $slug)->first();
+        $reports = Report::where('category_id', $categoyData->id)->paginate(10);
+        return view('reports', compact('categories', 'reports', 'categoyData'));
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function faq()
+    {
+        $categories = Category::all();
+        return view('faq', compact('categories'));
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function privacyPolicy()
+    {
+        $categories = Category::all();
+        return view('privacy_policy', compact('categories'));
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function termOfServices()
+    {
+        $categories = Category::all();
+        return view('term_of_services', compact('categories'));
     }
 }

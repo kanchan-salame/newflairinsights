@@ -16,7 +16,7 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <form action="{{ route('category.update', $category) }}" method="post">
+                        <form action="{{ route('category.update', $category) }}" method="post" enctype="multipart/form-data">
                             @method('put')
                             @csrf
                             <div class="form-group">
@@ -49,11 +49,20 @@
                             </div>
                             <div class="form-group">
                                 <label for="category_icon">Category Icon</label>
-                                <select id="category_icon" name="category_icon" class="form-control custom-select">
-                                    <option selected disabled>Select one</option>
-                                    <option value="icon1" {{$category->category_icon == 'icon1' ? 'selected' : ''}}>Icon 1</option>
-                                    <option value="icon0" {{$category->category_icon == 'icon0' ? 'selected' : ''}}>Icon 0</option>
-                                </select>
+                                <input type="text" name="category_icon" id="category_icon" class="form-control @error('category_icon') is-invalid @enderror" value="{{ $category->category_icon }}">
+                                @error('category_icon')
+                                    <p class="text-danger">{{ $message }}</p>
+                                @enderror
+                            </div>
+
+                            <div class="form-group">
+                                <label for="image">Image</label>
+                                <input type="file" accept="image/*" id="image" name="image"
+                                    class="form-control @error('image') is-invalid @enderror"
+                                    value="{{ old('image') }}">
+                                @error('image')
+                                    <p class="text-danger">{{ $message }}</p>
+                                @enderror
                             </div>
                             <div class="row">
                                 <div class="col-12">

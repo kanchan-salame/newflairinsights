@@ -11,4 +11,12 @@ class Report extends Model
     use HasFactory;
     use SoftDeletes;
     protected $guarded = [];
+
+        /**
+     * Get the user that owns the phone.
+     */
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
 }

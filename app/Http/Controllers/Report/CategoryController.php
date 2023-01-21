@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Report;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Category\CategoryStoreRequest;
 use App\Models\Report\Category;
 use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
@@ -37,9 +38,26 @@ class CategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CategoryStoreRequest $request)
     {
-        Category::create($request->all());
+        if ($request->file('image')) {
+            $imageOne = time().'.'.$request->file('image')->getClientOriginalName();
+            $imageOneStore = $request->file('image')->store('public/category_image');
+
+            $imageOnePath = str_replace('public/', '', $imageOneStore);
+        }
+
+        $data = [
+            'name' => $request->name ?? '',
+            'title' => $request->title ?? '',
+            'show_on_homepage' => $request->show_on_homepage ?? '',
+            'image' => $imageOnePath ?? '',
+            'title_tag' => $request->title_tag ?? '',
+            'slug' => $request->slug ?? '',
+            'meta_keywords' => $request->meta_keywords ?? '',
+            'category_icon' => $request->category_icon ?? '',
+        ];
+        Category::create($data);
         $request->session()->flash('message', 'Category Created.');
         return redirect()->route('category.index');
     }
@@ -75,8 +93,24 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
+        if ($request->file('image')) {
+            $imageOne = time().'.'.$request->file('image')->getClientOriginalName();
+            $imageOneStore = $request->file('image')->store('public/category_image');
+            $imageOnePath = str_replace('public/', '', $imageOneStore);
+        }
 
-        if ($category->update($request->all())) {
+        $data = [
+            'name' => $request->name ?? '',
+            'title' => $request->title ?? '',
+            'show_on_homepage' => $request->show_on_homepage ?? '',
+            'image' => $imageOnePath ?? '',
+            'title_tag' => $request->title_tag ?? '',
+            'slug' => $request->slug ?? '',
+            'meta_keywords' => $request->meta_keywords ?? '',
+            'category_icon' => $request->category_icon ?? '',
+        ];
+
+        if ($category->update($data)) {
             $request->session()->flash('message', 'Category Updated.');
         } else {
             $request->session()->flash('error', 'Something Went Wrong.');

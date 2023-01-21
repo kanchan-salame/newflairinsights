@@ -16,43 +16,69 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <form action="{{ route('category.store') }}" method="post">
+                        <form action="{{ route('category.store') }}" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group">
                                 <label for="name">Name</label>
-                                <input type="text" name="name" id="name" class="form-control">
+                                <input type="text" name="name" id="name" class="form-control @error('name') is-invalid @enderror">
+                                @error('name')
+                                    <p class="text-danger">{{ $message }}</p>
+                                @enderror
                             </div>
                             <div class="form-group">
                                 <label for="show_on_homepage">Show On Homepage</label>
-                                <select id="show_on_homepage" name="show_on_homepage" class="form-control custom-select">
+                                <select id="show_on_homepage" name="show_on_homepage" class="form-control custom-select @error('show_on_homepage') is-invalid @enderror">
                                     <option selected disabled>Select one</option>
                                     <option value="1">Yes</option>
                                     <option value="0">No</option>
                                 </select>
+                                @error('show_on_homepage')
+                                    <p class="text-danger">{{ $message }}</p>
+                                @enderror
                             </div>
                             <div class="form-group">
                                 <label for="title">Title</label>
-                                <input type="text" name="title" id="title" class="form-control">
+                                <input type="text" name="title" id="title" class="form-control @error('title') is-invalid @enderror">
+                                @error('title')
+                                    <p class="text-danger">{{ $message }}</p>
+                                @enderror
                             </div>
                             <div class="form-group">
                                 <label for="title_tag">Title Tag</label>
-                                <input type="text" name="title_tag" id="title_tag" class="form-control">
+                                <input type="text" name="title_tag" id="title_tag" class="form-control @error('title_tag') is-invalid @enderror">
+                                @error('title_tag')
+                                    <p class="text-danger">{{ $message }}</p>
+                                @enderror
                             </div>
                             <div class="form-group">
                                 <label for="slug">Slug</label>
-                                <input type="text" name="slug" id="slug" class="form-control">
+                                <input type="text" name="slug" id="slug" class="form-control @error('slug') is-invalid @enderror">
+                                @error('slug')
+                                    <p class="text-danger">{{ $message }}</p>
+                                @enderror
                             </div>
                             <div class="form-group">
                                 <label for="meta_keywords">Meta Keywords</label>
-                                <input type="text" name="meta_keywords" id="meta_keywords" class="form-control">
+                                <input type="text" name="meta_keywords" id="meta_keywords" class="form-control @error('meta_keywords') is-invalid @enderror">
+                                @error('meta_keywords')
+                                    <p class="text-danger">{{ $message }}</p>
+                                @enderror
                             </div>
                             <div class="form-group">
                                 <label for="category_icon">Category Icon</label>
-                                <select id="category_icon" name="category_icon" class="form-control custom-select">
-                                    <option selected disabled>Select one</option>
-                                    <option value="icon1">Icon 1</option>
-                                    <option value="icon0">Icon 0</option>
-                                </select>
+                                <input type="text" name="category_icon" id="category_icon" class="form-control @error('category_icon') is-invalid @enderror">
+                                @error('category_icon')
+                                    <p class="text-danger">{{ $message }}</p>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <label for="image">Image</label>
+                                <input type="file" accept="image/*" id="image" name="image"
+                                    class="form-control @error('image') is-invalid @enderror"
+                                    value="{{ old('image') }}">
+                                @error('image')
+                                    <p class="text-danger">{{ $message }}</p>
+                                @enderror
                             </div>
                             <div class="row">
                                 <div class="col-12">

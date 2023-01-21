@@ -26,12 +26,14 @@
                 <div class="col-lg-4 col-md-6 footer-links">
                     <h4>Ouick Links</h4>
                     <ul>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Contact</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">FAQ's</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="{{ route('home') }}">Home</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="{{ route('aboutUs') }}">About us</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="{{ route('contactUs') }}">Contact</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="{{ route('faq') }}">FAQ's</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="{{ route('privacyPolicy') }}">Privacy
+                                policy</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="{{ route('termOfServices') }}">Terms of
+                                service</a></li>
                     </ul>
                 </div>
 
@@ -53,12 +55,14 @@
         </div>
     </div>
 
-    <div class="container footer-bottom clearfix">
-        <div class="copyright">
-            Copyright <strong><span>&copy; </span></strong> 2022. All Rights Reserved
-        </div>
-        <div class="credits">
-            Designed by <a href="https://salame.in/">Salame Apps</a>
+    <div class="footer-bottom clearfix">
+        <div class="container">
+            <div class="copyright">
+                Copyright <strong><span>&copy; </span></strong> 2022. All Rights Reserved
+            </div>
+            <div class="credits">
+                Designed by <a href="https://salame.in/">Salame Apps</a>
+            </div>
         </div>
     </div>
 </footer><!-- End Footer -->

@@ -1,6 +1,6 @@
 @extends('layouts.applayout')
 @section('content')
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
@@ -14,60 +14,106 @@
         }
 
         .container .tab-pane .active {}
-        .report-img{
+
+        .report-img {
             max-width: 100%;
             height: 200px;
             box-shadow: 5px 6px rgb(0 0 0 / 10%);
         }
+
         #hero {
             height: 400px;
             padding-top: 20px !important;
         }
+
         .breadcrumbs {
-            padding: 15px 0;
+            padding: 30px 0;
             min-height: 40px;
             background: transparent;
             margin-top: 0px;
         }
-        .breadcrumbs ol li a{
-            color: #000;
+
+        .breadcrumbs ol li a,
+        .breadcrumbs ol li {
+            color: #fff;
+            font-size: 18px;
+            font-weight: 600;
         }
+
+        .breadcrumbs ol li+li::before {
+            display: inline-block;
+            padding-right: 10px;
+            color: #fff;
+            content: "/";
+        }
+
         .icon-style {
             font-size: 40px;
             padding: 10px;
             color: #0869B1;
         }
+
+        #hero h1 {
+            margin: 0 0 10px 0;
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 25px;
+            color: #fff;
+        }
+
+        .report-inline {
+            color: #fff;
+        }
+
+        #home h3 {
+            font-size: 20px;
+            color: #0869B1;
+        }
+
+        thead {
+            background: #0869B1;
+            color: #fff;
+        }
     </style>
     <!-- ======= Hero Section ======= -->
-    <section id="hero" class="d-flex align-items-center">
+    <section id="hero" class="align-items-center">
 
 
         <div class="container">
             <section id="breadcrumbs" class="breadcrumbs">
                 <div class="">
 
-                  <ol>
-                    <li><a href="{{ route('home') }}">Home</a></li>
-                    <li>Inner Page</li>
-                  </ol>
+                    <ol>
+                        <li><a href="{{ route('home') }}">Home</a></li>
+                        <li>{{ $report->category->name }}</li>
+                    </ol>
 
                 </div>
-              </section><!-- End Breadcrumbs -->
+            </section><!-- End Breadcrumbs -->
             <div class="row">
                 <div class="col-lg-2 order-1 order-lg-1 hero-img">
-                    <img src="{{ route('home') }}/assets/img/hero-img.png" class="img-fluid report-img" alt="">
+                    <img src="{{ $report->category->image ? route('home') . '/storage/' . $report->category->image : route('home') . '/assets/img/team/team-3.jpg' }}"
+                     class="img-fluid report-img" alt="">
                 </div>
                 <div class="col-lg-10 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1"
                     data-aos="fade-up" data-aos-delay="200">
-                    <h1>{!! Str::limit($report->title, 50) !!}</h1>
-                    <p>
+                    <h1>{!! Str::limit($report->title, 200) !!}</h1>
+                    <p class="report-inline">
                         <strong>Report Id: </strong>{{ $report->id }} |
-                        <strong>Published Date: </strong>{{ $report->created_at }} |
+                        <strong>Published Date:
+                        </strong>{{ \Carbon\Carbon::parse($report->created_at)->isoFormat('MMM YYYY') }} |
                         <strong>No. of Pages: </strong>{{ $report->pages }} |
-                        <strong>Base Year for Estimate: </strong>{{ $report->created_at }} |
-                        <strong>Format: </strong>{{ $report->created_at }} |
+                        <strong>Base Year for Estimate:
+                        </strong>{{ \Carbon\Carbon::parse($report->created_at)->isoFormat('MMM YYYY') }} |
+                        <strong>Format: </strong> <i class="fas fa-file-pdf"></i>
                     </p>
                     <div class="d-flex justify-content-center justify-content-lg-start">
+                        <a href="#about" class="btn-get-started scrollto">
+                            <i class="fas fa-download"></i> Download PDF Sample
+                        </a>
+                        <a href="#about" class="btn-get-started scrollto mr-2 ml-2">
+                            <i class="fas fa-download"></i> Download PDF Sample
+                        </a>
                         <a href="#about" class="btn-get-started scrollto">
                             <i class="fas fa-download"></i> Download PDF Sample
                         </a>
@@ -100,14 +146,67 @@
                         <div class="tab-content">
                             <div id="home" class="container tab-pane active"><br>
                                 {!! $report->description_one !!}
-                                <img src="{{ route('home') . '/storage/' . $report->image_one }}" alt="" style="width: 100%;height: 300px;">
-                                {!! $report->image_one !!}
-                                {!! $report->description_one !!}
-                                <img src="{{ route('home') . '/storage/' . $report->image_two }}" alt="" style="width: 100%;height: 300px;">
-                                {!! $report->image_two !!}
-                                {!! $report->description_one !!}
-                                <img src="{{ route('home') . '/storage/' . $report->image_three }}" alt="" style="width: 100%;height: 300px;">
-                                {!! $report->image_three !!}
+                                <img src="{{ $report->image_one ? route('home') . '/storage/' . $report->image_one : route('home') . '/assets/img/flairInsightslogo.jpg' }}"
+                                    alt="" class="mb-2 mt-2" style="width: 100%;height: 300px;">
+                                {!! $report->description_two !!}
+                                <img src="{{ $report->image_one ? route('home') . '/storage/' . $report->image_one : route('home') . '/assets/img/flairInsightslogo.jpg' }}"
+                                    alt="" class="mb-2 mt-2" style="width: 100%;height: 300px;">
+                                {!! $report->description_three !!}
+                                <img src="{{ $report->image_one ? route('home') . '/storage/' . $report->image_one : route('home') . '/assets/img/flairInsightslogo.jpg' }}"
+                                    alt="" class="mb-2 mt-2" style="width: 100%;height: 300px;">
+
+                                <div class="mt-3">
+                                    <h3>
+                                        <strong>Darts Market Report Coverage</strong>
+                                    </h3>
+                                    <table class="table table-striped table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>ATTRIBUTES</th>
+                                                <th>DETAILS</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>STUDY PERIOD</td>
+                                                <td>2019-2030</td>
+                                            </tr>
+                                            <tr>
+                                                <td>BASE YEAR</td>
+                                                <td>2022</td>
+                                            </tr>
+                                            <tr>
+                                                <td>FORECAST PERIOD</td>
+                                                <td>2023-2030</td>
+                                            </tr>
+                                            <tr>
+                                                <td>HISTORICAL PERIOD</td>
+                                                <td>2019-2021</td>
+                                            </tr>
+                                            <tr>
+                                                <td>UNIT</td>
+                                                <td>VALUE (USD BILLION)</td>
+                                            </tr>
+                                            <tr>
+                                                <td>KEY COMPANIES PROFILED</td>
+                                                <td>Viper, Harrows Darts, WINMAU, Arachnid, Bottelsen, CUESOUL, Black Widow,
+                                                    KO Steel Tip Darts, Carrera, GLD Products.</td>
+                                            </tr>
+                                            <tr>
+                                                <td>SEGMENTS COVERED</td>
+                                                <td>By Type - Soft Tip Darts, Steel Tip Darts
+                                                    By Application - Rice, Beverages
+                                                    By Geography - North America, Europe, APAC, Middle East Asia & Rest of
+                                                    World.</td>
+                                            </tr>
+                                            <tr>
+                                                <td>CUSTOMIZATION SCOPE</td>
+                                                <td>Get Free Report Customization as per requirements with purchase.
+                                                    Addition or alteration to Country, Regional & Segment scope.</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                             <div id="menu1" class="container tab-pane fade"><br>
                                 {!! $report->description_one !!}
@@ -139,7 +238,8 @@
                                 </div>
                                 <br>
                                 <div class="why-us text-left">
-                                    <div class="options" style="
+                                    <div class="options"
+                                        style="
                                     text-align: left;
                                 ">
                                         <h6>Why Choose Us</h6>
@@ -246,7 +346,8 @@
                                                 </div>
                                                 <div class="form-group">
                                                     <div class="col-sm-12">
-                                                        <button type="submit" class="btn btn-primary form-control">Submit</button>
+                                                        <button type="submit"
+                                                            class="btn btn-primary form-control">Submit</button>
                                                     </div>
                                                 </div>
                                             </form>

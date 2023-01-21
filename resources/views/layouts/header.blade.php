@@ -18,7 +18,7 @@
     <link
         href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
         rel="stylesheet">
-        <link rel="stylesheet" href="{{ route('home') }}/plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="{{ route('home') }}/plugins/fontawesome-free/css/all.min.css">
 
     <!-- Vendor CSS Files -->
     <link href="{{ route('home') }}/assets/vendor/aos/aos.css" rel="stylesheet">
@@ -37,27 +37,26 @@
     <!-- ======= Header ======= -->
     <header id="header" class="fixed-top ">
         <div class="container d-flex align-items-center">
-            <a href="{{ route('home') }}" class="logo me-auto"><img src="{{ route('home') }}/assets/img/flairInsightslogo.jpg"
-                    alt="" class="img-fluid"></a>
+            <a href="{{ route('home') }}" class="logo me-auto"><img
+                    src="{{ route('home') }}/assets/img/flairInsightslogo.jpg" alt="" class="img-fluid"></a>
 
             <nav id="navbar" class="navbar">
                 <ul>
                     <li class="dropdown"><a href="#"><span>Report Categories</span> <i
                                 class="bi bi-chevron-down"></i></a>
-                        <div style="width: 900px;padding:30px;">
+                        <div class="dropdown-width">
                             <ul class="row">
                                 @foreach ($categories as $category)
-                                <li class="col-md-4">
-                                    <img src="{{ route('home') }}/assets/img/flairInsightslogo.jpg" alt="" class="img-fluid"><a
-                                        href="{{ route('reports', $category->id) }}">{{ $category->name }}</a>
-                                </li>
+                                    <li class="col-md-4 d-flex">
+                                        <a href="{{ route('reports', $category->slug) }}"><i class="fas {{ $category->category_icon }} cat-icon"></i> {{ $category->name }}</a>
+                                    </li>
                                 @endforeach
                             </ul>
                         </div>
                     </li>
                     <li><a class="nav-link" href="{{ route('latestReport') }}">Latest Report</a></li>
                     <li><a class="nav-link" href="{{ route('caseStudy') }}">Case Study</a></li>
-                    <li><a class="nav-link" href="{{ route('blog') }}">News</a></li>
+                    <li><a class="nav-link" href="{{ route('blog') }}">Blog</a></li>
                     <li><a class="nav-link" href="{{ route('aboutUs') }}">About</a></li>
                     <li><a class="nav-link" href="{{ route('contactUs') }}">Contact Us</a></li>
                     <li><a class="getstarted" href="#ClientLogin">Client Login</a></li>
@@ -67,8 +66,16 @@
 
         </div>
     </header><!-- End Header -->
-<style>
-    .dropdown ul li img {
-        padding: 10px 20px;
-    }
-</style>
+    <style>
+        .dropdown ul li img {
+            padding: 10px 20px;
+        }
+        .cat-icon{
+            font-size: 35px !important;
+            margin: 10px;
+        }
+        .dropdown-width {
+            width: 1100px;
+            padding:30px;
+        }
+    </style>

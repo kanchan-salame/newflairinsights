@@ -5,6 +5,10 @@
         font-weight: normal;
         font-size: 15px;
     }
+    .img-fluid {
+        max-width: 100%;
+        height: 210px;
+    }
 </style>
     <main id="main">
 {{-- {{ dd($reports) }} --}}
@@ -23,7 +27,7 @@
                                         <h4>Categories</h4>
                                         @foreach ($categories as $category)
                                             <div class="btn btn-light customBtn">
-                                                <a href="{{ route('reports', $category->id) }}">{{ $category->name }} </a>
+                                                <a href="{{ route('reports', $category->slug) }}">{{ $category->name }} </a>
                                             </div>
                                         @endforeach
                                     </div>
@@ -38,15 +42,15 @@
                                 <div class="col-lg-12 mt-4">
                                     <div class="member d-flex align-items-start aos-init aos-animate" data-aos="zoom-in"
                                         data-aos-delay="300">
-                                        <div class="pic"><img src="{{ route('home') }}/assets/img/team/team-3.jpg"
-                                                class="img-fluid" alt="">
+                                        <div class="pic"><img src="{{ $report->category->image ? route('home') . '/storage/' . $report->category->image : route('home') . '/assets/img/team/team-3.jpg' }}"
+                                                class="img-fluid" alt="{{ $report->category->name }}">
                                         </div>
                                         <div class="member-info">
                                             <h4>{{ Str::limit($report->title, 100) }}</h4>
                                             <p>{!! Str::limit($report->description_one, 300) !!}</p>
                                             <br>
                                             <div class="d-flex">
-                                                <a href="{{ route('reportDescription', $report->id) }}" class="btn-learn-more"><i class="ri-eye-fill"></i>
+                                                <a href="{{ route('reportDescription', $report->slug) }}" class="btn-learn-more"><i class="ri-eye-fill"></i>
                                                     View Report</a>&nbsp;&nbsp;&nbsp;
                                                 <a href="#" class="btn-learn-more"><i class="ri-file-fill"></i>
                                                     Request A Sample</a>&nbsp;&nbsp;&nbsp;

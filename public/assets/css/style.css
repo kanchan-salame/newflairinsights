@@ -252,6 +252,7 @@ h6 {
   opacity: 1;
   top: 100%;
   visibility: visible;
+  border-top: 5px solid #0869B1;
 }
 
 .navbar .dropdown .dropdown ul {
@@ -394,7 +395,7 @@ h6 {
 #hero {
   width: 100%;
   height: 60vh;
-  background: #3976EF;
+  background: #0869B1;
 }
 
 #hero .container {
@@ -1235,7 +1236,7 @@ text-align: center;
 
 .team .member .pic {
   overflow: hidden;
-  width: 140px;
+  width: 300px;
   /* border-radius: 50%; */
 }
 
@@ -1833,7 +1834,7 @@ text-align: center;
 
 #footer .footer-top {
   padding: 60px 0 30px 0;
-  background: #3976EF;
+  background: #172D55;
 }
 
 #footer .footer-top .footer-contact {
@@ -1935,6 +1936,7 @@ color: #ffffff;
   padding-top: 30px;
   padding-bottom: 30px;
   color: #fff;
+  background-color: #41464A;
 }
 
 #footer .copyright {
