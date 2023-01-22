@@ -85,39 +85,22 @@
 
                     <ol>
                         <li><a href="{{ route('home') }}">Home</a></li>
-                        <li>{{ $report->category->name }}</li>
+                        <li>{{ $blog->title }}</li>
                     </ol>
 
                 </div>
             </section><!-- End Breadcrumbs -->
             <div class="row">
                 <div class="col-lg-2 order-1 order-lg-1 hero-img">
-                    <img src="{{ $report->category->image ? route('home') . '/storage/' . $report->category->image : route('home') . '/assets/img/team/team-3.jpg' }}"
-                     class="img-fluid report-img" alt="">
                 </div>
                 <div class="col-lg-10 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1"
                     data-aos="fade-up" data-aos-delay="200">
-                    <h1>{!! Str::limit($report->title, 200) !!}</h1>
+                    <h1>{!! Str::limit($blog->title, 200) !!}</h1>
                     <p class="report-inline">
-                        <strong>Report Id: </strong>{{ $report->id }} |
+                        <strong>Report Id: </strong>{{ $blog->id }} |
                         <strong>Published Date:
-                        </strong>{{ \Carbon\Carbon::parse($report->created_at)->isoFormat('MMM YYYY') }} |
-                        <strong>No. of Pages: </strong>{{ $report->pages }} |
-                        <strong>Base Year for Estimate:
-                        </strong>{{ \Carbon\Carbon::parse($report->created_at)->isoFormat('MMM YYYY') }} |
-                        <strong>Format: </strong> <i class="fas fa-file-pdf"></i>
+                        </strong>{{ \Carbon\Carbon::parse($blog->created_at)->isoFormat('MMM YYYY') }}
                     </p>
-                    <div class="d-flex justify-content-center justify-content-lg-start">
-                        <a href="#about" class="btn-get-started scrollto">
-                            <i class="fas fa-download"></i> Download PDF Sample
-                        </a>
-                        <a href="#about" class="btn-get-started scrollto mr-2 ml-2">
-                            <i class="fas fa-download"></i> Download PDF Sample
-                        </a>
-                        <a href="#about" class="btn-get-started scrollto">
-                            <i class="fas fa-download"></i> Download PDF Sample
-                        </a>
-                    </div>
                 </div>
             </div>
         </div>
@@ -145,16 +128,7 @@
                         <!-- Tab panes -->
                         <div class="tab-content">
                             <div id="home" class="container tab-pane active"><br>
-                                {!! $report->description_one !!}
-                                <img src="{{ $report->image_one ? route('home') . '/storage/' . $report->image_one : route('home') . '/assets/img/flairInsightslogo.jpg' }}"
-                                    alt="" class="mb-2 mt-2" style="width: 100%;height: 300px;">
-                                {!! $report->description_two !!}
-                                <img src="{{ $report->image_one ? route('home') . '/storage/' . $report->image_one : route('home') . '/assets/img/flairInsightslogo.jpg' }}"
-                                    alt="" class="mb-2 mt-2" style="width: 100%;height: 300px;">
-                                {!! $report->description_three !!}
-                                <img src="{{ $report->image_one ? route('home') . '/storage/' . $report->image_one : route('home') . '/assets/img/flairInsightslogo.jpg' }}"
-                                    alt="" class="mb-2 mt-2" style="width: 100%;height: 300px;">
-
+                                {{ $blog->long_description }}
                                 <div class="mt-3">
                                     <h3>
                                         <strong>Darts Market Report Coverage</strong>
@@ -207,12 +181,6 @@
                                         </tbody>
                                     </table>
                                 </div>
-                            </div>
-                            <div id="menu1" class="container tab-pane fade"><br>
-                                {!! $report->description_one !!}
-                            </div>
-                            <div id="menu2" class="container tab-pane fade"><br>
-                                {!! $report->description_one !!}
                             </div>
                         </div>
                     </div>

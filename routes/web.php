@@ -33,7 +33,7 @@ Route::get('/faq', [App\Http\Controllers\Home\HomeController::class, 'faq'])->na
 Route::get('/privacyPolicy', [App\Http\Controllers\Home\HomeController::class, 'privacyPolicy'])->name('privacyPolicy');
 Route::get('/termOfServices', [App\Http\Controllers\Home\HomeController::class, 'termOfServices'])->name('termOfServices');
 Route::get('/caseStudyDetail/{slug}', [App\Http\Controllers\Home\HomeController::class, 'caseStudyDetail'])->name('caseStudyDetail');
-Route::get('/blogDetail/{slug}', [App\Http\Controllers\Home\HomeController::class, 'caseStudyDetail'])->name('caseStudyDetail');
+Route::get('/blogDetail/{slug}', [App\Http\Controllers\Home\HomeController::class, 'blogDetail'])->name('blogDetail');
 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('admin.home');
