@@ -34,7 +34,11 @@ Route::get('/privacyPolicy', [App\Http\Controllers\Home\HomeController::class, '
 Route::get('/termOfServices', [App\Http\Controllers\Home\HomeController::class, 'termOfServices'])->name('termOfServices');
 Route::get('/caseStudyDetail/{slug}', [App\Http\Controllers\Home\HomeController::class, 'caseStudyDetail'])->name('caseStudyDetail');
 Route::get('/blogDetail/{slug}', [App\Http\Controllers\Home\HomeController::class, 'blogDetail'])->name('blogDetail');
-
+Route::get('/rquestSample/{slug}', [App\Http\Controllers\Home\HomeController::class, 'rquestSample'])->name('rquestSample');
+Route::get('/sendAQuery/{slug}', [App\Http\Controllers\Home\HomeController::class, 'sendAQuery'])->name('sendAQuery');
+Route::get('/askForDiscount/{slug}', [App\Http\Controllers\Home\HomeController::class, 'askForDiscount'])->name('askForDiscount');
+Route::get('/buyNowPage/{slug}', [App\Http\Controllers\Home\HomeController::class, 'buyNowPage'])->name('buyNowPage');
+Route::get('/buyNow/{slug}', [App\Http\Controllers\Home\HomeController::class, 'buyNow'])->name('buyNow');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('admin.home');
 Route::resource('category', CategoryController::class);

@@ -432,6 +432,7 @@ h6 {
 
 #hero .btn-get-started:hover {
   background: #209dd8;
+  text-decoration: none;
 }
 
 #hero .btn-watch-video {

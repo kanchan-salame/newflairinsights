@@ -151,4 +151,42 @@ class HomeController extends Controller
         $caseStudy = CaseStudy::where('slug', $slug)->first();
         return view('caseStudyDetail', compact('categories', 'caseStudy'));
     }
+
+    public function rquestSample($slug)
+    {
+        $categories = Category::all();
+        $report = Report::where('slug', $slug)->first();
+        return view('rquestSample', compact('categories', 'report'));
+    }
+
+    public function sendAQuery($slug)
+    {
+        $categories = Category::all();
+        $report = Report::where('slug', $slug)->first();
+        return view('sendAQuery', compact('categories', 'report'));
+    }
+
+    public function askForDiscount($slug)
+    {
+        $categories = Category::all();
+        $report = Report::where('slug', $slug)->first();
+        return view('askForDiscount', compact('categories', 'report'));
+    }
+
+    public function buyNowPage($slug)
+    {
+        $categories = Category::all();
+        $report = Report::where('slug', $slug)->first();
+        return view('buyNowPage', compact('categories', 'report'));
+    }
+
+    public function buyNow($slug)
+    {
+        $categories = Category::all();
+        $report = Report::where('slug', $slug)->first();
+        return view('buyNow', compact('categories', 'report'));
+    }
+
+
+
 }
