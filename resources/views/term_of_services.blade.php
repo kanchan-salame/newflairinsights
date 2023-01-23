@@ -1,235 +1,262 @@
 @extends('layouts.applayout')
 @section('content')
-    <!-- ======= Hero Section ======= -->
-    <section id="hero" class="d-flex align-items-center">
-
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1"
-                    data-aos="fade-up" data-aos-delay="200">
-                    <h1>Better Solutions For Your Business</h1>
-                    <h2>We are team of talented designers making websites with Bootstrap</h2>
-                    <div class="d-flex justify-content-center justify-content-lg-start">
-                        <a href="#about" class="btn-get-started scrollto">Get Started</a>
-                        <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="glightbox btn-watch-video"><i
-                                class="bi bi-play-circle"></i><span>Watch Video</span></a>
-                    </div>
-                </div>
-                <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
-                    <img src="assets/img/hero-img.png" class="img-fluid animated" alt="">
-                </div>
-            </div>
-        </div>
-
-    </section><!-- End Hero -->
-
     <main id="main">
-
-        <!-- ======= Clients Section ======= -->
-        <section id="clients" class="clients section-bg">
-            <div class="container">
-
-                <div class="row" data-aos="zoom-in">
-
-                    <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-                        <img src="assets/img/clients/client-1.png" class="img-fluid" alt="">
-                    </div>
-
-                    <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-                        <img src="assets/img/clients/client-2.png" class="img-fluid" alt="">
-                    </div>
-
-                    <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-                        <img src="assets/img/clients/client-3.png" class="img-fluid" alt="">
-                    </div>
-
-                    <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-                        <img src="assets/img/clients/client-4.png" class="img-fluid" alt="">
-                    </div>
-
-                    <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-                        <img src="assets/img/clients/client-5.png" class="img-fluid" alt="">
-                    </div>
-
-                    <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-                        <img src="assets/img/clients/client-6.png" class="img-fluid" alt="">
-                    </div>
-
-                </div>
-
-            </div>
-        </section><!-- End Cliens Section -->
-
         <!-- ======= About Us Section ======= -->
-        <section id="about" class="about">
+        <section id="about" class="about mt-5">
             <div class="container" data-aos="fade-up">
 
                 <div class="section-title">
-                    <h2>About Us</h2>
+                    <h2>Terms and Conditions</h2>
                 </div>
 
-                <div class="row content">
-                    <div class="col-lg-6">
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore
-                            magna aliqua.
+                <div class="row content mb-5">
+                    <div class="col-lg-12">
+                        <h4>Disclaimer</h4>
+                        <p class="text-justify">
+                            Flair Insights makes no warranties and will not be held liable about the accuracy, completeness
+                            and suitability of the information and graphics contained on the website. Flair Insights has the
+                            right to make amendments to its product specifications and pricing without prior notice.
+                            Security of any information transmitted through the internet cannot be guaranteed and Flair
+                            Insights shall not be held liable for any loss or damage incurred by the user. The terms and
+                            conditions will be interpreted and construed in accordance with the laws of India and will be
+                            subject to the non-exclusive jurisdiction of the Indian Courts.
                         </p>
-                        <ul>
-                            <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat
-                            </li>
-                            <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in voluptate
-                                velit</li>
-                            <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-6 pt-4 pt-lg-0">
-                        <p>
-                            Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
-                            in voluptate
-                            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                            proident, sunt in
-                            culpa qui officia deserunt mollit anim id est laborum.
+                        <hr>
+                        <h4>Copyright</h4>
+                        <p class="text-justify">
+                            All content and software included on this site is the property of Flair Insights or its content
+                            suppliers and is protected by international copyright laws. You agree not to copy, reproduce,
+                            duplicate, sell, resell, or exploit for any commercial purposes, any portion of the site, use of
+                            the site, or access to the site without written consent.
                         </p>
-                        <a href="#" class="btn-learn-more">Learn More</a>
+                        <hr>
+                        <h4>Trademark</h4>
+                        <p class="text-justify">
+                            All trade names, trademarks, service marks and other product and service names and logos on our
+                            service or in the material are the proprietary trademarks of their respective owners and are
+                            protected by applicable trademark and copyright laws
+                        </p>
+                        <hr>
+                        <h4>Permitted Use </h4>
+                        <p class="text-justify">
+                            You may access and download the material only as required to view the material on your web
+                            browser for your individual use, keeping all copyright and other notices on the material. You
+                            may print a single copy of the material for your use.
+                        </p>
+                        <hr>
+
+                        <h4>Limitations on Use</h4>
+                        <p class="text-justify">
+                            You may not re-publish or distribute any material or do anything else with the material, which
+                            is not specifically permitted in this agreement.
+                        </p>
+                        <hr>
+                        <h4>Links to Third Party Sites</h4>
+                        <p class="text-justify">
+                            Various links on our service will take you out of our service. We are not responsible for the
+                            contents of any linked page or any other page not under our control. We provide these links only
+                            as a convenience; the inclusion of a link does not imply endorsement of that linked site.
+                        </p>
+                        <hr>
+                        <h4>Product Price</h4>
+                        <p class="text-justify">
+                            Prices are set by the publisher and are intended to be the same as those advertised by the
+                            publisher. Prices are subject to change without notice.
+                        </p>
+                        <hr>
+                        <h4>Product Descriptions</h4>
+                        <p class="text-justify">
+                            Flair Insights sells knowledge products such as reports, articles, and books on behalf of
+                            publishers. We make every effort to ensure that all the contents of reports, books and other
+                            products are accurately described on our website but we accept no liability for any inaccuracy.
+                        </p>
+                        <hr>
+                        <h4>Returns Policy</h4>
+                        <p class="text-justify">
+                            Due to the nature of the products, refunds cannot be granted. In the case of damaged or
+                            incomplete goods refunds are at Flair Insights’ discretion.
+                        </p>
+                        <hr>
+                        <h4>Warranties and Limitation of liability</h4>
+                        <p class="text-justify">
+                            Flair Insights sells products in good faith on behalf of publishers but makes no claim that they
+                            are free of error or fit for any particular purpose. Flair Insights shall not be liable to the
+                            customer or to any other person for the consequences of any decision or action taken in reliance
+                            on any publication of data.
+                        </p>
+                        <p class="text-justify">
+                            Any communication between Flair Insights and a customer or a potential customer relating to
+                            their particular requirements or terms for the supply of product will be treated as confidential
+                            information that shall not be disclosed outside their respective organisations. Any agreement
+                            between Flair Insights and a Customer shall take effect under, and its terms shall be
+                            interpreted in accordance with the law of land.
+                        </p>
+                        <hr>
+                        <h4>Discounts and offers</h4>
+                        <p class="text-justify">
+                            Reports bought under discounts and offers are entitled to post-sale analyst hours support from
+                            Flair Insights research team in order to help them expand their report proceeds. However, the
+                            number of analyst hours support depends on the discretion of Flair Insights. In addition, in
+                            case of any customization or modification request, Flair Insights is willing to assist its
+                            clients in getting it resolved from our in-house research team. However, the payment cannot be
+                            reimbursed in any situation in order to avoid a data breach. Please check our return policy for
+                            further clarifications.
+                        </p>
+                        <hr>
+                        <h4>Ownership</h4>
+                        <p class="text-justify">
+                            Intellectual Property Rights are the sole property of Flair Insights, that includes but is not
+                            limited to the following proprietary rights: All copyrights, utility models, patents, service
+                            marks, trademarks, database rights, design rights (whether registered or unregistered), and
+                            proprietary information rights. You should acknowledge that you shall not obtain any
+                            intellectual property rights in relation to the product or its usage, except for the license
+                            granted by Flair Insights.
+                        </p>
+                        <hr>
+                        <h4>Terms & Conditions of Website Use</h4>
+                        <p class="text-justify">
+                            You use this site on the understanding that you will abide by the following terms and
+                            conditions. The material on the website is for information only and though you can choose to
+                            purchase products based on this information. You must understand that you do this at your
+                            discretion.
+                        </p>
+                        <hr>
+                        <h4>No Hacking</h4>
+                        <p class="text-justify">
+                            You may not, or allow others to, directly or indirectly attempt to disrupt, interfere with or
+                            modify any of the information or material held on this site, nor may you collect or attempt to
+                            collect any information of others, including passwords, account or other information.
+                        </p>
+                        <hr>
+                        <h4>Return Policy</h4>
+                        <p class="text-justify">
+                            Please read all the information related to the market research report before placing an order
+                            for the report. The order cannot be cancelled in case delivered owing to confidentiality of the
+                            reports. In case of incomplete or damaged products, the products would be replaced by the
+                            company.
+                        </p>
+                        <hr>
+                        <h4>Ordering and Shipping Policy</h4>
+                        <p class="text-justify">
+                            Flair Insights offers market research reports at reasonable prices with flexibility in report
+                            format and delivery options. The reports can be downloaded in various standard formats such as
+                            Adobe pdf, Microsoft PowerPoint and Microsoft Word. In case any statistics are associated with
+                            the reports then there is the option of downloading the content in Excel.
+                        </p>
+                        <hr>
+                        <h4>Soft Copy Delivery: </h4>
+                        <p class="text-justify">
+                            The report will be emailed to the user's email account from the publisher in 3-4 working days
+                            after payment confirmation. The report is restricted to personal use and circulation of the
+                            report to other users is prohibited.
+                        </p>
+                        <hr>
+                        <h4>Hard Copy Delivery:</h4>
+                        <p class="text-justify">
+                            The hard copy of the reports can be sent to the shipping address and will be delivered in 5-7
+                            business days. There would be additional delivery charges based on the geographical location.
+                        </p>
+                        <hr>
+                        <h4>Corporate License:</h4>
+                        <p class="text-justify">
+                            Corporate license enables the reports to be accessed by authorized users apart from the
+                            customer. The reports can be shared over the corporate intranet with the access given to a
+                            limited number of employees. The circulation of reports to other users apart from the authorized
+                            users is prohibited.
+                        </p>
+                        <hr>
+
+                        <h4>Payment Options</h4>
+                        <p class="text-justify">
+                            The payment of the research reports can be made through credit cards, debit cards and internet
+                            banking. An invoice will be generated containing the payment details and mailed to you on the
+                            registered email address and the shipping address. Apart from these options, cash payments are
+                            also acceptable in case of hard copy delivery.
+                        </p>
+                        <hr>
+                        <h4>Applicable Laws</h4>
+                        <p class="text-justify">
+                            These Terms and Conditions of Use and any disputes, claims or proceedings arising out of or in
+                            any way relating to these Terms and Conditions of Use shall be governed by the laws of the
+                            Republic of India with regard to any principles of conflicts of law. Any disputes arising in
+                            connection with these License Terms (including non-contractual disputes) shall be subject to the
+                            exclusive jurisdiction of the appropriate courts of the Republic of India. The courts shall have
+                            exclusive jurisdiction for the purpose of any proceedings arising out of or in any way relating
+                            to these Terms and Conditions of Use.
+                        </p>
+                        <p class="text-justify">
+                            The terms and conditions are in compliance with the recently introduced General Data Protection
+                            Regulation (“GDPR”) by the European Union. Our Terms and Conditions currently address the
+                            consent to use personal data and is reformed to ensure we comply with Article 7 of the GDPR
+                            (Conditions for consent). We are developing processes for recording consent, making sure that we
+                            can evidence an agreeing opt-in, and a way to withdraw consent at any time for marketing
+                            purposes only. Consent cannot be withdrawn for data relating to financial transactions once
+                            activity begins. We do not use any of our users’ data for unethical purposes. Nor do we share
+                            the sensitive personal information to any third party without obtaining the prior consent of the
+                            User.
+                        </p>
+                        <hr>
+                        <h4>Miscellanies</h4>
+                        <h4>Entire Agreement: </h4>
+                        <p class="text-justify">
+                            The entire agreement entered in by the parties relating to the licensing of the Product(s)
+                            consists of these License Terms, along with any terms and conditions set forth in an Order. This
+                            makes null and voids all previous agreements and understandings, whether oral or written,
+                            relating to such licensing. In the event of any dispute between these terms and conditions and
+                            any other Order, these License Terms shall prevail as a final document. Any modifications,
+                            amendments, or supplements to these License Terms shall be only effective unless each party
+                            signs it. Approvals or consents hereunder by any party have to be in writing.
+                        </p>
+                        <hr>
+
+                        <h4>Assignment: </h4>
+                        <p class="text-justify">
+                            You cannot assign or transfer your rights or obligations under these License Terms to another
+                            party without the prior written consent of Flair Insights
+                        </p>
+                        <hr>
+
+                        <h4>No Waiver:</h4>
+                        <p class="text-justify">
+                            The user shall not ask for any waiver or modification of any term or condition mentioned under
+                            the License terms in case of failure of Flair Insights at any time to enforce any of the other
+                            aforementioned terms.
+                        </p>
+                        <hr>
+
+                        <h4>Severability:</h4>
+                        <p class="text-justify">
+                            In case, any provision of these License Terms, or an Order, is held to be invalid or
+                            unenforceable by any court of law or administrative body of competent jurisdiction, the
+                            invalidity or unenforceability of such provision shall not in any way affect the other
+                            provisions of these License Terms, and all provisions not so affected by such invalidity or
+                            unenforceability shall remain in effect. Further, all the parties present in the agreement
+                            should be ready to substitute for any invalid or unenforceable provision with a valid or
+                            enforceable provision to the maximum extent the economic objectives of the unenforceable
+                            provision is expected to be achieved.
+                        </p>
+                        <hr>
+                        <h4>Governing Law and Jurisdiction:</h4>
+                        <p class="text-justify">
+                            These License Terms shall be governed by the laws of the Republic of India with regard to any
+                            principles of conflicts of law. Any disputes arising in connection with these License Terms
+                            (including non-contractual disputes) shall be subject to the exclusive jurisdiction of the
+                            appropriate courts of the Republic of India.
+                        </p>
+                        <hr>
+                        <h4>Equitable Relief:</h4>
+                        <p class="text-justify">
+                            You should acknowledge that non-compliance of these license terms may cause Flair Insights
+                            irreparable damage for which recovery may be inadequate. In that case, you shall agree that
+                            Flair Insights shall be entitled, in addition to any other appropriate remedies available to it,
+                            to seek (in any court of competent jurisdiction) injunctive relief and/or other equitable relief
+                            to prevent or restrain any breach by you or otherwise to protect its rights, without being
+                            required to post a bond or other security.
+                        </p>
+                        <hr>
                     </div>
                 </div>
-
             </div>
         </section><!-- End About Us Section -->
-
-        <!-- ======= Why Us Section ======= -->
-        <section id="why-us" class="why-us section-bg">
-            <div class="container-fluid" data-aos="fade-up">
-
-                <div class="row">
-
-                    <div class="col-lg-7 d-flex flex-column justify-content-center align-items-stretch  order-2 order-lg-1">
-
-                        <div class="content">
-                            <h3>Eum ipsam laborum deleniti <strong>velit pariatur architecto aut nihil</strong></h3>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                                labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
-                            </p>
-                        </div>
-
-                        <div class="accordion-list">
-                            <ul>
-                                <li>
-                                    <a data-bs-toggle="collapse" class="collapse"
-                                        data-bs-target="#accordion-list-1"><span>01</span> Non consectetur a erat nam at
-                                        lectus urna duis? <i class="bx bx-chevron-down icon-show"></i><i
-                                            class="bx bx-chevron-up icon-close"></i></a>
-                                    <div id="accordion-list-1" class="collapse show" data-bs-parent=".accordion-list">
-                                        <p>
-                                            Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus
-                                            laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor
-                                            rhoncus dolor purus non.
-                                        </p>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <a data-bs-toggle="collapse" data-bs-target="#accordion-list-2"
-                                        class="collapsed"><span>02</span> Feugiat scelerisque varius morbi enim nunc? <i
-                                            class="bx bx-chevron-down icon-show"></i><i
-                                            class="bx bx-chevron-up icon-close"></i></a>
-                                    <div id="accordion-list-2" class="collapse" data-bs-parent=".accordion-list">
-                                        <p>
-                                            Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id
-                                            interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus
-                                            scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim.
-                                            Mauris ultrices eros in cursus turpis massa tincidunt dui.
-                                        </p>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <a data-bs-toggle="collapse" data-bs-target="#accordion-list-3"
-                                        class="collapsed"><span>03</span> Dolor sit amet consectetur adipiscing elit? <i
-                                            class="bx bx-chevron-down icon-show"></i><i
-                                            class="bx bx-chevron-up icon-close"></i></a>
-                                    <div id="accordion-list-3" class="collapse" data-bs-parent=".accordion-list">
-                                        <p>
-                                            Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci.
-                                            Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl
-                                            suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis
-                                            convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi quis
-                                        </p>
-                                    </div>
-                                </li>
-
-                            </ul>
-                        </div>
-
-                    </div>
-
-                    <div class="col-lg-5 align-items-stretch order-1 order-lg-2 img"
-                        style='background-image: url("assets/img/why-us.png");' data-aos="zoom-in" data-aos-delay="150">
-                        &nbsp;</div>
-                </div>
-
-            </div>
-        </section><!-- End Why Us Section -->
-
-        <!-- ======= Skills Section ======= -->
-        <section id="skills" class="skills">
-            <div class="container" data-aos="fade-up">
-
-                <div class="row">
-                    <div class="col-lg-6 d-flex align-items-center" data-aos="fade-right" data-aos-delay="100">
-                        <img src="assets/img/skills.png" class="img-fluid" alt="">
-                    </div>
-                    <div class="col-lg-6 pt-4 pt-lg-0 content" data-aos="fade-left" data-aos-delay="100">
-                        <h3>Voluptatem dignissimos provident quasi corporis voluptates</h3>
-                        <p class="fst-italic">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore
-                            magna aliqua.
-                        </p>
-
-                        <div class="skills-content">
-
-                            <div class="progress">
-                                <span class="skill">HTML <i class="val">100%</i></span>
-                                <div class="progress-bar-wrap">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0"
-                                        aria-valuemax="100"></div>
-                                </div>
-                            </div>
-
-                            <div class="progress">
-                                <span class="skill">CSS <i class="val">90%</i></span>
-                                <div class="progress-bar-wrap">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0"
-                                        aria-valuemax="100"></div>
-                                </div>
-                            </div>
-
-                            <div class="progress">
-                                <span class="skill">JavaScript <i class="val">75%</i></span>
-                                <div class="progress-bar-wrap">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0"
-                                        aria-valuemax="100"></div>
-                                </div>
-                            </div>
-
-                            <div class="progress">
-                                <span class="skill">Photoshop <i class="val">55%</i></span>
-                                <div class="progress-bar-wrap">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0"
-                                        aria-valuemax="100"></div>
-                                </div>
-                            </div>
-
-                        </div>
-
-                    </div>
-                </div>
-
-            </div>
-        </section><!-- End Skills Section -->
     </main><!-- End #main -->
 @endsection

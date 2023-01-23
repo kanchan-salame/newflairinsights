@@ -55,9 +55,11 @@
                                                     <a href="{{ route('reportDescription', $report->slug) }}"
                                                         class="btn-learn-more"><i class="ri-eye-fill"></i>
                                                         View Report</a>&nbsp;&nbsp;&nbsp;
-                                                    <a href="#" class="btn-learn-more"><i class="ri-file-fill"></i>
+                                                    <a href="{{ route('rquestSample', $report->slug) }}"
+                                                        class="btn-learn-more"><i class="ri-file-fill"></i>
                                                         Request A Sample</a>&nbsp;&nbsp;&nbsp;
-                                                    <a href="#" class="btn-learn-more"><i class="ri-phone-fill"></i>
+                                                    <a href="{{ route('sendAQuery', $report->slug) }}"
+                                                        class="btn-learn-more"><i class="ri-phone-fill"></i>
                                                         Inquiry Before Buying</a>
                                                 </div>
                                             </div>

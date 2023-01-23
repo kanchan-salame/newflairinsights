@@ -129,7 +129,7 @@
             <div class="container aos-init aos-animate" data-aos="fade-up">
                 <div class="row">
                     <div class="col-md-8">
-                        <h2>Express Your Interest</h2>
+                        <h4>Discount is available with the report you wish to purchase.</h4>
                         <form action="forms/contact.php" method="post" role="form" class="php-email-form mt-5">
                             <div class="form-group">
                                 <label for="email">Full Name:</label>

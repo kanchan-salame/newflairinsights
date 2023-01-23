@@ -1,235 +1,84 @@
 @extends('layouts.applayout')
 @section('content')
-    <!-- ======= Hero Section ======= -->
-    <section id="hero" class="d-flex align-items-center">
-
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1"
-                    data-aos="fade-up" data-aos-delay="200">
-                    <h1>Better Solutions For Your Business</h1>
-                    <h2>We are team of talented designers making websites with Bootstrap</h2>
-                    <div class="d-flex justify-content-center justify-content-lg-start">
-                        <a href="#about" class="btn-get-started scrollto">Get Started</a>
-                        <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="glightbox btn-watch-video"><i
-                                class="bi bi-play-circle"></i><span>Watch Video</span></a>
-                    </div>
-                </div>
-                <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
-                    <img src="assets/img/hero-img.png" class="img-fluid animated" alt="">
-                </div>
-            </div>
-        </div>
-
-    </section><!-- End Hero -->
-
     <main id="main">
-
-        <!-- ======= Clients Section ======= -->
-        <section id="clients" class="clients section-bg">
-            <div class="container">
-
-                <div class="row" data-aos="zoom-in">
-
-                    <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-                        <img src="assets/img/clients/client-1.png" class="img-fluid" alt="">
-                    </div>
-
-                    <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-                        <img src="assets/img/clients/client-2.png" class="img-fluid" alt="">
-                    </div>
-
-                    <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-                        <img src="assets/img/clients/client-3.png" class="img-fluid" alt="">
-                    </div>
-
-                    <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-                        <img src="assets/img/clients/client-4.png" class="img-fluid" alt="">
-                    </div>
-
-                    <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-                        <img src="assets/img/clients/client-5.png" class="img-fluid" alt="">
-                    </div>
-
-                    <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-                        <img src="assets/img/clients/client-6.png" class="img-fluid" alt="">
-                    </div>
-
-                </div>
-
-            </div>
-        </section><!-- End Cliens Section -->
-
         <!-- ======= About Us Section ======= -->
-        <section id="about" class="about">
+        <section id="about" class="about mt-5">
             <div class="container" data-aos="fade-up">
 
                 <div class="section-title">
-                    <h2>About Us</h2>
+                    <h2>Faq's</h2>
                 </div>
 
-                <div class="row content">
-                    <div class="col-lg-6">
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore
-                            magna aliqua.
+                <div class="row content mb-5">
+                    <div class="col-lg-12">
+                        <h4>1. What is Flair Insights?</h4>
+                        <p class="text-justify">
+                            Flair Insights is the best and most authentic online platforms to buy authentic market research
+                            reports. We are efficient website that fulfills market research needs for national and
+                            international customers.
                         </p>
-                        <ul>
-                            <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat
-                            </li>
-                            <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in voluptate
-                                velit</li>
-                            <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-6 pt-4 pt-lg-0">
-                        <p>
-                            Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
-                            in voluptate
-                            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                            proident, sunt in
-                            culpa qui officia deserunt mollit anim id est laborum.
+                        <hr>
+                        <h4>2. Why use Flair Insights?</h4>
+                        <p class="text-justify">
+                            Flair Insights propagates real research reports by the best publishers from around the world,
+                            who genuine and accurate. Furthermore, we have a user-friendly website interface, 100% secure
+                            payment choices, and customer support that’s 24/7 to ensure you the best.
                         </p>
-                        <a href="#" class="btn-learn-more">Learn More</a>
+                        <hr>
+                        <h4>3. Who are our customers?</h4>
+                        <p class="text-justify">
+                            Flair Insights has clients from various business domains. From, industrialists, and
+                            entrepreneurs, to executives, and even some students. Flair Insights provides them all with
+                            accurate and detailed analysis of their required market.
+                        </p>
+                        <p class="text-justify">
+                            We confidently provide comprehensive analysis of potential, existing and future market
+                            happenings and trends for different business sectors like banking, insurance, finance, energy,
+                            technology, chemicals, medical, pharmaceutical, automobiles, education, consulting, genetics,
+                            biotechnology, and FMCGs.
+                        </p>
+                        <hr>
+                        <h4>4. How to reach our customer support team?</h4>
+                        <p class="text-justify">
+                            Customer support is a priority for us. Customers can effortlessly contact us for any sort of
+                            help and support, before, during or the purchase process. We are available on phone, email, live
+                            chat, skype, or by filling up the contact form on the website.
+                        </p>
+                        <hr>
+
+                        <h4>5. How can I contribute as a publisher on Flair Insights?</h4>
+                        <p class="text-justify">
+                            Quite easily. Firstly, you should register with us as a publisher in our website. Once your
+                            application has been verified and approved, our sales executives will get in touch with you.
+                        </p>
+                        <hr>
+                        <h4>6. Is my personal information protected?</h4>
+                        <p class="text-justify">
+                            Yes. We ensure all personal information shared by our clients is always safe & secure. For more
+                            information, please read our security policies, privacy policy, and terms & conditions.
+                        </p>
+                        <hr>
+                        <h4>7. Does Flair Insights offer academic discounts?</h4>
+                        <p class="text-justify">
+                            Currently, we are unable to give academic discounts on our products or give complimentary copies
+                            of the same.
+                        </p>
+                        <hr>
+                        <h4>8. Does Flair Insights require payment before order dispatch?</h4>
+                        <p class="text-justify">
+                            Owing to the nature of our products, we cannot dispatch them until the required payment has been
+                            received fully for the order.
+                        </p>
+                        <hr>
+                        <h4>9. What is Flair Insights’ cancellation policy?</h4>
+                        <p class="text-justify">
+                            When you place order for products with Flair Insights, you are agreeing to our Terms &
+                            Conditions which state that cancellation of an order once placed is not acceptable.
+                        </p>
+                        <hr>
                     </div>
                 </div>
-
             </div>
         </section><!-- End About Us Section -->
-
-        <!-- ======= Why Us Section ======= -->
-        <section id="why-us" class="why-us section-bg">
-            <div class="container-fluid" data-aos="fade-up">
-
-                <div class="row">
-
-                    <div class="col-lg-7 d-flex flex-column justify-content-center align-items-stretch  order-2 order-lg-1">
-
-                        <div class="content">
-                            <h3>Eum ipsam laborum deleniti <strong>velit pariatur architecto aut nihil</strong></h3>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                                labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
-                            </p>
-                        </div>
-
-                        <div class="accordion-list">
-                            <ul>
-                                <li>
-                                    <a data-bs-toggle="collapse" class="collapse"
-                                        data-bs-target="#accordion-list-1"><span>01</span> Non consectetur a erat nam at
-                                        lectus urna duis? <i class="bx bx-chevron-down icon-show"></i><i
-                                            class="bx bx-chevron-up icon-close"></i></a>
-                                    <div id="accordion-list-1" class="collapse show" data-bs-parent=".accordion-list">
-                                        <p>
-                                            Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus
-                                            laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor
-                                            rhoncus dolor purus non.
-                                        </p>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <a data-bs-toggle="collapse" data-bs-target="#accordion-list-2"
-                                        class="collapsed"><span>02</span> Feugiat scelerisque varius morbi enim nunc? <i
-                                            class="bx bx-chevron-down icon-show"></i><i
-                                            class="bx bx-chevron-up icon-close"></i></a>
-                                    <div id="accordion-list-2" class="collapse" data-bs-parent=".accordion-list">
-                                        <p>
-                                            Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id
-                                            interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus
-                                            scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim.
-                                            Mauris ultrices eros in cursus turpis massa tincidunt dui.
-                                        </p>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <a data-bs-toggle="collapse" data-bs-target="#accordion-list-3"
-                                        class="collapsed"><span>03</span> Dolor sit amet consectetur adipiscing elit? <i
-                                            class="bx bx-chevron-down icon-show"></i><i
-                                            class="bx bx-chevron-up icon-close"></i></a>
-                                    <div id="accordion-list-3" class="collapse" data-bs-parent=".accordion-list">
-                                        <p>
-                                            Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci.
-                                            Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl
-                                            suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis
-                                            convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi quis
-                                        </p>
-                                    </div>
-                                </li>
-
-                            </ul>
-                        </div>
-
-                    </div>
-
-                    <div class="col-lg-5 align-items-stretch order-1 order-lg-2 img"
-                        style='background-image: url("assets/img/why-us.png");' data-aos="zoom-in" data-aos-delay="150">
-                        &nbsp;</div>
-                </div>
-
-            </div>
-        </section><!-- End Why Us Section -->
-
-        <!-- ======= Skills Section ======= -->
-        <section id="skills" class="skills">
-            <div class="container" data-aos="fade-up">
-
-                <div class="row">
-                    <div class="col-lg-6 d-flex align-items-center" data-aos="fade-right" data-aos-delay="100">
-                        <img src="assets/img/skills.png" class="img-fluid" alt="">
-                    </div>
-                    <div class="col-lg-6 pt-4 pt-lg-0 content" data-aos="fade-left" data-aos-delay="100">
-                        <h3>Voluptatem dignissimos provident quasi corporis voluptates</h3>
-                        <p class="fst-italic">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore
-                            magna aliqua.
-                        </p>
-
-                        <div class="skills-content">
-
-                            <div class="progress">
-                                <span class="skill">HTML <i class="val">100%</i></span>
-                                <div class="progress-bar-wrap">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0"
-                                        aria-valuemax="100"></div>
-                                </div>
-                            </div>
-
-                            <div class="progress">
-                                <span class="skill">CSS <i class="val">90%</i></span>
-                                <div class="progress-bar-wrap">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0"
-                                        aria-valuemax="100"></div>
-                                </div>
-                            </div>
-
-                            <div class="progress">
-                                <span class="skill">JavaScript <i class="val">75%</i></span>
-                                <div class="progress-bar-wrap">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0"
-                                        aria-valuemax="100"></div>
-                                </div>
-                            </div>
-
-                            <div class="progress">
-                                <span class="skill">Photoshop <i class="val">55%</i></span>
-                                <div class="progress-bar-wrap">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0"
-                                        aria-valuemax="100"></div>
-                                </div>
-                            </div>
-
-                        </div>
-
-                    </div>
-                </div>
-
-            </div>
-        </section><!-- End Skills Section -->
     </main><!-- End #main -->
 @endsection

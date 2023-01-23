@@ -6,6 +6,19 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <style>
+        #thisButton {
+            padding: 8px 20px;
+            margin-left: 30px;
+            border-radius: 50px;
+            color: rgb(0, 0, 0);
+            font-size: 14px;
+            border: 2px solid #47b2e4;
+            font-weight: 600;
+        }
+        #thisButton:hover {
+            color: #fff;
+            background: #31a9e1;
+        }
         .tab-content>.active {
             display: block;
             border-left: 1px solid #dee2e6;
@@ -93,7 +106,7 @@
             <div class="row">
                 <div class="col-lg-2 order-1 order-lg-1 hero-img">
                     <img src="{{ $report->category->image ? route('home') . '/storage/' . $report->category->image : route('home') . '/assets/img/team/team-3.jpg' }}"
-                     class="img-fluid report-img" alt="">
+                        class="img-fluid report-img" alt="">
                 </div>
                 <div class="col-lg-10 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1"
                     data-aos="fade-up" data-aos-delay="200">
@@ -108,14 +121,14 @@
                         <strong>Format: </strong> <i class="fas fa-file-pdf"></i>
                     </p>
                     <div class="d-flex justify-content-center justify-content-lg-start">
-                        <a href="#about" class="btn-get-started scrollto">
-                            <i class="fas fa-download"></i> Download PDF Sample
+                        <a href="tel:+1 830 455 7727" class="btn-get-started scrollto">
+                            <i class="fas fa-phone"></i> Request Expert Call?
                         </a>
-                        <a href="#about" class="btn-get-started scrollto mr-2 ml-2">
-                            <i class="fas fa-download"></i> Download PDF Sample
+                        <a href="{{ route('askForDiscount', $report->slug) }}" class="btn-get-started scrollto mr-2 ml-2">
+                            <i class="fas fa-eye"></i> Ask for Discount
                         </a>
-                        <a href="#about" class="btn-get-started scrollto">
-                            <i class="fas fa-download"></i> Download PDF Sample
+                        <a href="{{ route('home') }}" class="btn-get-started scrollto">
+                            <i class="fas fa-download"></i> Download Free Sample Report
                         </a>
                     </div>
                 </div>
@@ -139,6 +152,9 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" data-bs-toggle="tab" href="#menu2">Methodology</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link getstarted" id="thisButton" href="{{ route('home') }}">This is Button</a>
                             </li>
                         </ul>
 
@@ -223,7 +239,9 @@
                                 <div class="sidebar">
                                     <div class="options">
                                         <h6>Pricing & Purchase Option</h6>
-                                        <button class="btn btn-success">Proceed to buy</button>
+                                        <button class="btn btn-success">
+                                            <a href="{{ route('buyNowPage', $report->slug) }}">Proceed to buy</a>
+                                        </button>
                                     </div>
                                 </div>
                                 <br>

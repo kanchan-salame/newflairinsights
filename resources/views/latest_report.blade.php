@@ -1,17 +1,18 @@
 @extends('layouts.applayout')
 @section('content')
-<style>
-    .member-info h3 strong {
-        font-weight: normal;
-        font-size: 15px;
-    }
-    .img-fluid {
-        max-width: 100%;
-        height: 210px;
-    }
-</style>
+    <style>
+        .member-info h3 strong {
+            font-weight: normal;
+            font-size: 15px;
+        }
+
+        .img-fluid {
+            max-width: 100%;
+            height: 210px;
+        }
+    </style>
     <main id="main">
-{{-- {{ dd($reports) }} --}}
+        {{-- {{ dd($reports) }} --}}
         <section id="team" class="team section-bg mt-5">
             <div class="container aos-init aos-animate" data-aos="fade-up">
                 <div class="row">
@@ -38,29 +39,34 @@
                     <div class="col-md-9">
                         <div class="row">
                             @if ($reports)
-                            @foreach ($reports as $report)
-                                <div class="col-lg-12 mt-4">
-                                    <div class="member d-flex align-items-start aos-init aos-animate" data-aos="zoom-in"
-                                        data-aos-delay="300">
-                                        <div class="pic"><img src="{{ $report->category->image ? route('home') . '/storage/' . $report->category->image : route('home') . '/assets/img/team/team-3.jpg' }}"
-                                                class="img-fluid" alt="{{ $report->category->name }}">
-                                        </div>
-                                        <div class="member-info">
-                                            <h4>{{ Str::limit($report->title, 100) }}</h4>
-                                            <p>{!! Str::limit($report->description_one, 300) !!}</p>
-                                            <br>
-                                            <div class="d-flex">
-                                                <a href="{{ route('reportDescription', $report->slug) }}" class="btn-learn-more"><i class="ri-eye-fill"></i>
-                                                    View Report</a>&nbsp;&nbsp;&nbsp;
-                                                <a href="#" class="btn-learn-more"><i class="ri-file-fill"></i>
-                                                    Request A Sample</a>&nbsp;&nbsp;&nbsp;
-                                                <a href="#" class="btn-learn-more"><i class="ri-phone-fill"></i>
-                                                    Inquiry Before Buying</a>
+                                @foreach ($reports as $report)
+                                    <div class="col-lg-12 mt-4">
+                                        <div class="member d-flex align-items-start aos-init aos-animate" data-aos="zoom-in"
+                                            data-aos-delay="300">
+                                            <div class="pic"><img
+                                                    src="{{ $report->category->image ? route('home') . '/storage/' . $report->category->image : route('home') . '/assets/img/team/team-3.jpg' }}"
+                                                    class="img-fluid" alt="{{ $report->category->name }}">
+                                            </div>
+                                            <div class="member-info">
+                                                <h4><a href="{{ route('reportDescription', $report->slug) }}">
+                                                        {{ Str::limit($report->title, 100) }}</a></h4>
+                                                <p>{!! Str::limit($report->description_one, 300) !!}</p>
+                                                <br>
+                                                <div class="d-flex">
+                                                    <a href="{{ route('reportDescription', $report->slug) }}"
+                                                        class="btn-learn-more"><i class="ri-eye-fill"></i>
+                                                        View Report</a>&nbsp;&nbsp;&nbsp;
+                                                    <a href="{{ route('rquestSample', $report->slug) }}"
+                                                        class="btn-learn-more"><i class="ri-file-fill"></i>
+                                                        Request A Sample</a>&nbsp;&nbsp;&nbsp;
+                                                    <a href="{{ route('sendAQuery', $report->slug) }}"
+                                                        class="btn-learn-more"><i class="ri-phone-fill"></i>
+                                                        Inquiry Before Buying</a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            @endforeach
+                                @endforeach
                         </div>
                         <br><br>
                         {{-- Pagination --}}
@@ -68,7 +74,7 @@
                             {!! $reports->links() !!}
                         </div>
                         @endif
-                        @if(count($reports) == 0)
+                        @if (count($reports) == 0)
                             <div class="col-lg-12 mt-4">
                                 <h1 class="text-center">No Reports Found....!</h1>
                             </div>
