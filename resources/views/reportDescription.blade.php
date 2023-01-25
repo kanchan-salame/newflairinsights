@@ -154,7 +154,7 @@
                                 <a class="nav-link" data-bs-toggle="tab" href="#menu2">Methodology</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link getstarted" id="thisButton" href="{{ route('home') }}">This is Button</a>
+                                <a class="nav-link getstarted" id="thisButton" href="{{ route('home') }}">Need Customization</a>
                             </li>
                         </ul>
 
@@ -167,62 +167,63 @@
                                 {!! $report->description_two !!}
                                 <img src="{{ $report->image_one ? route('home') . '/storage/' . $report->image_one : route('home') . '/assets/img/flairInsightslogo.jpg' }}"
                                     alt="" class="mb-2 mt-2" style="width: 100%;height: 300px;">
+
+                                    <div class="mt-3">
+                                        <h3>
+                                            <strong>Darts Market Report Coverage</strong>
+                                        </h3>
+                                        <table class="table table-striped table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>ATTRIBUTES</th>
+                                                    <th>DETAILS</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>STUDY PERIOD</td>
+                                                    <td>2019-2030</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>BASE YEAR</td>
+                                                    <td>2022</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>FORECAST PERIOD</td>
+                                                    <td>2023-2030</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>HISTORICAL PERIOD</td>
+                                                    <td>2019-2021</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UNIT</td>
+                                                    <td>VALUE (USD BILLION)</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>KEY COMPANIES PROFILED</td>
+                                                    <td>Viper, Harrows Darts, WINMAU, Arachnid, Bottelsen, CUESOUL, Black Widow,
+                                                        KO Steel Tip Darts, Carrera, GLD Products.</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>SEGMENTS COVERED</td>
+                                                    <td>By Type - Soft Tip Darts, Steel Tip Darts
+                                                        By Application - Rice, Beverages
+                                                        By Geography - North America, Europe, APAC, Middle East Asia & Rest of
+                                                        World.</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>CUSTOMIZATION SCOPE</td>
+                                                    <td>Get Free Report Customization as per requirements with purchase.
+                                                        Addition or alteration to Country, Regional & Segment scope.</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 {!! $report->description_three !!}
                                 <img src="{{ $report->image_one ? route('home') . '/storage/' . $report->image_one : route('home') . '/assets/img/flairInsightslogo.jpg' }}"
                                     alt="" class="mb-2 mt-2" style="width: 100%;height: 300px;">
 
-                                <div class="mt-3">
-                                    <h3>
-                                        <strong>Darts Market Report Coverage</strong>
-                                    </h3>
-                                    <table class="table table-striped table-hover">
-                                        <thead>
-                                            <tr>
-                                                <th>ATTRIBUTES</th>
-                                                <th>DETAILS</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>STUDY PERIOD</td>
-                                                <td>2019-2030</td>
-                                            </tr>
-                                            <tr>
-                                                <td>BASE YEAR</td>
-                                                <td>2022</td>
-                                            </tr>
-                                            <tr>
-                                                <td>FORECAST PERIOD</td>
-                                                <td>2023-2030</td>
-                                            </tr>
-                                            <tr>
-                                                <td>HISTORICAL PERIOD</td>
-                                                <td>2019-2021</td>
-                                            </tr>
-                                            <tr>
-                                                <td>UNIT</td>
-                                                <td>VALUE (USD BILLION)</td>
-                                            </tr>
-                                            <tr>
-                                                <td>KEY COMPANIES PROFILED</td>
-                                                <td>Viper, Harrows Darts, WINMAU, Arachnid, Bottelsen, CUESOUL, Black Widow,
-                                                    KO Steel Tip Darts, Carrera, GLD Products.</td>
-                                            </tr>
-                                            <tr>
-                                                <td>SEGMENTS COVERED</td>
-                                                <td>By Type - Soft Tip Darts, Steel Tip Darts
-                                                    By Application - Rice, Beverages
-                                                    By Geography - North America, Europe, APAC, Middle East Asia & Rest of
-                                                    World.</td>
-                                            </tr>
-                                            <tr>
-                                                <td>CUSTOMIZATION SCOPE</td>
-                                                <td>Get Free Report Customization as per requirements with purchase.
-                                                    Addition or alteration to Country, Regional & Segment scope.</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
                             </div>
                             <div id="menu1" class="container tab-pane fade"><br>
                                 {!! $report->description_one !!}

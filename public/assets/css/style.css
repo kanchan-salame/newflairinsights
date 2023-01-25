@@ -1222,6 +1222,11 @@ text-align: center;
     padding: 10px 10px 10px 10px;
     text-align: center;
     font-weight: bold;
+    background-color: #0869B1;
+  }
+  .options button a{
+    color: #fff;
+    text-decoration: none;
   }
 /*--------------------------------------------------------------
 # Team
