@@ -31,6 +31,7 @@
 
     <!-- Template Main CSS File -->
     <link href="{{ route('home') }}/assets/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ route('home') }}/assets/css/bootstrap-video-carousel.min.css" />
 </head>
 
 <body>
