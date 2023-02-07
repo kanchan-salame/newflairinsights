@@ -31,7 +31,7 @@
 
     <!-- Template Main CSS File -->
     <link href="{{ route('home') }}/assets/css/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{ route('home') }}/assets/css/bootstrap-video-carousel.min.css" />
+
 </head>
 
 <body>
@@ -76,7 +76,13 @@
             margin: 10px;
         }
         .dropdown-width {
-            width: 1100px;
+            width: 950px;
             padding:30px;
+        }
+
+        @media (max-width: 768px) {
+            .dropdown-width {
+                width: 92%;
+            }
         }
     </style>

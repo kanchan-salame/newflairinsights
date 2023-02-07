@@ -64,7 +64,7 @@
     <div class="footer-bottom clearfix">
         <div class="container">
             <div class="copyright">
-                Copyright <strong><span>&copy; </span></strong> 2022. All Rights Reserved
+                Copyright <strong><span>&copy; </span></strong> 2023. All Rights Reserved
             </div>
             <div class="credits">
                 Designed by <a href="https://salame.in/">Salame Apps</a>
@@ -91,7 +91,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css" />
-<script type="text/javascript" src="{{ route('home') }}/assets/js/mdb.min.js"></script>
 @yield('script')
 
 </body>

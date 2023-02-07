@@ -1,5 +1,6 @@
 @extends('layouts.applayout')
 @section('content')
+<link rel="stylesheet" href="{{ route('home') }}/assets/css/bootstrap-video-carousel.min.css" />
     <style>
         /* Testimonial CSS */
         .section-title {
@@ -235,7 +236,33 @@
         #introCarousel {
           margin-top: -58.59px;
         }
+
       }
+
+      @media (max-width: 768px) {
+        .align-items-center {
+                align-items: center !important;
+                width: 80%;
+                margin: 0 auto;
+            }
+            .mobile-text h1 {
+                font-size: 18px;
+                font-weight: bold;
+            }
+            .mobile-text h5 {
+                font-size: 14px;
+            }
+            .back-to-top {
+                width: 50px;
+            }
+            .rowcss {
+                margin-top: 0px !important;
+            }
+            .section_title, .colcss {
+                margin-top: 0px !important;
+                padding-top: 0px !important;
+            }
+        }
 
     </style>
 
@@ -261,7 +288,7 @@
         <!-- Single item -->
         <div class="carousel-item active">
           <video
-                 style="min-width: 100%; min-height: 100%"
+          style="min-width: 100%; min-height: 100%"
                  playsinline
                  autoplay
                  muted
@@ -269,7 +296,7 @@
                  >
             <source
                     class="h-100"
-                    src="{{ route('home') }}/assets/video/test.mp4"
+                    src="{{ route('home') }}/assets/video/FINAL.mp4"
                     type="video/mp4"
                     />
           </video>
@@ -277,90 +304,13 @@
             <div
                  class="d-flex justify-content-center align-items-center h-100"
                  >
-              <div class="text-white text-center">
+              <div class="text-white text-center mobile-text">
                 <h1 class="mb-3">WE ARE NEW AGE GROWTH</h1>
                 <h1 class="mb-3">CONSULTING COMPANY</h1>
                 <hr>
                 <h5 class="mb-4">
                   We deep dive - track pulse of the market - and share value to our clients through
                   <br> hyperintelligence solutions and take them ahead on growth curve
-                </h5>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Single item -->
-        <div class="carousel-item">
-          <video
-                 style="min-width: 100%; min-height: 100%"
-                 playsinline
-                 autoplay
-                 muted
-                 loop
-                 >
-            <source
-                    class="h-100"
-                    src="{{ route('home') }}/assets/video/homevideo.mp4"
-                    type="video/mp4"
-                    />
-          </video>
-          <div class="mask" style="background-color: rgba(0, 0, 0, 0.3)">
-            <div
-                 class="d-flex justify-content-center align-items-center h-100"
-                 >
-              <div class="text-white text-center">
-                <h1 class="mb-3">WE ARE MARKET</h1>
-                <h1 class="mb-3">RESEARCH EXPERTS</h1>
-                <hr>
-                <h5 class="mb-4">
-                    With our years of expertise in market research we help businesses to identify, acquire, engage, <br>
-                    and understand reliable market insights. Our actionable research insights allows companies to uncover <br>
-                    new age business complexities and gain competitive advantage. Therefore, through our research and consulting <br>
-                    expertise we assist wide range of companies in their growth journey. <br> hyperintelligence solutions and take them ahead on growth curve
-                </h5>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Single item -->
-        <div class="carousel-item">
-          <video
-                 style="min-width: 100%; min-height: 100%"
-                 playsinline
-                 autoplay
-                 muted
-                 loop
-                 >
-            <source
-                    class="h-100"
-                    src="{{ route('home') }}/assets/video/rain.mp4"
-                    type="video/mp4"
-                    />
-          </video>
-          <div
-               class="mask"
-               style="
-                      background: linear-gradient(
-                      45deg,
-                      rgba(29, 236, 197, 0.7),
-                      rgba(91, 14, 214, 0.7) 100%
-                      );
-                      "
-               >
-            <div
-                 class="d-flex justify-content-center align-items-center h-100"
-                 >
-              <div class="text-white text-center">
-                <h1 class="mb-3">THE GOAD IS TO HELP COMPANIES & CREATE</h1>
-                <h1 class="mb-3">THEIR SUSTAINABLE GROWTH STORIES</h1>
-                <hr>
-                <h5 class="mb-4">
-                    Our unconventional research approaches starts by seeing your world through the analytical lenses of leading-edge <br>
-                    commerce and innovation, with the sharpest view of technology and its impact on businesses. We facilitate best-fit <br>
-                    solutions to companies and keep them ahead on the technology curve, propel their growth, identify new opportunities, <br>
-                    markets and business models, answer their unknowns; and create your Growth Story
                 </h5>
               </div>
             </div>
@@ -431,8 +381,8 @@
                 <div class="container text-center">
                     <div class="row">
                         <div class="col-sm-6">
-                            <div class="row mt-5">
-                                <div class="col-sm-10 pt-5">
+                            <div class="row mt-5 rowcss" >
+                                <div class="col-sm-10 pt-5 colcss">
                                     <div class="section_title mt-5 pt-5">
                                         <h2 class="text-left sub-heading"> Testimonials</h2>
                                         <h1 class="primary-color"><strong>Our Customers Praise us for Our Great
@@ -543,6 +493,8 @@
             </div><!-- /End customer-feedback -->
         </section>
     </main><!-- End #main -->
+
+<script type="text/javascript" src="{{ route('home') }}/assets/js/mdb.min.js"></script>
 @endsection
 
 @section('script')
