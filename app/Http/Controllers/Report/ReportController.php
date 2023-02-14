@@ -8,6 +8,8 @@ use App\Models\Report\Category;
 use App\Models\Report\Report;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Imports\ReportImport;
 
 class ReportController extends Controller
 {
@@ -182,5 +184,14 @@ class ReportController extends Controller
             $request->session()->flash('error', 'Something Went Wrong.');
         }
         return redirect()->route('report.index');
+    }
+
+    public function import(Request  $request)
+    {
+        $request->validate([
+            'reportfile' => 'required|image|mimes:csv',
+        ]);
+        Excel::import(new ReportImport, $request->file('reportfile'), \Maatwebsite\Excel\Excel::CSV);
+        return redirect()->route('report.index')->with('success', 'Rports Imported Successfully');
     }
 }

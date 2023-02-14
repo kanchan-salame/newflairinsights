@@ -296,7 +296,7 @@
                  >
             <source
                     class="h-100"
-                    src="{{ route('home') }}/assets/video/FINAL.mp4"
+                    src="{{ route('home') }}/assets/video/homevideo3.mp4"
                     type="video/mp4"
                     />
           </video>

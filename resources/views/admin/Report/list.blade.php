@@ -7,7 +7,24 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">DataTable with default features</h3>
+                        <form action="{{ route('report.import') }}" method="post" enctype="multipart/form-data">
+                            @csrf
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <h1>Import Reports</h1>
+                                </div>
+                                <div class="col-md-4">
+                                    <input type="file" name="reportfile" id="reportfile" class="form-control" value="{{ old('reportfile ') }}">
+                                    @error('reportfile')
+                                        <p class="text-danger">{{ $message }}</p>
+                                    @enderror
+                                </div>
+                                <div class="col-md-4">
+                                    <input type="submit" value="Import" class="form-control btn btn-primary btn-sm">
+                                </div>
+                            </div>
+                        </form>
+
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
@@ -28,14 +45,16 @@
                                         <td>{{ $report->title }}</td>
                                         <td>
                                             <div class="btn-group">
-                                                <a href="{{ route('report.edit', $report) }}" type="button" class="btn btn-sm btn-info"><i class="fas fa-edit"></i></a>
+                                                <a href="{{ route('report.edit', $report) }}" type="button"
+                                                    class="btn btn-sm btn-info"><i class="fas fa-edit"></i></a>
 
-                                                <form method="post" action="{{route('report.destroy', $report)}}">
+                                                <form method="post" action="{{ route('report.destroy', $report) }}">
                                                     @method('delete')
                                                     @csrf
-                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button>
+                                                    <button type="submit" class="btn btn-danger btn-sm"><i
+                                                            class="fas fa-trash"></i></button>
                                                 </form>
-                                              </div>
+                                            </div>
                                         </td>
                                     </tr>
                                 @endforeach
