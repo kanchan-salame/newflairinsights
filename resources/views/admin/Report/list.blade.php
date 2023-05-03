@@ -7,7 +7,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <form action="{{ route('report.import') }}" method="post" enctype="multipart/form-data">
+                        <form action="{{ route('import') }}" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="row">
                                 <div class="col-md-4">

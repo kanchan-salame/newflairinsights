@@ -49,7 +49,9 @@
                             <ul class="row">
                                 @foreach ($categories as $category)
                                     <li class="col-md-4 mt-2 mb-2 d-flex">
-                                        <a href="{{ route('reports', $category->slug) }}"><i class="fas {{ $category->category_icon }} cat-icon"></i> {{ $category->name }}</a>
+                                        <a href="{{ route('reports', $category->slug) }}"><i
+                                                class="fas {{ $category->category_icon }} cat-icon"></i>
+                                            {{ $category->name }}</a>
                                     </li>
                                 @endforeach
                             </ul>
@@ -71,18 +73,28 @@
         .dropdown ul li img {
             padding: 10px 20px;
         }
-        .cat-icon{
+
+        .cat-icon {
             font-size: 35px !important;
             margin: 10px;
         }
+
         .dropdown-width {
             width: 950px;
-            padding:30px;
+            padding: 30px;
         }
 
         @media (max-width: 768px) {
             .dropdown-width {
-                width: 92%;
+                width: 92% !important;
+            }
+
+            .navbar .dropdown:hover>div {
+                left: 15px !important;
+            }
+
+            .navbar .dropdown:hover>div {
+                left: 0px;
             }
         }
     </style>

@@ -44,6 +44,33 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <style>
+
+.blink_me {
+  animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+.nav-tabs .nav-link {
+    border: 1px solid #dee2e6;
+    margin-right: 10px;
+}
+#team {
+    /* background: #fff; */
+    /* position: fixed; */
+    /* top: 0; */
+    /* left: 0; */
+    /* width: 50%;
+    height: 100%; */
+    background: -webkit-linear-gradient(top, #0869B1 10%, #fff 10%);
+}
+#blink_btn {
+    background: #F37735;
+    color: #fff;
+}
         #thisButton {
             padding: 8px 20px;
             margin-left: 30px;
@@ -75,7 +102,7 @@
         }
 
         #hero {
-            height: 400px;
+            height: 150px;
             padding-top: 20px !important;
         }
 
@@ -106,6 +133,13 @@
             color: #0869B1;
         }
 
+        #hero111 h1 {
+            margin: 0 0 10px 0;
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 25px;
+            /* color: #fff; */
+        }
         #hero h1 {
             margin: 0 0 10px 0;
             font-size: 18px;
@@ -114,9 +148,28 @@
             color: #fff;
         }
 
-        .report-inline {
+        /* .report-inline {
             color: #fff;
-        }
+        } */
+
+        #hero111 .btn-get-started:hover {
+  background: #209dd8;
+  text-decoration: none;
+}
+
+#hero111 .btn-get-started {
+  font-family: "Poppins";
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 10px 28px 11px 28px;
+  border-radius: 50px;
+  transition: 0.5s;
+  margin: 10px 0 0 0;
+  color: #fff;
+  background: #47b2e4;
+}
 
         #home h3 {
             font-size: 20px;
@@ -143,43 +196,49 @@
 
                 </div>
             </section><!-- End Breadcrumbs -->
-            <div class="row">
-                <div class="col-lg-2 order-1 order-lg-1 hero-img">
-                    <img src="{{ $report->category->image ? route('home') . '/storage/' . $report->category->image : route('home') . '/assets/img/team/team-3.jpg' }}"
-                        class="img-fluid report-img" alt="">
-                </div>
-                <div class="col-lg-10 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1"
-                    data-aos="fade-up" data-aos-delay="200">
-                    <h1>{!! Str::limit($report->title, 200) !!}</h1>
-                    <p class="report-inline">
-                        <strong>Report Id: </strong>{{ $report->id }} |
-                        <strong>Published Date:
-                        </strong>{{ \Carbon\Carbon::parse($report->created_at)->isoFormat('MMM YYYY') }} |
-                        <strong>No. of Pages: </strong>{{ $report->pages }} |
-                        <strong>Base Year for Estimate:
-                        </strong>{{ \Carbon\Carbon::parse($report->created_at)->isoFormat('MMM YYYY') }} |
-                        <strong>Format: </strong> <i class="fas fa-file-pdf"></i>
-                    </p>
-                    <div class="d-flex justify-content-center justify-content-lg-start">
-                        <a href="tel:+1 830 455 7727" class="btn-get-started scrollto">
-                            <i class="fas fa-phone"></i> Request Expert Call?
-                        </a>
-                        <a href="{{ route('askForDiscount', $report->slug) }}" class="btn-get-started scrollto mr-2 ml-2">
-                            <i class="fas fa-eye"></i> Ask for Discount
-                        </a>
-                        <a href="{{ route('home') }}" class="btn-get-started scrollto">
-                            <i class="fas fa-download"></i> Download Free Sample Report
-                        </a>
-                    </div>
-                </div>
-            </div>
         </div>
 
     </section><!-- End Hero -->
     <main id="main">
 
+        <div class="container">
+
+        </div>
+
         <section id="team" class="team section-bg">
-            <div class="container aos-init aos-animate" data-aos="fade-up">
+            <div class="container aos-init aos-animate pt-3" data-aos="fade-up" style="background: #fff;">
+                <div id="hero111">
+                    <div class="row">
+                        <div class="col-lg-2 order-1 order-lg-1 hero-img">
+                            <img src="{{ $report->category->image ? route('home') . '/storage/' . $report->category->image : route('home') . '/assets/img/team/team-3.jpg' }}"
+                                class="img-fluid report-img" alt="">
+                        </div>
+                        <div class="col-lg-10 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1"
+                            data-aos="fade-up" data-aos-delay="200">
+                            <h1>{!! Str::limit($report->title, 200) !!}</h1>
+                            <p class="report-inline">
+                                <strong>Report Id: </strong>{{ $report->id }} |
+                                <strong>Published Date:
+                                </strong>{{ \Carbon\Carbon::parse($report->created_at)->isoFormat('MMM YYYY') }} |
+                                <strong>No. of Pages: </strong>{{ $report->pages }} |
+                                <strong>Base Year for Estimate:
+                                </strong>{{ \Carbon\Carbon::parse($report->created_at)->isoFormat('MMM YYYY') }} |
+                                <strong>Format: </strong> <i class="fas fa-file-pdf"></i>
+                            </p>
+                            <div class="d-flex justify-content-center justify-content-lg-start">
+                                <a href="tel:+1 830 455 7727" class="btn-get-started scrollto">
+                                    <i class="fas fa-phone"></i> Request Expert Call?
+                                </a>
+                                <a href="{{ route('askForDiscount', $report->slug) }}" class="btn-get-started scrollto mr-2 ml-2">
+                                    <i class="fas fa-eye"></i> Ask for Discount
+                                </a>
+                                <a href="{{ route('home') }}" class="btn-get-started scrollto">
+                                    <i class="fas fa-download"></i> Download Free Sample Report
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="row">
                     <div class="col-md-8">
                         <!-- Nav tabs -->
@@ -194,7 +253,7 @@
                                 <a class="nav-link" data-bs-toggle="tab" href="#menu2">Methodology</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link getstarted" id="thisButton"
+                                <a class="nav-link getstarted blink_me" id="blink_btn"
                                     href="{{ route('rquestSample', $report->slug) }}">Need Customization</a>
                             </li>
                         </ul>
@@ -300,7 +359,7 @@
                                 global, regional, and segment level
 
 
-                                <img src="{{ route('home') . '/assets/img/rm.jpg' }}" alt="" class="mb-2 mt-2"
+                                <img src="{{ route('home') . '/assets/img/RESEARCH METHODOLOGYresulution walapng .png' }}" alt="" class="mb-2 mt-2"
                                     style="width: 100%;">
 
                             </div>
@@ -309,9 +368,9 @@
                             </div>
                             <div id="menu2" class="container tab-pane fade"><br>
                                 <div class="row">
-                                    <h3 style="text-align: justify;"><strong>Research Methodology&nbsp;</strong></h3>
+                                    {{-- <h3 style="text-align: justify;"><strong>Research Methodology&nbsp;</strong></h3> --}}
                                     <div class="col-md-6">
-                                        <img src="{{ route('home') . '/assets/img/flairInsightslogo.jpg' }}" alt=""
+                                        <img src="{{ route('home') . '/assets/img/Research Methodology.png' }}" alt=""
                                             class="mb-2 mt-2" style="width: 100%;height: 300px;">
                                     </div>
                                     <div class="col-md-6">
@@ -340,9 +399,9 @@
 
                                         </p>
                                     </div>
-                                    <h3 style="text-align: justify;"><strong>Secondary Research&nbsp;</strong></h3>
+                                    {{-- <h3 style="text-align: justify;"><strong>Secondary Research&nbsp;</strong></h3> --}}
                                     <div class="col-md-6">
-                                        <img src="{{ route('home') . '/assets/img/flairInsightslogo.jpg' }}" alt=""
+                                        <img src="{{ route('home') . '/assets/img/Secondary Research.png' }}" alt=""
                                             class="mb-2 mt-2" style="width: 100%;height: 300px;">
 
                                     </div>
@@ -380,9 +439,9 @@
                                             macro and micro economic indicators our consultants strive to examine the market
                                             dynamics and behavior to benefit our client. </p>
                                     </div>
-                                    <h3 style="text-align: justify;"><strong>Primary Research &nbsp;</strong></h3>
+                                    {{-- <h3 style="text-align: justify;"><strong>Primary Research &nbsp;</strong></h3> --}}
                                     <div class="col-md-6">
-                                        <img src="{{ route('home') . '/assets/img/flairInsightslogo.jpg' }}" alt=""
+                                        <img src="{{ route('home') . '/assets/img/Primary Research.png' }}" alt=""
                                             class="mb-2 mt-2" style="width: 100%;height: 300px;">
 
                                     </div>

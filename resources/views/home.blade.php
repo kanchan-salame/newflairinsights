@@ -1,6 +1,6 @@
 @extends('layouts.applayout')
 @section('content')
-<link rel="stylesheet" href="{{ route('home') }}/assets/css/bootstrap-video-carousel.min.css" />
+    <link rel="stylesheet" href="{{ route('home') }}/assets/css/bootstrap-video-carousel.min.css" />
     <style>
         /* Testimonial CSS */
         .section-title {
@@ -200,147 +200,299 @@
         .customer-feedback .owl-dots .owl-dot.active span {
             background-color: rgb(251, 90, 13);
         }
-
     </style>
 
 
     <style>
-      /* Carousel styling */
-      #introCarousel,
-      .carousel-inner,
-      .carousel-item,
-      .carousel-item.active {
-        height: 100vh;
-      }
-
-      .carousel-item:nth-child(1) {
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center center;
-      }
-
-      .carousel-item:nth-child(2) {
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center center;
-      }
-
-      .carousel-item:nth-child(3) {
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center center;
-      }
-
-      /* Height for devices larger than 576px */
-      @media (min-width: 992px) {
-        #introCarousel {
-          margin-top: -58.59px;
+        /* Carousel styling */
+        #introCarousel,
+        .carousel-inner,
+        .carousel-item,
+        .carousel-item.active {
+            height: 100vh;
         }
 
-      }
+        .carousel-item:nth-child(1) {
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+        }
 
-      @media (max-width: 768px) {
-        .align-items-center {
+        .carousel-item:nth-child(2) {
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+        }
+
+        .carousel-item:nth-child(3) {
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+        }
+
+        /* Height for devices larger than 576px */
+        @media (min-width: 992px) {
+            #introCarousel {
+                margin-top: -58.59px;
+            }
+
+        }
+
+        @media (max-width: 768px) {
+            .align-items-center {
                 align-items: center !important;
                 width: 80%;
                 margin: 0 auto;
             }
+
             .mobile-text h1 {
                 font-size: 18px;
                 font-weight: bold;
             }
+
             .mobile-text h5 {
                 font-size: 14px;
             }
+
             .back-to-top {
                 width: 50px;
             }
+
             .rowcss {
                 margin-top: 0px !important;
             }
-            .section_title, .colcss {
+
+            .section_title,
+            .colcss {
                 margin-top: 0px !important;
                 padding-top: 0px !important;
             }
         }
-
     </style>
 
     <!-- Carousel wrapper -->
-    <div
-         id="introCarousel"
-         class="carousel slide carousel-fade shadow-2-strong"
-         data-mdb-ride="carousel"
-         >
-      <!-- Indicators -->
-      <ol class="carousel-indicators">
-        <li
-            data-mdb-target="#introCarousel"
-            data-mdb-slide-to="0"
-            class="active"
-            ></li>
-        <li data-mdb-target="#introCarousel" data-mdb-slide-to="1"></li>
-        <li data-mdb-target="#introCarousel" data-mdb-slide-to="2"></li>
-      </ol>
+    <div id="introCarousel" class="carousel slide carousel-fade shadow-2-strong" data-mdb-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-mdb-target="#introCarousel" data-mdb-slide-to="0" class="active"></li>
+            {{-- <li data-mdb-target="#introCarousel" data-mdb-slide-to="1"></li>
+        <li data-mdb-target="#introCarousel" data-mdb-slide-to="2"></li> --}}
+        </ol>
 
-      <!-- Inner -->
-      <div class="carousel-inner">
-        <!-- Single item -->
-        <div class="carousel-item active">
-          <video
-          style="min-width: 100%; min-height: 100%"
-                 playsinline
-                 autoplay
-                 muted
-                 loop
-                 >
-            <source
-                    class="h-100"
-                    src="{{ route('home') }}/assets/video/homevideo3.mp4"
-                    type="video/mp4"
-                    />
-          </video>
-          <div class="mask" style="background-color: rgba(0, 0, 0, 0.6)">
-            <div
-                 class="d-flex justify-content-center align-items-center h-100"
-                 >
-              <div class="text-white text-center mobile-text">
-                <h1 class="mb-3">WE ARE NEW AGE GROWTH</h1>
-                <h1 class="mb-3">CONSULTING COMPANY</h1>
-                <hr>
-                <h5 class="mb-4">
-                  We deep dive - track pulse of the market - and share value to our clients through
-                  <br> hyperintelligence solutions and take them ahead on growth curve
-                </h5>
-              </div>
+        <!-- Inner -->
+        <div class="carousel-inner">
+            <!-- Single item -->
+            <div class="carousel-item active">
+                <video style="min-width: 100%; min-height: 100%" playsinline autoplay muted loop>
+                    <source class="h-100" src="{{ route('home') }}/assets/video/avc_My Video13.mp4" type="video/mp4" />
+                </video>
+                <div class="mask" style="background-color: rgba(0, 0, 0, 0.6)">
+                    <div class="d-flex justify-content-center align-items-center h-100">
+                        <div class="text-white text-center mobile-text" style="opacity: 0.7;">
+                            <h1 class="mb-3">WE ARE A NEW AGE GROWTH</h1>
+                            <h1 class="mb-3">CONSULTING COMPANY</h1>
+                            <hr>
+                            <h5 class="mb-4">
+                                We deep dive - track pulse of the market - and share value to our clients through
+                                <br> hyperintelligence solutions and take them ahead on growth curve
+                            </h5>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-      <!-- Inner -->
+        <!-- Inner -->
 
-      <!-- Controls -->
-      <a
-         class="carousel-control-prev"
-         href="#introCarousel"
-         role="button"
-         data-mdb-slide="prev"
-         >
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a
-         class="carousel-control-next"
-         href="#introCarousel"
-         role="button"
-         data-mdb-slide="next"
-         >
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
+        <!-- Controls -->
+        <a class="carousel-control-prev" href="#introCarousel" role="button" data-mdb-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#introCarousel" role="button" data-mdb-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
     </div>
 
     <main id="main">
+
+        <style>
+            .section-heading,
+            .section-heading h2 {
+                font-size: 30px;
+                font-weight: 700;
+                color: #000;
+                display: inline-block;
+                position: relative;
+                text-align: center;
+            }
+
+            .we-are-market, .the-goal-is, .to-assist-clients, .discover-flair, .strategic-growth {
+                background-image: linear-gradient(45deg, #f5f5f5 0%, #69cff6 100%);
+                border-radius: 20px;
+                padding: 10px;
+                overflow: hidden;
+
+            }
+            .we-are-market .container,.to-assist-clients .container,.strategic-growth .container {
+
+                background-image: url("{{ route('home') . '/assets/img/Path 401.png' }}");
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-position: left;
+                background-size: 20% 100%;
+            }
+
+            .the-goal-is .container, .discover-flair .container{
+
+                background-image: url("{{ route('home') . '/assets/img/Path 402.png' }}");
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-position: right;
+                background-size: 20% 100%;
+            }
+
+            .we-are-market p, .the-goal-is p, .discover-flair p, .strategic-growth p {
+                font-size: 24px;
+                text-align: justify;
+                color: #000;
+                font-weight: 500;
+            }
+            .to-assist-clients p {
+                font-size: 20px;
+                text-align: justify;
+                color: #000;
+                font-weight: 500;
+            }
+            .we-are-market img, .the-goal-is img, .to-assist-clients img {
+                width: 100%;
+                border-radius: 20px;
+            }
+            ul {
+                list-style: none;
+            }
+        </style>
+        <section class="we-are-market">
+            <div class="container" data-aos="fade-up">
+                <div class="row content">
+
+                    <div class="col-lg-6">
+                        <div class="section-heading">
+                            <h2>WE ARE A MARKET RESEARCH EXPERT</h2>
+                        </div>
+                        <p class="text-justify">
+                            With our years of expertise in market research we help businesses to identify, acquire, engage,
+                            and understand reliable market insights. Our actionable research insights allows companies to
+                            uncover new age business complexities and gain competitive advantage. Therefore, through our
+                            research and consulting expertise we assist wide range of companies in their growth journey.
+                        </p>
+                    </div>
+                    <div class="col-lg-6">
+                        <img src="{{ route('home') . '/assets/img/img1.png' }}" alt="" class="mb-2 mt-2">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="the-goal-is">
+            <div class="container" data-aos="fade-up">
+                <div class="row content">
+                    <div class="col-lg-6">
+                        <img src="{{ route('home') . '/assets/img/img2.png' }}" alt="">
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="section-heading pt-4">
+                            <h2>THE GOAL IS TO HELP COMPANIES & CREATE THEIR SUSTAINABLE GROWTH STORIES</h2>
+                        </div>
+                        <br><br><br>
+                        <p class="text-justify">
+                            With our years of expertise in market research we help businesses to identify, acquire, engage,
+                            and understand reliable market insights. Our actionable research insights allows companies to
+                            uncover new age business complexities and gain competitive advantage.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <section class="to-assist-clients">
+            <div class="container" data-aos="fade-up">
+                <div class="row content">
+                    <div class="col-lg-6">
+                        <div class="section-heading pt-4">
+                            <h2>TO ASSIST OUR CLIENTS ON STRATEGIC INTELLIGENCE IS AT THE CORE OF WHAT WE DO</h2>
+                        </div>
+                        <p class="text-justify">
+                            Our unconventional research approaches starts by seeing your world through the analytical lenses
+                            of leading-edge commerce and innovation, with the sharpest view of technology and its impact on
+                            businesses. We facilitate best-fit solutions to companies and keep them ahead on the technology
+                            curve, propel their growth, identify new opportunities, markets and business models, answer
+                            their unknowns; and create your Growth Story
+                        </p>
+
+                    </div>
+
+                    <div class="col-lg-6">
+                        <img src="{{ route('home') . '/assets/img/img3.png' }}" alt="" style="width: 100%;">
+                    </div>
+                    <div class="col-md-6">
+                        <ul class="pt-4">
+                            <li><i class="ri-check-double-line"></i> Competitive Intelligence</li>
+                            <li><i class="ri-check-double-line"></i> Advisory Service</li>
+                            <li><i class="ri-check-double-line"></i> Strategy Consulting</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <ul class="pt-4">
+                            <li><i class="ri-check-double-line"></i> Industry/Market Intelligence Report</li>
+                            <li><i class="ri-check-double-line"></i> Custom Research</li>
+                            <li><i class="ri-check-double-line"></i> Consulting and Engagement Services</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="discover-flair">
+            <div class="container" data-aos="fade-up">
+                <div class="row content">
+                    <div class="col-lg-12 text-center">
+                        <div class="section-title pt-4">
+                            <h2>Discover how Flair Insights can help your business</h2>
+                        </div>
+                        <br><br><br>
+                        <p class="text-justify">
+                            Growth is a journey, but sustainable growth is a long run journey, and we look to be your
+                            catalyst along. Our business consulting, advisory, and intelligence expertise uncover growth
+                            opportunities and methodically help companies to identify, plan and capture them. We offer range
+                            intelligence services that includes
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="strategic-growth">
+            <div class="container" data-aos="fade-up">
+                <div class="row content">
+                    <div class="col-lg-12 text-center">
+                        <div class="section-title pt-4">
+                            <h2>Strategic Growth Intelligence Model</h2>
+                        </div>
+                        <p class="text-justify">
+                            We help our consumers to identify the areas of their business that are set for innovation and
+                            help them in developing suitable GTM strategies. At each stage of business, we deep dive at
+                            granular level and analyze the untapped areas where our client partners can gain suitable
+                            revenue opportunities. Our intelligence further suggests whom to partner with right set of
+                            technology tools and planning execution roadmap to achieve realistic as well as scalable
+                            opportunities.
+                        </p>
+                    </div>
+                    <div class="col-lg-12">
+                        <img src="{{ route('home') . '/assets/img/Presentationfgjn2.png' }}" alt="" style="width: 100%;">
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <!-- ======= Clients Section ======= -->
         <section id="clients" class="clients section-bg">
@@ -381,7 +533,7 @@
                 <div class="container text-center">
                     <div class="row">
                         <div class="col-sm-6">
-                            <div class="row mt-5 rowcss" >
+                            <div class="row mt-5 rowcss">
                                 <div class="col-sm-10 pt-5 colcss">
                                     <div class="section_title mt-5 pt-5">
                                         <h2 class="text-left sub-heading"> Testimonials</h2>
@@ -494,12 +646,11 @@
         </section>
     </main><!-- End #main -->
 
-<script type="text/javascript" src="{{ route('home') }}/assets/js/mdb.min.js"></script>
+    <script type="text/javascript" src="{{ route('home') }}/assets/js/mdb.min.js"></script>
 @endsection
 
 @section('script')
     <script type="text/javascript">
-
         jQuery(document).ready(function($) {
             var feedbackSlider = $(".feedback-slider");
             feedbackSlider.owlCarousel({

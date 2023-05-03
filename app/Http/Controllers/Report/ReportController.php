@@ -20,7 +20,9 @@ class ReportController extends Controller
      */
     public function index()
     {
-        $reports = Report::all();
+        // dd('hi');
+        $reports = Report::paginate();
+        // dd($reports);
         return view('admin.Report.list', compact('reports'));
     }
 
@@ -188,8 +190,9 @@ class ReportController extends Controller
 
     public function import(Request  $request)
     {
+        dd('hi');
         $request->validate([
-            'reportfile' => 'required|image|mimes:csv',
+            'reportfile' => 'required|file|mimes:csc',
         ]);
         Excel::import(new ReportImport, $request->file('reportfile'), \Maatwebsite\Excel\Excel::CSV);
         return redirect()->route('report.index')->with('success', 'Rports Imported Successfully');
