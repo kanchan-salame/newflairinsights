@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Contact;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
+use App\Models\Contact\Contact;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\ContactMail;
 class ContactController extends Controller
 {
     /**
@@ -14,7 +16,8 @@ class ContactController extends Controller
      */
     public function index()
     {
-        return view('admin.Contact.list');
+        $contacts = Contact::paginate();
+        return view('admin.Contact.list', compact('contacts'));
     }
 
     /**
@@ -35,7 +38,10 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Contact::create($request->all());
+        $contact = Contact::latest()->first();
+        Mail::to($request->email)->send(new ContactMail($contact));
+        return 'contact created';
     }
 
     /**
