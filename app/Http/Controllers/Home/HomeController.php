@@ -187,6 +187,16 @@ class HomeController extends Controller
         return view('buyNow', compact('categories', 'report'));
     }
 
+    public function checkout()
+    {    
+        $categories = Category::all();
+        return view('checkout', compact('categories'));
+    }
 
+    public function wireTransferThanks()
+    {    
+        $categories = Category::all();
+        return view('wireTransferThanks', compact('categories'));
+    }
 
 }

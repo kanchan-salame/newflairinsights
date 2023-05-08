@@ -22,16 +22,16 @@
 
     <!-- Vendor CSS Files -->
     <link href="{{ route('home') }}/assets/vendor/aos/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ route('home') }}/assets/css/home.css" />
+    <link rel="stylesheet" href="{{ route('home') }}/assets/css/bootstrap-video-carousel.min.css" />
+
     <link href="{{ route('home') }}/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="{{ route('home') }}/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
     <link href="{{ route('home') }}/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
     <link href="{{ route('home') }}/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
     <link href="{{ route('home') }}/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
     <link href="{{ route('home') }}/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-    <!-- Template Main CSS File -->
     <link href="{{ route('home') }}/assets/css/style.css" rel="stylesheet">
-
 </head>
 
 <body>
@@ -48,11 +48,11 @@
                         <div class="dropdown-width">
                             <ul class="row">
                                 @foreach ($categories as $category)
-                                    <li class="col-md-4 mt-2 mb-2 d-flex">
-                                        <a href="{{ route('reports', $category->slug) }}"><i
-                                                class="fas {{ $category->category_icon }} cat-icon"></i>
-                                            {{ $category->name }}</a>
-                                    </li>
+                                <li class="col-md-4 mt-2 mb-2 d-flex">
+                                    <a href="{{ route('reports', $category->slug) }}"><i
+                                            class="fas {{ $category->category_icon }} cat-icon"></i>
+                                        {{ $category->name }}</a>
+                                </li>
                                 @endforeach
                             </ul>
                         </div>
@@ -62,7 +62,7 @@
                     <li><a class="nav-link" href="{{ route('blog') }}">Blog</a></li>
                     <li><a class="nav-link" href="{{ route('aboutUs') }}">About</a></li>
                     <li><a class="nav-link" href="{{ route('contactUs') }}">Contact Us</a></li>
-                    <li><a class="getstarted" href="#ClientLogin">Client Login</a></li>
+                    <!-- <li><a class="getstarted" href="login">Client Login</a></li> -->
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->
@@ -70,31 +70,31 @@
         </div>
     </header><!-- End Header -->
     <style>
-        .dropdown ul li img {
-            padding: 10px 20px;
-        }
+    .dropdown ul li img {
+        padding: 10px 20px;
+    }
 
-        .cat-icon {
-            font-size: 35px !important;
-            margin: 10px;
-        }
+    .cat-icon {
+        font-size: 35px !important;
+        margin: 10px;
+    }
 
+    .dropdown-width {
+        width: 950px;
+        padding: 30px;
+    } 
+
+    @media (max-width: 768px) {
         .dropdown-width {
-            width: 950px;
-            padding: 30px;
+            width: 92% !important;
         }
 
-        @media (max-width: 768px) {
-            .dropdown-width {
-                width: 92% !important;
-            }
-
-            .navbar .dropdown:hover>div {
-                left: 15px !important;
-            }
-
-            .navbar .dropdown:hover>div {
-                left: 0px;
-            }
+        .navbar .dropdown:hover>div {
+            left: 15px !important;
         }
+
+        .navbar .dropdown:hover>div {
+            left: 0px;
+        }
+    }
     </style>

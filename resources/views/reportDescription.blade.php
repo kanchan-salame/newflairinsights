@@ -50,9 +50,13 @@
 }
 
 @keyframes blinker {
-  50% {
-    opacity: 0;
+  
+    10% {
+    background-color: rgb(0, 0, 255);
   }
+    100% {
+    background-color:  #F37735;
+    }
 }
 .nav-tabs .nav-link {
     border: 1px solid #dee2e6;
@@ -208,8 +212,8 @@
         <section id="team" class="team section-bg">
             <div class="container aos-init aos-animate pt-3" data-aos="fade-up" style="background: #fff;">
                 <div id="hero111">
-                    <div class="row">
-                        <div class="col-lg-2 order-1 order-lg-1 hero-img">
+                    <div class="row mt-5">
+                        <div class="col-lg-2 order-1 order-lg-1 hero-img ">
                             <img src="{{ $report->category->image ? route('home') . '/storage/' . $report->category->image : route('home') . '/assets/img/team/team-3.jpg' }}"
                                 class="img-fluid report-img" alt="">
                         </div>
@@ -225,14 +229,14 @@
                                 </strong>{{ \Carbon\Carbon::parse($report->created_at)->isoFormat('MMM YYYY') }} |
                                 <strong>Format: </strong> <i class="fas fa-file-pdf"></i>
                             </p>
-                            <div class="d-flex justify-content-center justify-content-lg-start">
+                            <div class="d-flex justify-content-center justify-content-lg-start mb-5">
                                 <a href="tel:+1 830 455 7727" class="btn-get-started scrollto">
                                     <i class="fas fa-phone"></i> Request Expert Call?
                                 </a>
                                 <a href="{{ route('askForDiscount', $report->slug) }}" class="btn-get-started scrollto mr-2 ml-2">
                                     <i class="fas fa-eye"></i> Ask for Discount
                                 </a>
-                                <a href="{{ route('home') }}" class="btn-get-started scrollto">
+                                <a href="{{ route('rquestSample', $report->slug) }}" class="btn-get-started scrollto">
                                     <i class="fas fa-download"></i> Download Free Sample Report
                                 </a>
                             </div>
@@ -253,7 +257,7 @@
                                 <a class="nav-link" data-bs-toggle="tab" href="#menu2">Methodology</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link getstarted blink_me" id="blink_btn"
+                                <a class="nav-link getstarted blink_me " id="blink_btn"
                                     href="{{ route('rquestSample', $report->slug) }}">Need Customization</a>
                             </li>
                         </ul>
