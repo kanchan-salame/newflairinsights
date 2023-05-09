@@ -228,12 +228,15 @@
                                     </div><!-- end price-head -->
 
                                     <form method="post" action="#">
+                                        @csrf
                                         <input type="hidden" value="Single User" name="license_type">
                                         <input type="hidden" value="3950" name="unit_price">
                                         <input type="hidden" value="118590" name="report_id">
                                         <div class="price-btn-box text-center">
+                                            <a href="{{route('checkout')}}">
                                             <button type="submit" class="theme-btn vmr-bg text-white">Buy Now<i
                                                     class="la la-arrow-right ml-2"></i></button>
+                                            </a>
                                         </div>
                                     </form>
 
@@ -258,12 +261,13 @@
                                     </div><!-- end price-head -->
 
                                     <form method="post" action="#">
+                                        @csrf
                                         <input type="hidden" value="Single User" name="license_type">
                                         <input type="hidden" value="3950" name="unit_price">
                                         <input type="hidden" value="118590" name="report_id">
                                         <div class="price-btn-box text-center">
-                                            <button type="submit" class="theme-btn vmr-bg text-white">Buy Now<i
-                                                    class="la la-arrow-right ml-2"></i></button>
+                                            <a href="#"><button type="submit" class="theme-btn vmr-bg text-white">Buy Now<i
+                                                    class="la la-arrow-right ml-2"></i></button></a>
                                         </div>
                                     </form>
 
@@ -288,7 +292,9 @@
                                 <div class="sidebar">
                                     <div class="options">
                                         <h6>Pricing & Purchase Option</h6>
+                                        <a href="{{route('checkout')}}">
                                         <button class="btn btn-success">Proceed to buy</button>
+                                        </a>
                                     </div>
                                 </div>
                                 <br>

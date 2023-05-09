@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Report\Category;
 use Srmklive\PayPal\Services\PayPal as PayPalClient;
 
 class PayPalController extends Controller
@@ -12,9 +13,11 @@ class PayPalController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function createTransaction()
-    {
-        return view('transaction');
+    public function checkout(Request $request)
+    {   
+        
+        $categories = Category::all();
+        return view('checkout',compact('categories'));
     }
     /**
      * process transaction.
@@ -48,11 +51,11 @@ class PayPalController extends Controller
                 }
             }
             return redirect()
-                ->route('createTransaction')
+                ->route('checkout')
                 ->with('error', 'Something went wrong.');
         } else {
             return redirect()
-                ->route('createTransaction')
+                ->route('checkout')
                 ->with('error', $response['message'] ?? 'Something went wrong.');
         }
     }
@@ -69,11 +72,11 @@ class PayPalController extends Controller
         $response = $provider->capturePaymentOrder($request['token']);
         if (isset($response['status']) && $response['status'] == 'COMPLETED') {
             return redirect()
-                ->route('createTransaction')
+                ->route('checkout')
                 ->with('success', 'Transaction complete.');
         } else {
             return redirect()
-                ->route('createTransaction')
+                ->route('checkout')
                 ->with('error', $response['message'] ?? 'Something went wrong.');
         }
     }
@@ -85,7 +88,7 @@ class PayPalController extends Controller
     public function cancelTransaction(Request $request)
     {
         return redirect()
-            ->route('createTransaction')
+            ->route('checkout')
             ->with('error', $response['message'] ?? 'You have canceled the transaction.');
     }
 }
