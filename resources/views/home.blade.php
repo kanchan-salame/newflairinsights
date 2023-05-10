@@ -1,22 +1,52 @@
 @extends('layouts.applayout')
 @section('content')
+
+<!-- *************Home styles and scripts Page Links************ -->
 <link rel="stylesheet" href="{{ route('home') }}/assets/css/testimonial.css" />
 <link rel="stylesheet" href="{{ route('home') }}/assets/css/home.css" />
 <link rel="stylesheet" href="{{ route('home') }}/assets/css/clients.css" />
 <link rel="stylesheet" href="{{ route('home') }}/assets/css/bootstrap-video-carousel.min.css" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.rtl.min.css"
-    integrity="sha384-T5m5WERuXcjgzF8DAb7tRkByEZQGcpraRTinjpywg37AO96WoYN9+hrhDVoM6CaT" crossorigin="anonymous">
+<!-- tegrity="sha384-T5m5WERuXcjgzF8DAb7tRkByEZQGcpraRTinjpywg37AO96WoYN9+hrhDVoM6CaT" crossorigin="anonymous"> -->
 <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-<script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
+<!-- *************Home styles and scripts Page Links ends************ -->
 
+<style>
+    /* *********vedio text animation******** */
+
+.animation1 {
+    animation-name: zoomIn;
+    /* animation-iteration-count:infinite; */
+    animation-duration: 6s;
+    animation-delay: 1s;
+}
+
+.animation2 {
+    animation-name: zoomIn;
+    /* animation-iteration-count:infinite; */
+    animation-duration: 6s;
+    animation-delay: 2s;
+}
+
+.animation3 {
+    animation-name: zoomIn;
+    /* animation-iteration-count:infinite; */
+    animation-duration: 6s;
+    animation-delay: 4s;
+}
+
+.animation4 {
+    animation-name: zoomIn;
+    animation-iteration-count: infinite;
+    animation-duration: 5s;
+    animation-delay: 2s;
+}
+</style>
 <!-- Carousel wrapper -->
 <div id="introCarousel" class="carousel slide carousel-fade shadow-2-strong" data-mdb-ride="carousel">
 
-    <link rel="stylesheet" href="{{route('home')}}/assets/css/home.css">
     <div class="carousel-inner">
         <!-- Single item -->
         <div class="">
@@ -168,7 +198,7 @@
     </section>
 
     <!-- ======= Clients Section ======= -->
-    <div class="container-fluid  bg-info">
+    <div class="container-fluid my-5" style="background-color:#01123d">
         <div class="container py-5">
 
             <section class="customer-logos slider py-3">
@@ -193,8 +223,7 @@
                 </div>
                 <div class="slide"><img src="{{route('home')}}/assets/img/clients/MotorcarPartsofAmerica.png"></div>
                 <div class="slide"><img src="{{route('home')}}/assets/img/clients/NOV.png" class="img-center2"></div>
-                <div class="slide"><img src="{{route('home')}}/public/assets/img/clients/PHILIPS.png"
-                        class="img-center1">
+                <div class="slide"><img src="{{route('home')}}/assets/img/clients/PHILIPS.png" class="img-center1">
                 </div>
                 <div class="slide"><img src="{{route('home')}}/assets/img/clients/SELO.png"></div>
                 <div class="slide"><img src="{{route('home')}}/assets/img/clients/TSI.png"></div>
@@ -208,13 +237,13 @@
 
 
     <!-- /* Testimonial HTML */ -->
-    <div class="container-fluid px-3 px-sm-5 my-5 text-center py-5">
+    <div class="container-fluid px-3 px-sm-5 my-5 text-center py-3">
         <div class="container">
             <div class="section-title pt-4">
                 <h2 class="mb-5 ">What Our Client Say's</h2>
             </div>
             <div class="owl-carousel owl-theme">
-                <div class="item card first prev  border-info border-3 rounded-5 py-5">
+                <div class="item card first prev rounded-5 border-3 border-info py-2" style="border:3px solid">
                     <div class=" overflow-hidden">
                         <span></span>
                         <h4 class="mb-3 mt-2">Vice President</h4>
@@ -226,13 +255,13 @@
                             <span class="fa fa-star star"></span>
                         </h4>
                         <p class="font-weight-bold pt-3" style="color:gray"><i>Corporate Planning</i></p>
-                        <p class="content mb-5 mx-2 px-5">We had a great experience working with Flair Insights over the
+                        <p class="content mb-3 mx-2 px-5">We had a great experience working with Flair Insights over the
                             past few months.
                             They truly understand our requirement and provide excellent quality of report and customer
                             service.</p>
                     </div>
                 </div>
-                <div class="item card show p-5 rounded-5 py-5 border-3 border-info px-5">
+                <div class="item card show rounded-5 py-2 border-3 border-info " style="border:3px solid">
                     <div class=" overflow-hidden ">
 
                         <h4 class="mb-3 mt-2">Director</h4>
@@ -250,7 +279,7 @@
                             Good work. Keep it up.</p>
                     </div>
                 </div>
-                <div class="item next card rounded-5  py-5 border-3 border-info px-5">
+                <div class="item next card rounded-5  py-2 border-3 border-info px-3" style="border:3px solid">
                     <div class=" border-0 overflow-hidden">
 
                         <h4 class="mb-3 mt-2">Senior Vice President</h4>
@@ -262,13 +291,13 @@
                             <span class="fa fa-star star"></span>
                         </h4>
                         <p class="font-weight-bold pt-3" style="color:gray"><i>Corporate Planning</i></p>
-                        <p class="content mb-5 mx-2 px-4">Flair insights provide us in-depth analysis, quality of the
+                        <p class="content mb-3 mx-2 px-4">Flair insights provide us in-depth analysis, quality of the
                             report and the level of knowledge with actionable insights.
                             Everyone in our team is impressed so our company would like to continue working with you in
                             near future.</p>
                     </div>
                 </div>
-                <div class="item card last rounded-5  py-5 border-3 border-info px-5">
+                <div class="item card last rounded-5  py-2 border-3 border-info" style="border:3px solid">
                     <div class=" border-0 overflow-hidden">
 
                         <h4 class="mb-3 mt-2">Director</h4>
@@ -280,7 +309,7 @@
                             <span class="fa fa-star star"></span>
                         </h4>
                         <p class="font-weight-bold pt-3" style="color:gray"><i>FMCG Company</i></p>
-                        <p class="content mb-5 mx-2 px-4">They are committed toward delivering intensive reports with
+                        <p class="content mb-3 mx-2 px-4">They are committed toward delivering intensive reports with
                             the facility of innovatively designed
                             and developed data processing and analysis division. Thanks Flair Insights.</p>
                     </div>

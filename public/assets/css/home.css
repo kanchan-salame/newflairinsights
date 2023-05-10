@@ -64,38 +64,6 @@
     }
 }
 
-
-/* *********text animation******** */
-
-.animation1 {
-    animation-name: zoomIn;
-    /* animation-iteration-count:infinite; */
-    animation-duration: 6s;
-    animation-delay: 1s;
-}
-
-.animation2 {
-    animation-name: zoomIn;
-    /* animation-iteration-count:infinite; */
-    animation-duration: 6s;
-    animation-delay: 2s;
-}
-
-.animation3 {
-    animation-name: zoomIn;
-    /* animation-iteration-count:infinite; */
-    animation-duration: 6s;
-    animation-delay: 4s;
-}
-
-.animation4 {
-    animation-name: zoomIn;
-    animation-iteration-count: infinite;
-    animation-duration: 5s;
-    animation-delay: 2s;
-}
-
-
 .section-heading,
 .section-heading h2 {
     font-size: 30px;

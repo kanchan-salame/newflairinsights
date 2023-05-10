@@ -26,11 +26,11 @@
 
 .slick-list
 {
-    position: relative;
+    /* position: relative;
     display: block;
     overflow: hidden;
     margin: 0;
-    padding: 0;
+    padding: 0; */
 }
 .slick-list:focus
 {
@@ -54,10 +54,10 @@
 
 .slick-track
 {
-    position: relative;
+    /* position: relative;
     top: 0;
     left: 0;
-    display: block;
+    display: block; */
 }
 .slick-track:before,
 .slick-track:after
@@ -114,15 +114,60 @@
 .slick-arrow.slick-hidden {
     display: none;
 }
-.slide{
-    height: 120px; 
+.slide{ 
+    height: 100px;
     background-color: white;
     padding: 10px;
     border-radius: 10px;
 }
 .img-center1{
-    padding-top: 45px;
+    padding-top: 36px;
 }
 .img-center2{
-    padding-top: 30px;
-}   
+    padding-top: 25px;
+}  
+
+@media only screen and (max-width:374px) {
+    .slide{ 
+        height: 60px;
+    }
+    .img-center1{
+    padding-top: 18px;
+}
+    .img-center2{
+        padding-top:  10px;
+    }  
+}
+@media only screen and (max-width:1170px) {
+    .slide{ 
+        height: 80px;
+    }
+    .img-center1{
+    padding-top: 20px;
+}
+    .img-center2{
+        padding-top:  15px;
+    }
+}
+@media only screen and (max-width:960px) {
+    .slide{ 
+        height: 50px;
+    }
+    .img-center1{
+    padding-top: 10px;
+}
+    .img-center2{
+        padding-top:  5px;
+    }
+}
+@media only screen and (max-width:750px) {
+    .slide{ 
+        height: 90px;
+    }
+    .img-center1{
+    padding-top: 25px;
+}
+    .img-center2{
+        padding-top:  20px;
+    }
+}

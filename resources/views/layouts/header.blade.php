@@ -22,9 +22,6 @@
 
     <!-- Vendor CSS Files -->
     <link href="{{ route('home') }}/assets/vendor/aos/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{ route('home') }}/assets/css/home.css" />
-    <link rel="stylesheet" href="{{ route('home') }}/assets/css/bootstrap-video-carousel.min.css" />
-
     <link href="{{ route('home') }}/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="{{ route('home') }}/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
     <link href="{{ route('home') }}/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
@@ -32,6 +29,10 @@
     <link href="{{ route('home') }}/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
     <link href="{{ route('home') }}/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
     <link href="{{ route('home') }}/assets/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ route('home') }}/assets/css/home.css" />
+    <link rel="stylesheet" href="{{ route('home') }}/assets/css/bootstrap-video-carousel.min.css" />
+
+
 </head>
 
 <body>
@@ -82,7 +83,7 @@
     .dropdown-width {
         width: 950px;
         padding: 30px;
-    } 
+    }
 
     @media (max-width: 768px) {
         .dropdown-width {
