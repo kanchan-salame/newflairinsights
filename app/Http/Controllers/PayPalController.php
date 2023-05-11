@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Report\Category;
 use App\Models\Report\Report;
 use Srmklive\PayPal\Services\PayPal as PayPalClient;
+use Validator;
 
 class PayPalController extends Controller
 {
@@ -30,38 +31,85 @@ class PayPalController extends Controller
      */
     public function processTransaction(Request $request)
     {
-        $provider = new PayPalClient;
-        $provider->setApiCredentials(config('paypal'));
-        $paypalToken = $provider->getAccessToken();
-        $response = $provider->createOrder([
-            "intent" => "CAPTURE",
-            "application_context" => [
-                "return_url" => route('successTransaction'),
-                "cancel_url" => route('cancelTransaction'),
-            ],
-            "purchase_units" => [
-                0 => [
-                    "amount" => [
-                        "currency_code" => "USD",
-                        "value" => "1000.00"
-                    ]
-                ]
-            ]
-        ]);
-        if (isset($response['id']) && $response['id'] != null) {            // redirect to approve href
-            foreach ($response['links'] as $links) {
-                if ($links['rel'] == 'approve') {
-                    return redirect()->away($links['href']);
-                }
+        // $validator = Validator::make($request->all(),[
+        //     'fname'=>'required |string|max:70',
+        //     'email' => 'required|email|max:255',
+        //     'phone' => 'nullable|regex:^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$^',
+        //     'company' => 'required',
+        //     'city' => 'required',
+        //     'state' => 'required',
+        //     'zipcode' => 'required',
+        //     'zipcode' => 'required|regex:/\b\d{5}\b/',
+        //     'country' => 'regex:/^\+\d{1,3}$/',
+        //     'pay_method' => 'required'
+        // ]);
+        // if ($validator->fails()) {
+        //     return back()
+        //                 ->withErrors($validator)
+        //                 ->withInput();
+        // }
+        
+        // $contact = new Contact;
+        // $contact->fullName = $request->fullName;
+        // $contact->email = $request->email;
+        // $contact->phoneNumber = $request->phoneNumber;
+        // $contact->message = $request->message;
+        // $contact->save();
+        
+        // return redirect('/')->with('status', 'Thanks for . We\'ll be in touch soon!');
+        
+            if($request->pay_method === 'wiretransfer'){
+                $categories = Category::all();
+                return view('wireTransactionThanks', compact('categories'));
             }
-            return redirect()
-                ->route('checkout')
-                ->with('error', 'Something went wrong.');
-        } else {
-            return redirect()
-                ->route('checkout')
-                ->with('error', $response['message'] ?? 'Something went wrong.');
-        }
+            else if($request->pay_method === 'paypal'){
+                  $provider = new PayPalClient;
+                  $provider->setApiCredentials(config('paypal'));
+                  $paypalToken = $provider->getAccessToken();
+                  $response = $provider->createOrder([
+                      "intent" => "CAPTURE",
+                      "application_context" => [
+                          "return_url" => route('successTransaction'),
+                          "cancel_url" => route('cancelTransaction'),
+                      ],
+                      "purchase_units" => [
+                          0 => [
+                              "amount" => [
+                                  "currency_code" => "USD",
+                                  "value" => "1000.00"
+                              ]
+                          ]
+                      ]
+                  ]);
+                  if (isset($response['id']) && $response['id'] != null) {            // redirect to approve href
+                      foreach ($response['links'] as $links) {
+                          if ($links['rel'] == 'approve') {
+                              return redirect()->away($links['href']);
+                          }
+                      }
+                      return redirect()
+                          ->route('checkout')
+                          ->with('error', 'Something went wrong.');
+                  } else {
+                      return redirect()
+                          ->route('checkout')
+                          ->with('error', $response['message'] ?? 'Something went wrong.');
+                  }
+                  }
+              
+       
+        
+
+        // $ = new Contact;
+        // $contact->fullName = $request->fullName;
+        // $contact->email = $request->email;
+        // $contact->phoneNumber = $request->phoneNumber;
+        // $contact->message = $request->message;
+        // $contact->save();
+        
+        // return redirect('/contact')->with('status', 'Thanks for contacting me. I\'ll be in touch soon!');
+
+        
     }
     /**
      * success transaction.

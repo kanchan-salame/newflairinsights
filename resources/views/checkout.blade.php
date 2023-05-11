@@ -15,10 +15,11 @@
 
 <!-- ======= Checkout ======= -->
 <div class="container-fluid checkout-main pt-5">
-    <section id="checkout" class="container pt-5">
-        <form action="" id="checkout" method="post">
+    <section class="container pt-5">
+        <form action="{{ route('processTransaction') }}" id="checkout" method="post">
+            @csrf
             <div class="row gx-5">
-                <div class="col-md-5 left p-4 rounded me-md-2 border-top border-info border-5" style="height:50%;">
+                <div class="col-md-5 left p-4 rounded me-md-2 border-top border-bottom border-info border-5" style="height:50%;">
                     <h5 class="heading p-2 rounded bg-info text-light ">ORDER SUMMERY</h5>
                     <h6 class=" my-3">Title Name</h6>
                     <p class="text-secondary">{{$report->title}}</p>
@@ -27,9 +28,9 @@
                     <h6 class=" my-3">Price</h6>
 
                     <p class="text-secondary">
-                        @if( $user_type === 'single')
+                        @if( $user_type === "single")
                         {{$report->single_user_price}}
-                        @elseif($user_type === 'multiple')
+                        @elseif($user_type === "multiple")
                         {{$report->multi_user_price}}
                         @endif
                     </p>
@@ -42,10 +43,10 @@
                                 <label class="form-label">Full Name:<span class="text-danger">*</span></label>
                             </div>
                             <div class="col">
-                                <input type="text" class="form-control">
+                                <input type="text" name="fname" class="form-control">
                             </div>
+                            <span style="color:red">@error('fname'){{$message}}@enderror</span>
                         </div>
-
                     </div>
                     <div class="mb-3">
                         <div class="row">
@@ -53,10 +54,11 @@
                                 <label class="form-label">Email:<span class="text-danger">*</span></label>
                             </div>
                             <div class="col">
-                                <input type="text" class="form-control">
+                                <input type="text" name="email" class="form-control">
                             </div>
                         </div>
                     </div>
+                    <span style="color:red">@error('email'){{$message}}@enderror</span>
                     <div class="mb-3">
                         <div class="row">
                             <div class="col-3">
@@ -64,13 +66,13 @@
                             </div>
                             <div class="col">
                                 <div class="form-control">
-                                    <input class=" border-0" id="phone" style="outline:none" type="tel">
+                                    <input class=" border-0" name="phone" id="phone" style="outline:none" type="tel">
                                     <span id="valid-msg" class="hide"></span>
                                     <span id="error-msg" class="hide"></span>
                                 </div>
                             </div>
                         </div>
-
+                    <span style="color:red">@error('phone'){{$message}}@enderror</span>
                     </div>
                     <div class="mb-3">
                         <div class="row">
@@ -78,9 +80,10 @@
                                 <label class="form-label">Company:<span class="text-danger">*</span></label>
                             </div>
                             <div class="col">
-                                <input type="text" class="form-control">
+                                <input type="text" name="company" class="form-control">
                             </div>
                         </div>
+                        <span style="color:red">@error('company'){{$message}}@enderror</span>
                     </div>
                     <div class="mb-3">
                         <div class="row">
@@ -88,19 +91,10 @@
                                 <label class="form-label">City:<span class="text-danger">*</span></label>
                             </div>
                             <div class="col">
-                                <input type="text" class="form-control">
+                                <input type="text" name="city" class="form-control">
                             </div>
                         </div>
-                    </div>
-                    <div class="mb-3">
-                        <div class="row">
-                            <div class="col-3">
-                                <label class="form-label">Full Name<span class="text-danger">*</span></label>
-                            </div>
-                            <div class="col">
-                                <input type="text" class="form-control">
-                            </div>
-                        </div>
+                        <span style="color:red">@error('city'){{$message}}@enderror</span>
                     </div>
                     <div class="mb-3">
                         <div class="row">
@@ -108,9 +102,10 @@
                                 <label class="form-label">State:<span class="text-danger">*</span></label>
                             </div>
                             <div class="col">
-                                <input type="text" class="form-control">
+                                <input type="text" name="state" class="form-control">
                             </div>
                         </div>
+                        <span style="color:red">@error('state'){{$message}}@enderror</span>
                     </div>
                     <div class="mb-3">
                         <div class="row">
@@ -118,9 +113,10 @@
                                 <label class="form-label">Zip Code:<span class="text-danger">*</span></label>
                             </div>
                             <div class="col">
-                                <input type="text" class="form-control">
+                                <input type="text" name="zipcode" class="form-control">
                             </div>
                         </div>
+                        <span style="color:red">@error('zipcode'){{$message}}@enderror</span>
                     </div>
                     <div class="mb-3">
                         <div class="row">
@@ -615,6 +611,7 @@
                                 </select>
                             </div>
                         </div>
+                        <span style="color:red">@error('ountry'){{$message}}@enderror</span>
                     </div>
                     <!-- <div class="mb-3">
                         <div class="row">
@@ -631,24 +628,22 @@
                     <div class="row gx-5 px-3">
                         <div class="col mb-3">
                             <label for="paypal">
-                                <img class="" alt="paypal" src="{{route('home')}}/assets/img/Paypal-icon.png">
+                            <img class="" alt="paypal" id="paypal_tnr_img" src="{{route('home')}}/assets/img/Paypal-icon.png">
                             </label>
-                            <input type="radio" id="paypal" name="pay_method" value="paypal" class="form-check-input"
-                                hidden checked>
+                            <input type="radio" id="paypal" name="pay_method" value="paypal" class="form-check-input" hidden>
                         </div>
                         <div class="col mb-3">
                             <label for="wiretransfer">
-                                <img class="" alt="Wire Transfer"
+                            <img class="" alt="Wire Transfer" id="wire_tnr_img"
                                     src="{{route('home')}}/assets/img/wire-transfer-icon.png">
                             </label>
                             <input type="radio" id="wiretransfer" name="pay_method" value="wiretransfer"
                                 class="form-check-input" hidden>
                         </div>
+                        <span style="color:red">@error('pay_method'){{$message}}@enderror</span>
                     </div>
-                    <!-- <a href="{{ route('processTransaction') }}"> -->
-                    <button type="button" class="btn bg-success px-3 align-center w-100 text-light"><b>PROCEED TO
+                    <button type="submit" class="btn bg-success px-3 align-center w-100 text-light" id="processTrn"><b>PROCEED TO
                             PAY</b></button>
-                    <!-- </a> -->
                 </div>
 
             </div>
@@ -667,24 +662,36 @@
 @endsection
 
 @section('script')
-<script src="{{route('home')}}/assets/js/checkout.js"></script>
+<!-- <script src="{{route('home')}}/assets/js/checkout.js"></script> -->
+<script>   
+$(document).ready(function(){
+  $('#processTrn').click(function(){
+    $('#checkout').submit();
+  })
+}); 
 
-<script>
-    
-$(document).ready(function() {
-    $('#papayl').change(fuction(){
-      selected_value = $("input[name='paypal']:checked").val();
-      console.log("hi");
+// jquery for paypal and wiretranser image
+$('#wire_tnr_img').click(function() {
+    $('#wire_tnr_img').css({
+        'box-shadow': '1px 1px 10px green',
+        'border-radius': '25px'
+
     });
-    // $('#checkout').attr('action', "{{ route('processTransaction') }}");
+    $('#paypal_tnr_img').css({
+        'box-shadow': '0px 0px 0px gray',
+        'border-radius': '25px'
+    });
 });
-    
-// $('#paypal').click(function() {
-//     $('#papayl').value;
-//     $('#checkout').attr('action', "{{ route('processTransaction') }}");
-// });
-// $('#wiretransfer').click(function() {
-// });
+$('#paypal_tnr_img').click(function() {
+    $('#paypal_tnr_img').css({
+        'box-shadow': '1px 1px 10px green',
+        'border-radius': '25px'
+    });
+    $('#wire_tnr_img').css({
+        'box-shadow': '0px 0px 0px gray',
+        'border-radius': '25px'
+    });
+});
 </script>
 
 @endsection
