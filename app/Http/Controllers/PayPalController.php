@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Report\Category;
+use App\Models\Report\Report;
 use Srmklive\PayPal\Services\PayPal as PayPalClient;
 
 class PayPalController extends Controller
@@ -14,10 +15,13 @@ class PayPalController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function checkout(Request $request)
-    {   
-        
+    {  
+        // dd($request->all());
+        $user_type = $request['user_type'];
+        // dd($request->parameter);
         $categories = Category::all();
-        return view('checkout',compact('categories'));
+        $report = Report::where('slug', $request['reportSlug'])->first();
+        return view('checkout', compact('categories', 'report', 'user_type'));
     }
     /**
      * process transaction.

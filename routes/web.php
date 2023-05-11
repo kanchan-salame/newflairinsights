@@ -20,11 +20,11 @@ use Illuminate\Support\Facades\Route;
 
 
 use App\Http\Controllers\PayPalController;
-// Route::get('/checkout', [App\Http\Controllers\PayPalController::class, 'checkout'])->name('checkout');
-Route::post('/checkout', [App\Http\Controllers\PayPalController::class, 'checkout'])->name('checkout');
+Route::get('/checkout/{slug?}/{parameter?}', [App\Http\Controllers\PayPalController::class, 'checkout'])->name('checkout');
 Route::get('process-transaction', [App\Http\Controllers\PayPalController::class, 'processTransaction'])->name('processTransaction');
 Route::get('success-transaction', [App\Http\Controllers\PayPalController::class, 'successTransaction'])->name('successTransaction');
 Route::get('cancel-transaction', [App\Http\Controllers\PayPalController::class, 'cancelTransaction'])->name('cancelTransaction');
+Route::get('/wireTransactionThanks', [App\Http\Controllers\HomeController::class, 'wireTransaction'])->name('wireTrasactionThanks');
 
 Auth::routes();
 

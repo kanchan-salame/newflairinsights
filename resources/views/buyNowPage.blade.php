@@ -1,5 +1,6 @@
 @extends('layouts.applayout')
 @section('content')
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 
@@ -227,19 +228,12 @@
                                         <h3 class="price__text">$3,950.00</h3>
                                     </div><!-- end price-head -->
 
-                                    <form method="post" action="#">
-                                        @csrf
-                                        <input type="hidden" value="Single User" name="license_type">
-                                        <input type="hidden" value="3950" name="unit_price">
-                                        <input type="hidden" value="118590" name="report_id">
-                                        <div class="price-btn-box text-center">
-                                            <a href="{{route('checkout')}}">
-                                            <button type="submit" class="theme-btn vmr-bg text-white">Buy Now<i
+                                    <div class="price-btn-box text-center">
+                                            <a href="{{ route('checkout', [ 'slug' => $report->slug, 'user_type' => 'single', 'reportSlug' => $report->slug]) }}">
+                                            <button class="theme-btn vmr-bg text-white">Buy Now<i
                                                     class="la la-arrow-right ml-2"></i></button>
                                             </a>
                                         </div>
-                                    </form>
-
                                     <ul class="list-items price-list mt-4">
                                         <li><i class="la la-check text-success mr-2"></i>1 User Access. (max. 2 IP
                                             addresses)</li>
@@ -256,20 +250,16 @@
                                 <div class="price-item">
                                     <div class="price-head vmr-color">
                                         <center><i class="la la-user vmr-color" style="font-size:56px"></i></center>
-                                        <h3 class="price__title text-uppercase vmr-color">Single User</h3>
+                                        <h3 class="price__title text-uppercase vmr-color">Multiple User</h3>
                                         <h3 class="price__text">$3,950.00</h3>
                                     </div><!-- end price-head -->
 
-                                    <form method="post" action="#">
-                                        @csrf
-                                        <input type="hidden" value="Single User" name="license_type">
-                                        <input type="hidden" value="3950" name="unit_price">
-                                        <input type="hidden" value="118590" name="report_id">
-                                        <div class="price-btn-box text-center">
-                                            <a href="#"><button type="submit" class="theme-btn vmr-bg text-white">Buy Now<i
+
+                                    <div class="price-btn-box text-center">
+                                            <a href="{{ route('checkout', [ 'slug' => $report->slug, 'user_type' => 'multiple', 'reportSlug' => $report->slug]) }}"><button class="theme-btn vmr-bg text-white">Buy Now<i
                                                     class="la la-arrow-right ml-2"></i></button></a>
                                         </div>
-                                    </form>
+                                    
 
                                     <ul class="list-items price-list mt-4">
                                         <li><i class="la la-check text-success mr-2"></i>1 User Access. (max. 2 IP
@@ -292,7 +282,7 @@
                                 <div class="sidebar">
                                     <div class="options">
                                         <h6>Pricing & Purchase Option</h6>
-                                        <a href="{{route('checkout')}}">
+                                        <a href="{{route('checkout', [ 'slug' => $report->slug, 'user_type' => '', 'reportSlug' => $report->slug])}}">
                                         <button class="btn btn-success">Proceed to buy</button>
                                         </a>
                                     </div>

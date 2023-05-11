@@ -10,6 +10,9 @@
     <meta content="" name="keywords">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
     <!-- Favicons -->
     <link href="{{ route('home') }}/assets/img/favicon.ico" rel="icon">
     <link href="{{ route('home') }}/assets/img/favicon.ico" rel="apple-touch-icon">
@@ -48,11 +51,11 @@
                         <div class="dropdown-width">
                             <ul class="row">
                                 @foreach ($categories as $category)
-                                    <li class="col-md-4 mt-2 mb-2 d-flex">
-                                        <a href="{{ route('reports', $category->slug) }}"><i
-                                                class="fas {{ $category->category_icon }} cat-icon"></i>
-                                            {{ $category->name }}</a>
-                                    </li>
+                                <li class="col-md-4 mt-2 mb-2 d-flex">
+                                    <a href="{{ route('reports', $category->slug) }}"><i
+                                            class="fas {{ $category->category_icon }} cat-icon"></i>
+                                        {{ $category->name }}</a>
+                                </li>
                                 @endforeach
                             </ul>
                         </div>
@@ -70,31 +73,31 @@
         </div>
     </header><!-- End Header -->
     <style>
-        .dropdown ul li img {
-            padding: 10px 20px;
-        }
+    .dropdown ul li img {
+        padding: 10px 20px;
+    }
 
-        .cat-icon {
-            font-size: 35px !important;
-            margin: 10px;
-        }
+    .cat-icon {
+        font-size: 35px !important;
+        margin: 10px;
+    }
 
+    .dropdown-width {
+        width: 950px;
+        padding: 30px;
+    }
+
+    @media (max-width: 768px) {
         .dropdown-width {
-            width: 950px;
-            padding: 30px;
+            width: 92% !important;
         }
 
-        @media (max-width: 768px) {
-            .dropdown-width {
-                width: 92% !important;
-            }
-
-            .navbar .dropdown:hover>div {
-                left: 15px !important;
-            }
-
-            .navbar .dropdown:hover>div {
-                left: 0px;
-            }
+        .navbar .dropdown:hover>div {
+            left: 15px !important;
         }
+
+        .navbar .dropdown:hover>div {
+            left: 0px;
+        }
+    }
     </style>
