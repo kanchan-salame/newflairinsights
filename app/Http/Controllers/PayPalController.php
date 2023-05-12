@@ -31,32 +31,23 @@ class PayPalController extends Controller
      */
     public function processTransaction(Request $request)
     {
-        // $validator = Validator::make($request->all(),[
-        //     'fname'=>'required |string|max:70',
-        //     'email' => 'required|email|max:255',
-        //     'phone' => 'nullable|regex:^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$^',
-        //     'company' => 'required',
-        //     'city' => 'required',
-        //     'state' => 'required',
-        //     'zipcode' => 'required',
-        //     'zipcode' => 'required|regex:/\b\d{5}\b/',
-        //     'country' => 'regex:/^\+\d{1,3}$/',
-        //     'pay_method' => 'required'
-        // ]);
-        // if ($validator->fails()) {
-        //     return back()
-        //                 ->withErrors($validator)
-        //                 ->withInput();
-        // }
-        
-        // $contact = new Contact;
-        // $contact->fullName = $request->fullName;
-        // $contact->email = $request->email;
-        // $contact->phoneNumber = $request->phoneNumber;
-        // $contact->message = $request->message;
-        // $contact->save();
-        
-        // return redirect('/')->with('status', 'Thanks for . We\'ll be in touch soon!');
+        $validator = Validator::make($request->all(),[
+            'fname'=>'required |string|max:70',
+            'email' => 'required|email|max:255',
+            // 'phone' => 'nullable|regex:^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$^',
+            'company' => 'required',
+            'city' => 'required',
+            'state' => 'required',
+            'zipcode' => 'required',
+            'zipcode' => 'required|regex:/\b\d{5}\b/',
+            'country' => 'regex:/^\+\d{1,3}$/',
+            'pay_method' => 'required',
+        ]);
+             
+            // Contact::create($request->all());
+            // $contact = Contact::latest()->first();
+            // Mail::to($request->email)->send(new ContactMail($contact));
+            // return 'Message sent Successfully';
         
             if($request->pay_method === 'wiretransfer'){
                 $categories = Category::all();

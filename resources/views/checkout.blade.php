@@ -14,6 +14,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
 <!-- ======= Checkout ======= -->
+
 <div class="container-fluid checkout-main pt-5">
     <section class="container pt-5">
         <form action="{{ route('processTransaction') }}" id="checkout" method="post">
@@ -35,8 +36,15 @@
                         @endif
                     </p>
                 </div>
+                <!-- sending report id -->
                 <div class="col-md-6 right p-4 ms-md-4 rounded border-top border-info border-5">
                     <h5 class="p-2 rounded heading text-light bg-info">PERSONAL DETAILS (SECURE WITH US)</h5>
+                    <div class="mb-3">
+                        <div class="row">
+                        <input type="number" value="{{($report->id)}}" name="report_id" hidden
+                        >
+                        </div>
+                    </div>
                     <div class="mb-3">
                         <div class="row">
                             <div class="col-3">
