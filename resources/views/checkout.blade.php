@@ -664,8 +664,6 @@
 @endsection
 
 @section('script')
-<script src="{{route('home')}}/assets/js/checkout.js">
-
-</script>
+<script src="{{route('home')}}/assets/js/checkout.js"></script>
 
 @endsection
