@@ -54,3 +54,6 @@ Route::resource('news', NewsController::class);
 Route::resource('contact', ContactController::class);
 Route::resource('casestudy', CaseStudyController::class);
 Route::post('imports', [App\Http\Controllers\Report\ReportController::class, 'import'] )->name('import');
+
+Route::get('/checkout',[App\Http\Controllers\Home\HomeController::class, 'checkout'])->name('checkout');
+Route::get('/wireTransferThanks',[App\Http\Controllers\Home\HomeController::class, 'wireTransferThanks'])->name('wireTransferThanks');

@@ -32,9 +32,10 @@
     <link href="{{ route('home') }}/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
     <link href="{{ route('home') }}/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
     <link href="{{ route('home') }}/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-    <!-- Template Main CSS File -->
     <link href="{{ route('home') }}/assets/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ route('home') }}/assets/css/home.css" />
+    <link rel="stylesheet" href="{{ route('home') }}/assets/css/bootstrap-video-carousel.min.css" />
+
 
 </head>
 
@@ -66,7 +67,7 @@
                     <li><a class="nav-link" href="{{ route('blog') }}">Blog</a></li>
                     <li><a class="nav-link" href="{{ route('aboutUs') }}">About</a></li>
                     <li><a class="nav-link" href="{{ route('contactUs') }}">Contact Us</a></li>
-                    <li><a class="getstarted" href="#ClientLogin">Client Login</a></li>
+                    <!-- <li><a class="getstarted" href="login">Client Login</a></li> -->
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->

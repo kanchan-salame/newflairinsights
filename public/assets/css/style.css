@@ -537,7 +537,7 @@ h6 {
 --------------------------------------------------------------*/
 
 section {
-    padding: 60px 0;
+    /* padding: 60px 0; */
     overflow: hidden;
 }
 
@@ -1236,13 +1236,7 @@ section {
     text-transform: uppercase;
 }
 
-
-/* .sidebar :hover {
-    transform: translateY(-10px);
-  } */
-
 .options h6 {
-    /* padding-left: 30px; */
     color: #fff;
     text-transform: uppercase;
     padding: 10px 10px 10px 10px;
@@ -1251,7 +1245,6 @@ section {
 }
 
 .options button {
-    /* padding-left: 30px; */
     color: #fff;
     text-transform: uppercase;
     padding: 10px 10px 10px 10px;
@@ -1282,7 +1275,6 @@ section {
 .team .member .pic {
     overflow: hidden;
     width: 300px;
-    /* border-radius: 50%; */
 }
 
 .team .member .pic img {

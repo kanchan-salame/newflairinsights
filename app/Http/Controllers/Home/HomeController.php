@@ -187,12 +187,16 @@ class HomeController extends Controller
         return view('buyNow', compact('categories', 'report'));
     }
 
-    public function wireTransaction(Request $request)
-    {
+    public function checkout()
+    {    
         $categories = Category::all();
-        return view('wireTransactionThanks', compact('categories'));
+        return view('checkout', compact('categories'));
     }
 
-
+    public function wireTransferThanks()
+    {    
+        $categories = Category::all();
+        return view('wireTransferThanks', compact('categories'));
+    }
 
 }

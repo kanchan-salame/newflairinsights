@@ -1,0 +1,15 @@
+.checkout-main {
+    background-color: #F8F8F9;
+}
+
+.checkout-main .left,
+.right {
+    background-color: white;
+    box-shadow: 1px 5px 5px silver;
+}
+
+.checkout-main .left:hover,
+.right:hover {
+    background-color: white;
+    box-shadow: 1px 7px 15px gray;
+}
