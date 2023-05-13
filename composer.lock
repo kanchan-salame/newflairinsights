@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e6a3cadd9dd266d0c7988d4737cc2c75",
+    "content-hash": "d7c3a778fd69283a7a057254af30788d",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -116,6 +116,7 @@
                 }
             ],
             "time": "2023-01-15T23:15:59+00:00"
+<<<<<<< HEAD
         },
         {
             "name": "composer/semver",
@@ -197,6 +198,8 @@
                 }
             ],
             "time": "2022-04-01T19:23:25+00:00"
+=======
+>>>>>>> paypal-integration
         },
         {
             "name": "dflydev/dot-access-data",
@@ -568,67 +571,6 @@
                 }
             ],
             "time": "2020-12-29T14:50:06+00:00"
-        },
-        {
-            "name": "ezyang/htmlpurifier",
-            "version": "v4.16.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/ezyang/htmlpurifier.git",
-                "reference": "523407fb06eb9e5f3d59889b3978d5bfe94299c8"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/ezyang/htmlpurifier/zipball/523407fb06eb9e5f3d59889b3978d5bfe94299c8",
-                "reference": "523407fb06eb9e5f3d59889b3978d5bfe94299c8",
-                "shasum": ""
-            },
-            "require": {
-                "php": "~5.6.0 || ~7.0.0 || ~7.1.0 || ~7.2.0 || ~7.3.0 || ~7.4.0 || ~8.0.0 || ~8.1.0 || ~8.2.0"
-            },
-            "require-dev": {
-                "cerdic/css-tidy": "^1.7 || ^2.0",
-                "simpletest/simpletest": "dev-master"
-            },
-            "suggest": {
-                "cerdic/css-tidy": "If you want to use the filter 'Filter.ExtractStyleBlocks'.",
-                "ext-bcmath": "Used for unit conversion and imagecrash protection",
-                "ext-iconv": "Converts text to and from non-UTF-8 encodings",
-                "ext-tidy": "Used for pretty-printing HTML"
-            },
-            "type": "library",
-            "autoload": {
-                "files": [
-                    "library/HTMLPurifier.composer.php"
-                ],
-                "psr-0": {
-                    "HTMLPurifier": "library/"
-                },
-                "exclude-from-classmap": [
-                    "/library/HTMLPurifier/Language/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "LGPL-2.1-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Edward Z. Yang",
-                    "email": "admin@htmlpurifier.org",
-                    "homepage": "http://ezyang.com"
-                }
-            ],
-            "description": "Standards compliant HTML filter written in PHP",
-            "homepage": "http://htmlpurifier.org/",
-            "keywords": [
-                "html"
-            ],
-            "support": {
-                "issues": "https://github.com/ezyang/htmlpurifier/issues",
-                "source": "https://github.com/ezyang/htmlpurifier/tree/v4.16.0"
-            },
-            "time": "2022-09-18T07:06:19+00:00"
         },
         {
             "name": "fruitcake/laravel-cors",
@@ -1975,6 +1917,7 @@
             "time": "2022-04-17T13:12:02+00:00"
         },
         {
+<<<<<<< HEAD
             "name": "maatwebsite/excel",
             "version": "3.1.48",
             "source": {
@@ -2240,6 +2183,8 @@
             "time": "2022-12-02T22:17:43+00:00"
         },
         {
+=======
+>>>>>>> paypal-integration
             "name": "monolog/monolog",
             "version": "2.9.1",
             "source": {
@@ -2340,6 +2285,7 @@
                 }
             ],
             "time": "2023-02-06T13:44:46+00:00"
+<<<<<<< HEAD
         },
         {
             "name": "myclabs/php-enum",
@@ -2403,6 +2349,8 @@
                 }
             ],
             "time": "2022-08-04T09:53:51+00:00"
+=======
+>>>>>>> paypal-integration
         },
         {
             "name": "nesbot/carbon",
@@ -2777,6 +2725,7 @@
             "time": "2022-01-27T09:35:39+00:00"
         },
         {
+<<<<<<< HEAD
             "name": "phpoffice/phpspreadsheet",
             "version": "1.28.0",
             "source": {
@@ -2882,6 +2831,8 @@
             "time": "2023-02-25T12:24:49+00:00"
         },
         {
+=======
+>>>>>>> paypal-integration
             "name": "phpoption/phpoption",
             "version": "1.9.1",
             "source": {
@@ -3163,6 +3114,7 @@
         },
         {
             "name": "psr/http-message",
+<<<<<<< HEAD
             "version": "1.1",
             "source": {
                 "type": "git",
@@ -3173,6 +3125,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/php-fig/http-message/zipball/cb6ce4845ce34a8ad9e68117c10ee90a29919eba",
                 "reference": "cb6ce4845ce34a8ad9e68117c10ee90a29919eba",
+=======
+            "version": "2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/http-message.git",
+                "reference": "402d35bcb92c70c026d1a6a9883f06b2ead23d71"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/http-message/zipball/402d35bcb92c70c026d1a6a9883f06b2ead23d71",
+                "reference": "402d35bcb92c70c026d1a6a9883f06b2ead23d71",
+>>>>>>> paypal-integration
                 "shasum": ""
             },
             "require": {
@@ -3181,7 +3145,11 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
+<<<<<<< HEAD
                     "dev-master": "1.1.x-dev"
+=======
+                    "dev-master": "2.0.x-dev"
+>>>>>>> paypal-integration
                 }
             },
             "autoload": {
@@ -3196,7 +3164,7 @@
             "authors": [
                 {
                     "name": "PHP-FIG",
-                    "homepage": "http://www.php-fig.org/"
+                    "homepage": "https://www.php-fig.org/"
                 }
             ],
             "description": "Common interface for HTTP messages",
@@ -3210,9 +3178,15 @@
                 "response"
             ],
             "support": {
+<<<<<<< HEAD
                 "source": "https://github.com/php-fig/http-message/tree/1.1"
             },
             "time": "2023-04-04T09:50:52+00:00"
+=======
+                "source": "https://github.com/php-fig/http-message/tree/2.0"
+            },
+            "time": "2023-04-04T09:54:51+00:00"
+>>>>>>> paypal-integration
         },
         {
             "name": "psr/log",
@@ -3317,6 +3291,7 @@
         },
         {
             "name": "psy/psysh",
+<<<<<<< HEAD
             "version": "v0.11.16",
             "source": {
                 "type": "git",
@@ -3327,6 +3302,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/bobthecow/psysh/zipball/151b145906804eea8e5d71fea23bfb470c904bfb",
                 "reference": "151b145906804eea8e5d71fea23bfb470c904bfb",
+=======
+            "version": "v0.11.17",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bobthecow/psysh.git",
+                "reference": "3dc5d4018dabd80bceb8fe1e3191ba8460569f0a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/3dc5d4018dabd80bceb8fe1e3191ba8460569f0a",
+                "reference": "3dc5d4018dabd80bceb8fe1e3191ba8460569f0a",
+>>>>>>> paypal-integration
                 "shasum": ""
             },
             "require": {
@@ -3387,9 +3374,15 @@
             ],
             "support": {
                 "issues": "https://github.com/bobthecow/psysh/issues",
+<<<<<<< HEAD
                 "source": "https://github.com/bobthecow/psysh/tree/v0.11.16"
             },
             "time": "2023-04-26T12:53:57+00:00"
+=======
+                "source": "https://github.com/bobthecow/psysh/tree/v0.11.17"
+            },
+            "time": "2023-05-05T20:02:42+00:00"
+>>>>>>> paypal-integration
         },
         {
             "name": "ralouphie/getallheaders",
@@ -3615,6 +3608,74 @@
                 }
             ],
             "time": "2023-04-15T23:01:58+00:00"
+<<<<<<< HEAD
+=======
+        },
+        {
+            "name": "srmklive/paypal",
+            "version": "3.0.21",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/srmklive/laravel-paypal.git",
+                "reference": "3a55d463f8d5935627c4eee15da702811a03c5ea"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/srmklive/laravel-paypal/zipball/3a55d463f8d5935627c4eee15da702811a03c5ea",
+                "reference": "3a55d463f8d5935627c4eee15da702811a03c5ea",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "guzzlehttp/guzzle": "~7.0",
+                "illuminate/support": "~6.0|~7.0|~8.0|~9.0|^10.0",
+                "nesbot/carbon": "~2.0",
+                "php": ">=7.2|^8.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^8.0|^9.0|^10.0",
+                "symfony/var-dumper": "~5.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Srmklive\\PayPal\\Providers\\PayPalServiceProvider"
+                    ],
+                    "aliases": {
+                        "PayPal": "Srmklive\\PayPal\\Facades\\PayPal"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Srmklive\\PayPal\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Raza Mehdi",
+                    "email": "srmk@outlook.com"
+                }
+            ],
+            "description": "Laravel plugin For Processing Payments Through Paypal Express Checkout. Can Be Used Independently With Other Applications.",
+            "keywords": [
+                "http",
+                "laravel paypal",
+                "paypal",
+                "rest",
+                "web service"
+            ],
+            "support": {
+                "issues": "https://github.com/srmklive/laravel-paypal/issues",
+                "source": "https://github.com/srmklive/laravel-paypal/tree/3.0.21"
+            },
+            "time": "2023-04-26T16:27:35+00:00"
+>>>>>>> paypal-integration
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -6547,6 +6608,7 @@
         },
         {
             "name": "laravel/sail",
+<<<<<<< HEAD
             "version": "v1.21.5",
             "source": {
                 "type": "git",
@@ -6557,13 +6619,29 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/laravel/sail/zipball/27af207bb1c53faddcba34c7528b3e969f6a646d",
                 "reference": "27af207bb1c53faddcba34c7528b3e969f6a646d",
+=======
+            "version": "v1.22.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/sail.git",
+                "reference": "923e1e112b6a8598664dbb0ee79dd3137f1c9d56"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/sail/zipball/923e1e112b6a8598664dbb0ee79dd3137f1c9d56",
+                "reference": "923e1e112b6a8598664dbb0ee79dd3137f1c9d56",
+>>>>>>> paypal-integration
                 "shasum": ""
             },
             "require": {
                 "illuminate/console": "^8.0|^9.0|^10.0",
                 "illuminate/contracts": "^8.0|^9.0|^10.0",
                 "illuminate/support": "^8.0|^9.0|^10.0",
+<<<<<<< HEAD
                 "php": "^7.3|^8.0",
+=======
+                "php": "^8.0",
+>>>>>>> paypal-integration
                 "symfony/yaml": "^6.0"
             },
             "require-dev": {
@@ -6608,7 +6686,11 @@
                 "issues": "https://github.com/laravel/sail/issues",
                 "source": "https://github.com/laravel/sail"
             },
+<<<<<<< HEAD
             "time": "2023-04-24T13:29:38+00:00"
+=======
+            "time": "2023-05-04T14:52:56+00:00"
+>>>>>>> paypal-integration
         },
         {
             "name": "mockery/mockery",
@@ -7259,6 +7341,7 @@
         },
         {
             "name": "phpunit/phpunit",
+<<<<<<< HEAD
             "version": "9.6.7",
             "source": {
                 "type": "git",
@@ -7269,6 +7352,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/c993f0d3b0489ffc42ee2fe0bd645af1538a63b2",
                 "reference": "c993f0d3b0489ffc42ee2fe0bd645af1538a63b2",
+=======
+            "version": "9.6.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sebastianbergmann/phpunit.git",
+                "reference": "17d621b3aff84d0c8b62539e269e87d8d5baa76e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/17d621b3aff84d0c8b62539e269e87d8d5baa76e",
+                "reference": "17d621b3aff84d0c8b62539e269e87d8d5baa76e",
+>>>>>>> paypal-integration
                 "shasum": ""
             },
             "require": {
@@ -7342,7 +7437,11 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
                 "security": "https://github.com/sebastianbergmann/phpunit/security/policy",
+<<<<<<< HEAD
                 "source": "https://github.com/sebastianbergmann/phpunit/tree/9.6.7"
+=======
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/9.6.8"
+>>>>>>> paypal-integration
             },
             "funding": [
                 {
@@ -7358,7 +7457,11 @@
                     "type": "tidelift"
                 }
             ],
+<<<<<<< HEAD
             "time": "2023-04-14T08:58:40+00:00"
+=======
+            "time": "2023-05-11T05:14:45+00:00"
+>>>>>>> paypal-integration
         },
         {
             "name": "sebastian/cli-parser",
@@ -7660,16 +7763,16 @@
         },
         {
             "name": "sebastian/diff",
-            "version": "4.0.4",
+            "version": "4.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/diff.git",
-                "reference": "3461e3fccc7cfdfc2720be910d3bd73c69be590d"
+                "reference": "74be17022044ebaaecfdf0c5cd504fc9cd5a7131"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/diff/zipball/3461e3fccc7cfdfc2720be910d3bd73c69be590d",
-                "reference": "3461e3fccc7cfdfc2720be910d3bd73c69be590d",
+                "url": "https://api.github.com/repos/sebastianbergmann/diff/zipball/74be17022044ebaaecfdf0c5cd504fc9cd5a7131",
+                "reference": "74be17022044ebaaecfdf0c5cd504fc9cd5a7131",
                 "shasum": ""
             },
             "require": {
@@ -7714,7 +7817,7 @@
             ],
             "support": {
                 "issues": "https://github.com/sebastianbergmann/diff/issues",
-                "source": "https://github.com/sebastianbergmann/diff/tree/4.0.4"
+                "source": "https://github.com/sebastianbergmann/diff/tree/4.0.5"
             },
             "funding": [
                 {
@@ -7722,7 +7825,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-10-26T13:10:38+00:00"
+            "time": "2023-05-07T05:35:17+00:00"
         },
         {
             "name": "sebastian/environment",
