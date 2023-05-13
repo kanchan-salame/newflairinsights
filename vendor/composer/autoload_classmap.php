@@ -21,6 +21,7 @@ return array(
     'App\\Http\\Controllers\\HomeController' => $baseDir . '/app/Http/Controllers/HomeController.php',
     'App\\Http\\Controllers\\Home\\HomeController' => $baseDir . '/app/Http/Controllers/Home/HomeController.php',
     'App\\Http\\Controllers\\News\\NewsController' => $baseDir . '/app/Http/Controllers/News/NewsController.php',
+    'App\\Http\\Controllers\\PayPalController' => $baseDir . '/app/Http/Controllers/PayPalController.php',
     'App\\Http\\Controllers\\Report\\CategoryController' => $baseDir . '/app/Http/Controllers/Report/CategoryController.php',
     'App\\Http\\Controllers\\Report\\ReportController' => $baseDir . '/app/Http/Controllers/Report/ReportController.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',

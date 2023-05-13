@@ -323,8 +323,8 @@ class ComposerStaticInit31ae8dfbd390ab04087fb57ce03f1904
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-message/src',
-            1 => __DIR__ . '/..' . '/psr/http-factory/src',
+            0 => __DIR__ . '/..' . '/psr/http-factory/src',
+            1 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -546,6 +546,7 @@ class ComposerStaticInit31ae8dfbd390ab04087fb57ce03f1904
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\Home\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/Home/HomeController.php',
         'App\\Http\\Controllers\\News\\NewsController' => __DIR__ . '/../..' . '/app/Http/Controllers/News/NewsController.php',
+        'App\\Http\\Controllers\\PayPalController' => __DIR__ . '/../..' . '/app/Http/Controllers/PayPalController.php',
         'App\\Http\\Controllers\\Report\\CategoryController' => __DIR__ . '/../..' . '/app/Http/Controllers/Report/CategoryController.php',
         'App\\Http\\Controllers\\Report\\ReportController' => __DIR__ . '/../..' . '/app/Http/Controllers/Report/ReportController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
