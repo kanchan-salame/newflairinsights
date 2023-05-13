@@ -76,7 +76,7 @@
 <script src="{{ route('home') }}/assets/vendor/php-email-form/validate.js"></script>
 <!-- Template Main JS File -->
 <script src="{{ route('home') }}/assets/js/main.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script> -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css" />
 @yield('script')

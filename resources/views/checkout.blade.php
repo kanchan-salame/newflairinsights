@@ -1,203 +1,128 @@
 @extends('layouts.applayout')
 @section('content')
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-    <style>
-        .tab-content>.active {
-            display: block;
-            border-left: 1px solid #dee2e6;
-            border-right: 1px solid #dee2e6;
-            border-bottom: 1px solid #dee2e6;
-        }
+<link rel="stylesheet" href="{{route('home')}}/assets/css/checkout.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.3/css/intlTelInput.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/11.0.9/js/intlTelInput.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.3/js/intlTelInput.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/11.0.9/js/utils.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 
-        .container .tab-pane .active {}
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
-        .report-img {
-            max-width: 100%;
-            height: 200px;
-            box-shadow: 5px 6px rgb(0 0 0 / 10%);
-        }
-
-        #hero {
-            height: 400px;
-            padding-top: 20px !important;
-        }
-
-        .breadcrumbs {
-            padding: 30px 0;
-            min-height: 40px;
-            background: transparent;
-            margin-top: 0px;
-        }
-
-        .breadcrumbs ol li a,
-        .breadcrumbs ol li {
-            color: #fff;
-            font-size: 18px;
-            font-weight: 600;
-        }
-
-        .breadcrumbs ol li+li::before {
-            display: inline-block;
-            padding-right: 10px;
-            color: #fff;
-            content: "/";
-        }
-
-        .icon-style {
-            font-size: 40px;
-            padding: 10px;
-            color: #0869B1;
-        }
-
-        #hero h1 {
-            margin: 0 0 10px 0;
-            font-size: 18px;
-            font-weight: 700;
-            line-height: 25px;
-            color: #fff;
-        }
-
-        .report-inline {
-            color: #fff;
-        }
-
-        #home h3 {
-            font-size: 20px;
-            color: #0869B1;
-        }
-
-        thead {
-            background: #0869B1;
-            color: #fff;
-        }
-    </style>
-    <!-- ======= Hero Section ======= -->
-    <section id="hero" class="align-items-center">
-        <div class="container">
-            <section id="breadcrumbs" class="breadcrumbs">
-                <div class="">
-
-                    <ol>
-                        <li><a href="{{ route('home') }}">Home</a></li>
-                        <li>{{ $report->category->name }}</li>
-                    </ol>
-
+<!-- ======= Checkout ======= -->
+<div class="container-fluid checkout-main pt-5">
+    <section id="checkout" class="container pt-5">
+        <form action="" method="post">
+            <div class="row gx-5">
+                <div class="col-md-5 left p-4 rounded me-md-2 border-top border-info border-5" style="height:50%;">
+                    <h5 class="heading p-2 rounded bg-info text-light ">ORDER SUMMERY</h5>
+                    <h6 class=" my-3">Title Name</h6>
+                    <p class="text-secondary">Global Natural Chelating Agents Market Size and Forecast 2022-2029</p>
+                    <h6 class="  my-3">Type</h6>
+                    <p class="text-secondary">Global Natural Chelating Agents Market Size and Forecast 2022-2029</p>
+                    <h6 class=" my-3">Price</h6>
+                    <p class="text-secondary">Global Natural Chelating Agents Market Size and Forecast 2022-2029</p>
                 </div>
-            </section><!-- End Breadcrumbs -->
-            <div class="row">
-                <div class="col-lg-2 order-1 order-lg-1 hero-img">
-                    <img src="{{ $report->category->image ? route('home') . '/storage/' . $report->category->image : route('home') . '/assets/img/team/team-3.jpg' }}"
-                        class="img-fluid report-img" alt="">
-                </div>
-                <div class="col-lg-10 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1"
-                    data-aos="fade-up" data-aos-delay="200">
-                    <h1>{!! Str::limit($report->title, 200) !!}</h1>
-                    <p class="report-inline">
-                        <strong>Report Id: </strong>{{ $report->id }} |
-                        <strong>Published Date:
-                        </strong>{{ \Carbon\Carbon::parse($report->created_at)->isoFormat('MMM YYYY') }} |
-                        <strong>No. of Pages: </strong>{{ $report->pages }} |
-                        <strong>Base Year for Estimate:
-                        </strong>{{ \Carbon\Carbon::parse($report->created_at)->isoFormat('MMM YYYY') }} |
-                        <strong>Format: </strong> <i class="fas fa-file-pdf"></i>
-                    </p>
-                    <div class="d-flex justify-content-center justify-content-lg-start">
-                        <a href="tel:+1 830 455 7727" class="btn-get-started scrollto">
-                            <i class="fas fa-phone"></i> Request Expert Call?
-                        </a>
-                        <a href="{{ route('askForDiscount', $report->slug) }}" class="btn-get-started scrollto mr-2 ml-2">
-                            <i class="fas fa-eye"></i> Ask for Discount
-                        </a>
-                        <a href="{{ route('rquestSample', $report->slug) }}" class="btn-get-started scrollto">
-                            <i class="fas fa-download"></i> Download Free Sample Report
-                        </a>
+                <div class="col-md-6 right p-4 ms-md-4 rounded border-top border-info border-5">
+                    <h5 class="p-2 rounded heading text-light bg-info">PERSONAL DETAILS (SECURE WITH US)</h5>
+                    <div class="mb-3">
+                        <div class="row">
+                            <div class="col-3">
+                                <label class="form-label">Full Name:<span class="text-danger">*</span></label>
+                            </div>
+                            <div class="col">
+                            <input type="text" class="form-control">
+                        </div>
+                        </div>
+                        
                     </div>
-                </div>
-            </div>
-        </div>
-
-    </section><!-- End Hero -->
-    <main id="main">
-        
-        <section id="team" class="team section-bg">
-            <div class="container aos-init aos-animate" data-aos="fade-up">
-                <div class="row">
-                    <div class="col-md-8">
-                    <h2>Get in Touch</h2>
-                    <form action="forms/contact.php" method="post" role="form" class="php-email-form mt-5">
-                        <div class="form-group">
-                            <div class="row">
-                                <div class="col-3">
-                                    <label for="email">Full Name:</label>
-                                </div>
-                                <div class="col">
-                                    <input type="text" class="form-control" id="email" placeholder="Enter Name"
-                                        name="email">
-                                </div>
+                    <div class="mb-3">
+                        <div class="row">
+                            <div class="col-3">
+                                <label class="form-label">Email:<span class="text-danger">*</span></label>
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control">
                             </div>
                         </div>
-                        <div class="form-group">
-                            <div class="row">
-                                <div class="col-3">
-                                    <label for="email">Email:</label>
-                                </div>
-                                <div class="col">
-                                    <input type="email" class="form-control" id="email" placeholder="Enter email"
-                                        name="email">
-                                </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="row">
+                            <div class="col-3">
+                                <label class="form-label">Phone Number:<span class="text-danger">*</span></label>
                             </div>
-
-                        </div>
-                        <div class="form-group">
-                            <div class="row">
-                                <div class="col-3">
-                                    <label for="pwd">Phone Number:</label>
-                                </div>
-                                <div class="col">
-                                    <input type="number" class="form-control" id="pwd"
-                                        placeholder="Enter Contact Number" name="pswd">
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="form-group">
-                            <div class="row">
-                                <div class="col-3">
-                                    <label for="email">Name of Company:</label>
-
-                                </div>
-                                <div class="col">
-                                    <input type="text" class="form-control" id="email" placeholder="Enter Company Name"
-                                        name="email">
-                                </div>
+                            <div class="col">
+                            <div class="form-control">
+                                <input class=" border-0" id="phone" style="outline:none" type="tel">
+                                <span id="valid-msg" class="hide"></span>
+                                <span id="error-msg" class="hide"></span>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <div class="row">
-                                <div class="col-3">
-                                    <label for="email">Designation:</label>
-
-                                </div>
-                                <div class="col">
-                                    <input type="text" class="form-control" id="email" placeholder="Enter Company Name"
-                                        name="email">
-                                </div>
+                        </div>
+                        
+                    </div>
+                    <div class="mb-3">
+                        <div class="row">
+                            <div class="col-3">
+                                <label class="form-label">Company:<span class="text-danger">*</span></label>
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control">
                             </div>
                         </div>
-
-                        <div class="form-group">
-                            <div class="row">
-                                <div class="col-3">
-                                    <label for="email">Country:</label>
-                                </div>
-                                <div class="col">
-                                    <select class="countrySelect form-control form-control" id="country" name="country"
+                    </div>
+                    <div class="mb-3">
+                        <div class="row">
+                            <div class="col-3">
+                                <label class="form-label">City:<span class="text-danger">*</span></label>
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="row">
+                            <div class="col-3">
+                                <label class="form-label">Full Name<span class="text-danger">*</span></label>
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="row">
+                            <div class="col-3">
+                                <label class="form-label">State:<span class="text-danger">*</span></label>
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="row">
+                            <div class="col-3">
+                                <label class="form-label">Zip Code:<span class="text-danger">*</span></label>
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="row">
+                            <div class="col-3">
+                                <label class="form-label">Country:<span class="text-danger">*</span></label>
+                            </div>
+                            <div class="col">
+                            <select class="countrySelect form-control form-control" id="country" name="country"
                                         title="Country">
-                                        <option value="0">Select</option>
+                                        <option value="0" class="text-secondary">Select</option>
                                         <option value="af" data-country-name="Afghanistan " data-dial-code="93">
                                             Afghanistan
                                         </option>
@@ -687,114 +612,58 @@
                                         <option value="ax" data-country-name="Åland Islands" data-dial-code="358">Åland
                                             Islands</option>
                                     </select>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="row">
-                                <div class="col-3">
-                                    <label for="email">Research Requirements:</label>
-                                </div>
-                                <div class="col">
-                                    <textarea name="requirements" id="" cols="30" rows="3"
-                                        class="form-control"></textarea>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="d-grid gap-2 col-4 mx-auto">
-                            <button type="submit" class="btn btn-primary">Send Message</button>
-                        </div>
-                    </form>
-                </div>
-
-                    <div class="col-md-4">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="sidebar">
-                                    <div class="options">
-                                        <h6>Pricing & Purchase Option</h6>
-                                        <a href="{{ route('buyNowPage', $report->slug) }}">Proceed to buy</a>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="speak-to-analyst d-flex">
-                                    <img src="{{ route('home') }}/assets/img/hero-img.png" class="" alt="">
-                                    <p>Speak to analyst and have exclusive insights tailored for your needs</p>
-                                </div>
-                                <br>
-                                <div class="request-additional text-center">
-                                    <h6>Request addional customization in this report</h6>
-                                    <a href="#">Click here</a>
-                                </div>
-                                <br>
-                                <div class="why-us text-left">
-                                    <div class="options"
-                                        style="
-                                    text-align: left;
-                                ">
-                                        <h6>Why Choose Us</h6>
-                                        <div class="row">
-                                            <div class="col-md-3">
-                                                <span class="icon-style">
-                                                    <i class="fas fa-wallet"></i>
-                                                </span>
-                                            </div>
-                                            <div class="col-md-9">
-                                                <h5>Insured Buying </h5>
-                                                <p>This Report Has A Service
-                                                    Guarantee. We Stand By Our
-                                                    Report Quality.</p>
-                                            </div>
-                                        </div>
-
-                                        <div class="row">
-                                            <div class="col-md-3">
-                                                <span class="icon-style">
-                                                    <i class="fas fa-fan"></i>
-                                                </span>
-                                            </div>
-                                            <div class="col-md-9">
-                                                <h5>Confidentiality </h5>
-                                                <p>This Report Has A Service
-                                                    Guarantee. We Stand By Our
-                                                    Report Quality.</p>
-                                            </div>
-                                        </div>
-
-                                        <div class="row">
-                                            <div class="col-md-3">
-                                                <span class="icon-style">
-                                                    <i class="fab fa-searchengin"></i>
-                                                </span>
-                                            </div>
-                                            <div class="col-md-9">
-                                                <h5>Custom Research Service </h5>
-                                                <p>We Are In Compliance With
-                                                    GDPR & CCPA Norms. All
-                                                    Interactions Are Confidential.</p>
-                                            </div>
-                                        </div>
-
-                                        <div class="row">
-                                            <div class="col-md-3">
-                                                <span class="icon-style">
-                                                    <i class="fas fa-phone-alt"></i>
-                                                </span>
-                                            </div>
-                                            <div class="col-md-9">
-                                                <h5>24/5 Research Support </h5>
-                                                <p>Get Your Queries Resolved From An Industry Expert.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <br>
                             </div>
                         </div>
                     </div>
+                    <div class="mb-3">
+                        <div class="row">
+                            <div class="col-3">
+                                <label class="form-label">Human Verification:<span class="text-danger">*</span></label>
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control">
+
+                            </div>
+                        </div>
+                    </div>
+                    <h6 class="my-3">Choose a Payment Mode (Online Payment/Credit Card)</h6>
+                    <div class="row gx-5 px-3">
+                        <div class="col mb-3">
+                            <label for="paypal">
+                                <img class="" alt="paypal" src="{{route('home')}}/assets/img/Paypal-icon.png">
+                            </label>
+                            <input type="radio" id="paypal" name="pay_method" value="paypal" class="form-check-input"
+                                hidden checked>
+                        </div>
+                        <div class="col mb-3">
+                            <label for="wiretransfer">
+                                <img class="" alt="Wire Transfer"
+                                    src="{{route('home')}}/assets/img/wire-transfer-icon.png">
+                            </label>
+                            <input type="radio" id="wiretransfer" name="pay_method" value="wiretransfer"
+                                class="form-check-input" hidden>
+                        </div>
+                    </div>
+                    <button type="button" class="btn bg-success px-3 align-center w-100 text-light"><b>PROCEED TO
+                            PAY</b></button>
                 </div>
 
             </div>
-        </section>
-    </main><!-- End #main -->
+
+
+        </form>
+
+
+    </section>
+</div>
+<script>
+
+
+</script>
+
+@endsection
+
+@section('script')
+<script src="{{route('home')}}/assets/js/checkout.js"></script>
+
 @endsection

@@ -37,11 +37,11 @@ class ContactController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
+    {   
         Contact::create($request->all());
         $contact = Contact::latest()->first();
         Mail::to($request->email)->send(new ContactMail($contact));
-        return 'contact created';
+        return 'Message sent Successfully';
     }
 
     /**
