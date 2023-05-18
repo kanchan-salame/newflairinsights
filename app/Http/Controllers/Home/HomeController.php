@@ -199,4 +199,10 @@ class HomeController extends Controller
         return view('wireTransferThanks', compact('categories'));
     }
 
+    public function thanks()
+    {    
+        $categories = Category::all();
+        return view('thanks', compact('categories'));
+    }
+
 }

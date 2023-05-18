@@ -5,7 +5,7 @@ use App\Http\Controllers\Contact\ContactController;
 use App\Http\Controllers\News\NewsController;
 use App\Http\Controllers\Report\CategoryController;
 use App\Http\Controllers\Report\ReportController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Report;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +25,7 @@ Route::post('process-transaction', [App\Http\Controllers\PayPalController::class
 Route::get('success-transaction', [App\Http\Controllers\PayPalController::class, 'successTransaction'])->name('successTransaction');
 Route::get('cancel-transaction', [App\Http\Controllers\PayPalController::class, 'cancelTransaction'])->name('cancelTransaction');
 Route::get('/wireTransactionThanks', [App\Http\Controllers\Home\HomeController::class, 'wireTransactionThanks'])->name('wireTransactionThanks');
+Route::get('/thanks', [App\Http\Controllers\Home\HomeController::class, 'thanks'])->name('thanks');
 
 Auth::routes();
 
@@ -37,6 +38,7 @@ Route::get('/blog', [App\Http\Controllers\Home\HomeController::class, 'news'])->
 Route::get('/caseStudy', [App\Http\Controllers\Home\HomeController::class, 'caseStudy'])->name('caseStudy');
 Route::get('/reports/{slug}', [App\Http\Controllers\Home\HomeController::class, 'reports'])->name('reports');
 Route::get('/faq', [App\Http\Controllers\Home\HomeController::class, 'faq'])->name('faq');
+
 Route::get('/privacyPolicy', [App\Http\Controllers\Home\HomeController::class, 'privacyPolicy'])->name('privacyPolicy');
 Route::get('/termOfServices', [App\Http\Controllers\Home\HomeController::class, 'termOfServices'])->name('termOfServices');
 Route::get('/caseStudyDetail/{slug}', [App\Http\Controllers\Home\HomeController::class, 'caseStudyDetail'])->name('caseStudyDetail');

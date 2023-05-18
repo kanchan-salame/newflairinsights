@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Report\Category;
+use App\Models\Transaction\Transaction;
+use Illuminate\Support\Facades\Mail;
 use App\Models\Report\Report;
+use App\Mail\TransactionMail;
 use Srmklive\PayPal\Services\PayPal as PayPalClient;
 use Validator;
 
@@ -43,14 +46,30 @@ class PayPalController extends Controller
             'country' => 'regex:/^\+\d{1,3}$/',
             'pay_method' => 'required',
         ]);
-             
-            // Contact::create($request->all());
-            // $contact = Contact::latest()->first();
-            // Mail::to($request->email)->send(new ContactMail($contact));
-            // return 'Message sent Successfully';
+            
         
             if($request->pay_method === 'wiretransfer'){
+                
+                $transactions = new Transaction;
+                $transactions->name = $request->input('name');
+                $transactions->email = $request->input('email');
+                $transactions->contact_no = $request->input('contact_no');
+                $transactions->company_name = $request->input('company_name');
+                $transactions->city = $request->input('city');
+                $transactions->zip_code = $request->input('zip_code');
+                $transactions->country = $request->input('country');
+                $transactions->state = $request->input('state');
+                $transactions->pay_method = $request->input('pay_method');
+                $transactions->status = "Pending";
+                $transactions->user_type = $request->input('user_type');
+                $transactions->report_id= $request->input('report_id');
+                $transactions->save();
+                
+                
                 $categories = Category::all();
+                $transaction = Transaction::latest()->first();
+                Mail::to($request->email)->send(new TransactionMail($transaction));
+                //  return 'Message sent Successfully';
                 return view('wireTransactionThanks', compact('categories'));
             }
             else if($request->pay_method === 'paypal'){
@@ -87,21 +106,9 @@ class PayPalController extends Controller
                           ->with('error', $response['message'] ?? 'Something went wrong.');
                   }
                   }
-              
-       
-        
-
-        // $ = new Contact;
-        // $contact->fullName = $request->fullName;
-        // $contact->email = $request->email;
-        // $contact->phoneNumber = $request->phoneNumber;
-        // $contact->message = $request->message;
-        // $contact->save();
-        
-        // return redirect('/contact')->with('status', 'Thanks for contacting me. I\'ll be in touch soon!');
-
         
     }
+
     /**
      * success transaction.
      *
