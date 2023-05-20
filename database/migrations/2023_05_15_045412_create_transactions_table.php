@@ -16,9 +16,9 @@ class CreateTransactionsTable extends Migration
         Schema::create('transactions', function (Blueprint $table) {
             $table->id()->autoIncrement(1);
             $table->integer('report_id');
-            $table->string('name',60);
+            $table->string('fname',60);
             $table->string('email',200);
-            $table->string('contact_no',20);
+            $table->string('contact_no',20)->nullable();
             $table->string('company_name',60);
             $table->string('city',50);
             $table->string('state',50);
