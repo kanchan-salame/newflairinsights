@@ -5,6 +5,7 @@ use App\Http\Controllers\Contact\ContactController;
 use App\Http\Controllers\News\NewsController;
 use App\Http\Controllers\Report\CategoryController;
 use App\Http\Controllers\Report\ReportController;
+use App\Http\Controllers\ReportRequestController;
 use App\Http\Controllers\Report;
 
 /*

@@ -10,7 +10,8 @@ use Illuminate\Support\Facades\Mail;
 use App\Mail\ReportRequestMail;
 
 class ReportRequestController extends Controller
-{
+{  
+    
     /**
      * Display a listing of the resource.
      *
@@ -39,6 +40,7 @@ class ReportRequestController extends Controller
      */
     public function store(Storereport_requestRequest $request)
     {
+       
         Report_request::create($request->all());
         $contact = Report_request::latest()->first();
         Mail::to($request->email)->send(new ReportRequestMail($contact));
