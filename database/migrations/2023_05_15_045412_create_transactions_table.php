@@ -17,6 +17,7 @@ class CreateTransactionsTable extends Migration
             $table->id()->autoIncrement(1);
             $table->integer('report_id');
             $table->string('name',60);
+            $table->string('email',200);
             $table->string('contact_no',20);
             $table->string('company_name',60);
             $table->string('city',50);
