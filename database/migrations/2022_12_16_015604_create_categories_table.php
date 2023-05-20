@@ -23,6 +23,7 @@ class CreateCategoriesTable extends Migration
             $table->string('slug')->unique();
             $table->string('meta_keywords');
             $table->string('category_icon');
+            $table->string('image');
             $table->softDeletes();
             $table->timestamps();
         });

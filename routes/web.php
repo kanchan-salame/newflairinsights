@@ -54,6 +54,7 @@ Route::resource('category', CategoryController::class);
 Route::resource('report', ReportController::class);
 Route::resource('news', NewsController::class);
 Route::resource('contact', ContactController::class);
+Route::resource('ReportRequest', ReportRequestController::class);
 Route::resource('casestudy', CaseStudyController::class);
 Route::post('imports', [App\Http\Controllers\Report\ReportController::class, 'import'] )->name('import');
 
