@@ -5,6 +5,7 @@ use App\Http\Controllers\Contact\ContactController;
 use App\Http\Controllers\News\NewsController;
 use App\Http\Controllers\Report\CategoryController;
 use App\Http\Controllers\Report\ReportController;
+use App\Http\Controllers\ReportRequestController;
 use App\Http\Controllers\Report;
 
 /*
@@ -54,6 +55,7 @@ Route::resource('category', CategoryController::class);
 Route::resource('report', ReportController::class);
 Route::resource('news', NewsController::class);
 Route::resource('contact', ContactController::class);
+Route::resource('ReportRequest', ReportRequestController::class);
 Route::resource('casestudy', CaseStudyController::class);
 Route::post('imports', [App\Http\Controllers\Report\ReportController::class, 'import'] )->name('import');
 

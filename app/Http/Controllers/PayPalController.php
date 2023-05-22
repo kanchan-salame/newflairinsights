@@ -34,24 +34,26 @@ class PayPalController extends Controller
      */
     public function processTransaction(Request $request)
     {
-        $validator = Validator::make($request->all(),[
-            'fname'=>'required |string|max:70',
+        $validator = $request->validate([
+            'fname'=>'required',
             'email' => 'required|email|max:255',
+            'contact_no' => 'required',
             // 'phone' => 'nullable|regex:^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$^',
-            'company' => 'required',
+            'company_name' => 'required',
             'city' => 'required',
             'state' => 'required',
-            'zipcode' => 'required',
-            'zipcode' => 'required|regex:/\b\d{5}\b/',
-            'country' => 'regex:/^\+\d{1,3}$/',
+            'zip_code' => 'required|regex:/\b\d{6}\b/',
+            'country' => 'required|not_in:0',
             'pay_method' => 'required',
         ]);
+
+        // dd($request->all());
             
         
             if($request->pay_method === 'wiretransfer'){
                 
                 $transactions = new Transaction;
-                $transactions->name = $request->input('name');
+                $transactions->fname = $request->input('fname');
                 $transactions->email = $request->input('email');
                 $transactions->contact_no = $request->input('contact_no');
                 $transactions->company_name = $request->input('company_name');

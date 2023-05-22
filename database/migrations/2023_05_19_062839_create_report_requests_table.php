@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTransactionsTable extends Migration
+class CreateReportRequestsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,22 +13,18 @@ class CreateTransactionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('transactions', function (Blueprint $table) {
-            $table->id()->autoIncrement(1);
+        Schema::create('report_requests', function (Blueprint $table) {
+            $table->id();
             $table->integer('report_id');
-            $table->string('fname',60);
-            $table->string('email',200);
+            $table->string('name',60);
+            $table->string('email',60);
             $table->string('contact_no',20)->nullable();
             $table->string('company_name',60);
-            $table->string('city',50);
-            $table->string('state',50);
-            
-            $table->string('zip_code',10);
+            $table->string('designation',50);
             $table->string('country',20);
-            $table->string('pay_method',20);
-            $table->string('status',20);
+            $table->string('research_rqrmnt',20);
+            $table->string('subject');
             $table->timestamp('delete_at')->default(DB::raw('CURRENT_TIMESTAMP'));
-            $table->string('user_type',20);
             $table->timestamps();
         });
     }
@@ -40,6 +36,7 @@ class CreateTransactionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('transactions');
+        Schema::dropIfExists('report_requests');
     }
 }
+

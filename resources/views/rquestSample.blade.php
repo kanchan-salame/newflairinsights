@@ -129,7 +129,7 @@
                 <div class="row">
                 <div class="col-md-8">
                 <h2>Express Your Interest</h2>
-                    <form action="forms/contact.php" method="post" role="form" class="php-email-form mt-5">
+                    <form action="{{route('ReportRequest.store')}}" class=" mt-5" method="">
                         <div class="form-group">
                             <div class="row">
                                 <div class="col-3">
@@ -798,4 +798,9 @@
             </div>
         </section>
     </main><!-- End #main -->
+    <form action="">
+        <button type="submit">submit</button>
+    </form>
 @endsection
+
+

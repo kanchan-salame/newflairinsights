@@ -45,9 +45,10 @@
                                 <label class="form-label">Full Name:<span class="text-danger">*</span></label>
                             </div>
                             <div class="col">
-                                <input type="text" name="name" class="form-control">
+                                <input type="text" name="fname" class="form-control" value="{{ old('fname') }}">
+                                <span style="color:red">@error('fname'){{$message}}@enderror</span>
                             </div>
-                            <span style="color:red">@error('fname'){{$message}}@enderror</span>
+                            
                         </div>
                     </div>
                     <div class="mb-3">
@@ -56,11 +57,12 @@
                                 <label class="form-label">Email:<span class="text-danger">*</span></label>
                             </div>
                             <div class="col">
-                                <input type="text" name="email" class="form-control">
+                                <input type="text" name="email" class="form-control" value="{{ old('email') }}">
+                                <span style="color:red">@error('email'){{$message}}@enderror</span>
                             </div>
                         </div>
                     </div>
-                    <span style="color:red">@error('email'){{$message}}@enderror</span>
+                    
                     <div class="mb-3">
                         <div class="row">
                             <div class="col-3">
@@ -68,13 +70,14 @@
                             </div>
                             <div class="col">
                                 <div class="form-control">
-                                    <input class=" border-0" name="contact_no" id="phone" style="outline:none" type="tel">
+                                    <input class=" border-0" name="contact_no" id="phone" style="outline:none" type="tel" value="{{ old('contact_no') }}">
                                     <span id="valid-msg" class="hide"></span>
                                     <span id="error-msg" class="hide"></span>
+                                    <span style="color:red">@error('contact_no'){{$message}}@enderror</span>
                                 </div>
                             </div>
                         </div>
-                    <span style="color:red">@error('phone'){{$message}}@enderror</span>
+                    
                     </div>
                     <div class="mb-3">
                         <div class="row">
@@ -82,10 +85,11 @@
                                 <label class="form-label">Company:<span class="text-danger">*</span></label>
                             </div>
                             <div class="col">
-                                <input type="text" name="company_name" class="form-control">
+                                <input type="text" name="company_name" class="form-control" value="{{ old('company_name') }}" >
+                                <span style="color:red">@error('company_name'){{$message}}@enderror</span>
                             </div>
                         </div>
-                        <span style="color:red">@error('company'){{$message}}@enderror</span>
+                        
                     </div>
                     <div class="mb-3">
                         <div class="row">
@@ -93,10 +97,11 @@
                                 <label class="form-label">City:<span class="text-danger">*</span></label>
                             </div>
                             <div class="col">
-                                <input type="text" name="city" class="form-control">
+                                <input type="text" name="city" class="form-control" value="{{ old('city') }}">
+                                <span style="color:red">@error('city'){{$message}}@enderror</span>
                             </div>
                         </div>
-                        <span style="color:red">@error('city'){{$message}}@enderror</span>
+                        
                     </div>
                     <div class="mb-3">
                         <div class="row">
@@ -104,10 +109,11 @@
                                 <label class="form-label">State:<span class="text-danger">*</span></label>
                             </div>
                             <div class="col">
-                                <input type="text" name="state" class="form-control">
+                                <input type="text" name="state" class="form-control" value="{{ old('state') }}">
+                                <span style="color:red">@error('state'){{$message}}@enderror</span>
                             </div>
                         </div>
-                        <span style="color:red">@error('state'){{$message}}@enderror</span>
+                        
                     </div>
                     <div class="mb-3">
                         <div class="row">
@@ -115,10 +121,11 @@
                                 <label class="form-label">Zip Code:<span class="text-danger">*</span></label>
                             </div>
                             <div class="col">
-                                <input type="text" name="zip_code" class="form-control">
+                                <input type="text" name="zip_code" class="form-control" value="{{ old('zip_code') }}">
+                                <span style="color:red">@error('zip_code'){{$message}}@enderror</span>
                             </div>
                         </div>
-                        <span style="color:red">@error('zipcode'){{$message}}@enderror</span>
+                        
                     </div>
                     <div class="mb-3 d-none">
                         <div class="row">
@@ -126,7 +133,7 @@
                                 <label class="form-label">User Type:<span class="text-danger">*</span></label>
                             </div>
                             <div class="col">
-                                <input type="text" value='{{$user_type}}' name="user_type" class="form-control">
+                                <input type="text" value='{{$user_type}}' name="user_type" class="form-control" value="{{ old('user_type') }}">
                             </div>
                         </div>
                     </div>
@@ -136,7 +143,7 @@
                                 <label class="form-label">ID:<span class="text-danger">*</span></label>
                             </div>
                             <div class="col">
-                                <input type="number" value='{{$report->id}}' name="report_id" class="form-control">
+                                <input type="number" value='{{$report->id}}' name="report_id" class="form-control" value="{{ old('report_id') }}">
                             </div>
                         </div>
                     </div>
@@ -146,10 +153,10 @@
                                 <label class="form-label">Country:<span class="text-danger">*</span></label>
                             </div>
                             <div class="col">
-                                <select class="countrySelect form-control form-control" id="country" name="country"
+                                <select value="{{ old('country') }}" class="countrySelect form-control form-control" id="country" name="country"
                                     title="Country">
                                     <option value="0" class="text-secondary">Select</option>
-                                    <option value="af" data-country-name="Afghanistan " data-dial-code="93">
+                                    <option value="af" @if(old('country') == 'af') selected @endif data-country-name="Afghanistan " data-dial-code="93">
                                         Afghanistan
                                     </option>
                                     <option value="al" data-country-name="Albania " data-dial-code="355">Albania
@@ -631,9 +638,10 @@
                                     <option value="ax" data-country-name="Åland Islands" data-dial-code="358">Åland
                                         Islands</option>
                                 </select>
+                                <span style="color:red">@error('country'){{$message}}@enderror</span>
                             </div>
                         </div>
-                        <span style="color:red">@error('ountry'){{$message}}@enderror</span>
+                        
                     </div>
                     <h6 class="my-3">Choose a Payment Mode (Online Payment/Credit Card)</h6>
                     <div class="row gx-5 px-3">
@@ -641,7 +649,7 @@
                             <label for="paypal">
                             <img class="" alt="paypal" id="paypal_tnr_img" src="{{route('home')}}/assets/img/Paypal-icon.png">
                             </label>
-                            <input type="radio" id="paypal" name="pay_method" value="paypal" class="form-check-input" hidden>
+                            <input type="radio" value="{{ old('pay_method') }}" id="paypal" name="pay_method" value="paypal" class="form-check-input" hidden>
                         </div>
                         <div class="col mb-3">
                             <label for="wiretransfer">
@@ -649,7 +657,7 @@
                                     src="{{route('home')}}/assets/img/wire-transfer-icon.png">
                             </label>
                             <input type="radio" id="wiretransfer" name="pay_method" value="wiretransfer"
-                                class="form-check-input" hidden>
+                                class="form-check-input" value="{{ old('pay_method') }}" hidden>
                         </div>
                         <span style="color:red">@error('pay_method'){{$message}}@enderror</span>
                     </div>
