@@ -19,7 +19,7 @@
         <form action="{{ route('processTransaction') }}" id="checkout" method="post">
             @csrf
             <div class="row gx-5">
-                <div class="col-md-5 left p-4 rounded me-md-2 border-top border-bottom border-info border-5" style="height:50%;">
+                <div class=" col-12 col-lg-5 left p-4 rounded me-md-2 border-top border-bottom border-info border-5" style="height:50%;">
                     <h5 class="heading p-2 rounded bg-info text-light ">ORDER SUMMERY</h5>
                     <h6 class=" my-3">Title Name</h6>
                     <p class="">{{$report->title}}</p>
@@ -37,7 +37,7 @@
                         @endif
                     </p>
                 </div>
-                <div class="col-md-6 right p-4 ms-md-4 rounded border-top border-info border-5">
+                <div class="col-12 col-lg-5 right p-4 ms-md-4 rounded border-top border-info border-5">
                     <h5 class="p-2 rounded heading text-light bg-info">PERSONAL DETAILS (SECURE WITH US)</h5>
                     <div class="mb-3">
                         <div class="row">

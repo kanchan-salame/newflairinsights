@@ -987,7 +987,7 @@ thead {
                             <div class="sidebar">
                                 <div class="options">
                                     <h6>Pricing & Purchase Option</h6>
-                                    <a href="{{ route('buyNowPage', $report->slug) }}">Proceed to buy</a>
+                                    <a href="{{ route('buyNowPage', $report->slug) }}" class="btn btn-success">Proceed to buy</a>
                                 </div>
                             </div>
                             <br>
