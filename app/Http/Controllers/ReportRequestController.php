@@ -7,7 +7,11 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Storereport_requestRequest;
 use App\Http\Requests\Updatereport_requestRequest;
 use Illuminate\Support\Facades\Mail;
+use App\Models\Report\Report;
+use Illuminate\Http\Request;
+
 use App\Mail\ReportRequestMail;
+use Validator;
 
 class ReportRequestController extends Controller
 {  
@@ -19,7 +23,10 @@ class ReportRequestController extends Controller
      */
     public function index()
     {
-        //
+        $data = Report::find(25)->reportData();
+        dd($data);
+        return response()->json($data);
+        return $data;
     }
 
     /**
@@ -40,11 +47,20 @@ class ReportRequestController extends Controller
      */
     public function store(Storereport_requestRequest $request)
     {
-    //    dd('fjsdjkf');
+        $validator = $request->validate([
+            'fname'=>'required',
+            'email' => 'required|email|max:255',
+            'contact_no' => 'required',
+            'company_name' => 'required',
+            'country' => 'required',
+            'requirements' => 'required',
+            'designation' => 'required',         
+        ]);
         Report_request::create($request->all());
         $contact = Report_request::latest()->first();
         Mail::to($request->email)->send(new ReportRequestMail($contact));
-        return 'Message sent Successfully';
+        dd($request);
+        return redirect()->route('rquestSample', $report->slug)->with('success','Message sent Successfully.');
     }
 
     /**

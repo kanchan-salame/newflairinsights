@@ -10,15 +10,17 @@ use Illuminate\Queue\SerializesModels;
 class ReportRequestMail extends Mailable
 {
     use Queueable, SerializesModels;
+    public $data;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($data)
     {
-        //
+        $this->data = $data;
+        // dd($this->data);
     }
 
     /**
@@ -28,6 +30,16 @@ class ReportRequestMail extends Mailable
      */
     public function build()
     {
-        return $this->view('view.name');
+        return $this->markdown('emails.report_requests')->with('maildata', $this->data);
+    }
+
+    public function content()
+    {
+        return new Content(
+            markdown: 'emails.orders.shipped',
+            with: [
+                'url' => $this->subject,
+            ],
+        );
     }
 }
