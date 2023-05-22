@@ -27,9 +27,4 @@ class report_request extends Model
         'designation',  
         'report_id',  
     ];
-    public function reportRequest(): BelongsTo
-    {
-        return $this->belongsTo('App\Models\Report','report_id');
-    }
-
 }

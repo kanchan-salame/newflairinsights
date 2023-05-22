@@ -373,7 +373,7 @@
                                     <option value="kz" @if(old('country') == 'kz') selected @endif data-country-name="Kazakhstan " data-dial-code="7">Kazakhstan
                                     </option>
                                     <option value="ke" @if(old('country') == 'ke') selected @endif data-country-name="Kenya" data-dial-code="254">Kenya</option>
-                                    <option value="ki" @if(old('country') == ''ki) selected @endif data-country-name="Kiribati" data-dial-code="686">Kiribati
+                                    <option value="ki" @if(old('country') == 'ki') selected @endif data-country-name="Kiribati" data-dial-code="686">Kiribati
                                     </option>
                                     <option value="kw" @if(old('country') == 'kw') selected @endif data-country-name="Kuwait " data-dial-code="965">Kuwait
                                     </option>
