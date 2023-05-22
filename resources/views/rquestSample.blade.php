@@ -129,7 +129,8 @@
                 <div class="row">
                 <div class="col-md-8">
                 <h2>Express Your Interest</h2>
-                    <form action="{{route('ReportRequest.store')}}" class=" mt-5" method="">
+                    <form action="{{route('ReportRequest.store')}}" class=" mt-5" method="post">
+                        @csrf
                         <div class="form-group">
                             <div class="row">
                                 <div class="col-3">

@@ -40,7 +40,7 @@ class ReportRequestController extends Controller
      */
     public function store(Storereport_requestRequest $request)
     {
-       
+    //    dd('fjsdjkf');
         Report_request::create($request->all());
         $contact = Report_request::latest()->first();
         Mail::to($request->email)->send(new ReportRequestMail($contact));

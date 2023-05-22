@@ -131,6 +131,7 @@ thead {
                 <div class="col-md-8">
                     <h4>Discount is available with the report you wish to purchase.</h4>
                     <form action="{{route('ReportRequest.store')}}" method="post" role="form" class=" mt-5">
+                    @csrf
                         <div class="form-group">
                             <div class="row">
                                 <div class="col-3">
