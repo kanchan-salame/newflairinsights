@@ -43,6 +43,132 @@
     animation-duration: 5s;
     animation-delay: 2s;
 }
+
+.roller{
+  height: 4.125rem;
+  line-height: 4rem;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: #1D3557;
+}
+
+
+#spare-time{
+  font-size: 1rem;
+  font-style: italic;
+  /* letter-spacing: 1rem; */
+  margin-top: 0;
+  color: #A8DADC;
+  font-size: 35px;
+font-weight: bold;
+text-transform: uppercase;
+
+}
+
+.roller #rolltext {
+  position: absolute;
+  top: 0;
+  animation: slide 5s infinite;
+  font-size: 50px;
+font-weight: bold;
+text-transform: uppercase;
+}
+
+@keyframes slide {
+  0%{
+    top:0;
+  }
+  25%{
+    top: -4rem;
+  }
+  50%{
+    top: -8rem;
+  }
+  72.5%{
+    top: -12.25rem;
+  }
+}
+
+@media screen and (max-width: 600px){
+  h1{
+  text-align:center;
+  text-transform: uppercase;
+  color: #F1FAEE;
+  font-size: 2.125rem;
+}
+
+  .roller{
+  height: 2.6rem;
+  line-height: 2.125rem;
+  }
+
+  #spare-time {
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+  }
+
+  .roller #rolltext {
+  animation: slide-mob 5s infinite;
+}
+
+  @keyframes slide-mob {
+  0%{
+    top:0;
+  }
+  25%{
+    top: -2.125rem;
+  }
+  50%{
+    top: -4.25rem;
+  }
+  72.5%{
+    top: -6.375rem;
+  }
+}
+}
+
+.word {
+  margin: auto;
+  color: white;
+  font: 700 normal 2.5em 'tahoma';
+  text-shadow: 5px 2px #222324, 2px 4px #222324, 3px 5px #222324;
+  font-size: 50px;
+}
+
+.wrapper {
+  /* height: 100vh; */
+  /*This part is important for centering*/
+  display: grid;
+  place-items: center;
+  font-size: 25px;
+}
+
+.typing-demo {
+  width: 43ch;
+  animation: typing 2s steps(43), blink .5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid;
+  font-family: monospace;
+  font-size: 2em;
+}
+
+@keyframes typing {
+  from {
+    width: 0
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent
+  }
+}
 </style>
 <!-- Carousel wrapper -->
 <div id="introCarousel" class="carousel slide carousel-fade shadow-2-strong" data-mdb-ride="carousel">
@@ -55,19 +181,36 @@
             </video>
             <div class="mask" style="background-color: rgba(0, 0, 20, 0.8)">
                 <div class="d-flex justify-content-center align-items-center h-100">
-                    <div class="herotext text-white text-center mobile-text">
-                        <h1 class="mb-3 animation1 animate__animated animate__zoomIn">WE ARE A <span
+                    <div class="herotext text-white text-center mobile-text" style="width: 100%;">
+                        <div class="wrapper">
+                            <div class="typing-demo">
+                                WE ARE A NEW AGE GROWTH CONSULTING COMPANY.
+                            </div>
+                        </div>
+                        {{-- <h1 class="word"></h1>  --}}
+                        <br><br>
+                        {{-- <h1 class="mb-3 animation1 animate__animated animate__zoomIn">WE ARE A <span
                                 class="text-info animation4 animate__animated animate__bounce"
-                                style="text-shadow: 1px 1px skyblue"> NEW</span> AGE GROWTH</h1>
+                                style="text-shadow: 1px 1px skyblue"> NEW</span> AGE GROWTH</h1> --}}
 
-                        <h1 class="mb-3 mb-3 animation2 animate__animated animate__zoomIn" style="">CONSULTING COMPANY
+                        {{-- <h1 class="mb-3 mb-3 animation2 animate__animated animate__zoomIn" style="">CONSULTING COMPANY
                         </h1>
-                        <hr class="animation3 animate__animated animate__zoomIn">
-                        <marquee class="" scrollamount="10" behavior="scroll">
+                        <hr class="animation3 animate__animated animate__zoomIn"> --}}
+
+
+                        {{-- <marquee class="" scrollamount="10" behavior="scroll">
                             We deep dive - track pulse of the market - and share value to our clients through
                             hyperintelligence solutions and take them ahead on growth curve
-                        </marquee>
+                        </marquee> --}}
+
+                        <div class="roller">
+                            <span id="rolltext">We deep dive<br/>
+                                track pulse of the market<br/>
+                                and share value to our clients through<br/>
+                            <span id="spare-time">hyperintelligence solutions and take them ahead on growth curve</span><br/>
+                            </div>
                     </div>
+
                 </div>
             </div>
         </div>
@@ -323,6 +466,54 @@
     @endsection
 
     @section('script')
+<script>
+    var words = ['WE ARE A NEW AGE GROWTH CONSULTING COMPANY',],
+    part,
+    i = 0,
+    offset = 0,
+    len = words.length,
+    forwards = true,
+    skip_count = 0,
+    skip_delay = 15,
+    speed = 100;
+var wordflick = function () {
+  setInterval(function () {
+    if (forwards) {
+      if (offset >= words[i].length) {
+        ++skip_count;
+        if (skip_count == skip_delay) {
+          forwards = false;
+          skip_count = 0;
+        }
+      }
+    }
+    else {
+      if (offset == 0) {
+        forwards = true;
+        i++;
+        offset = 0;
+        if (i >= len) {
+          i = 0;
+        }
+      }
+    }
+    part = words[i].substr(0, offset);
+    if (skip_count == 0) {
+      if (forwards) {
+        offset++;
+      }
+      else {
+        offset--;
+      }
+    }
+    $('.word').text(part);
+  },speed);
+};
+
+$(document).ready(function () {
+  wordflick();
+});
+</script>
     <script src="{{ route('home') }}/assets/js/testimonial.js"></script>
     <script src="{{ route('home') }}/assets/js/clients.js"></script>
     <script type="text/javascript" src="{{ route('home') }}/assets/js/mdb.min.js"></script>
