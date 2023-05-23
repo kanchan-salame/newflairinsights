@@ -23,10 +23,7 @@ class ReportRequestController extends Controller
      */
     public function index()
     {
-        $data = Report::find(25)->reportData();
-        dd($data);
-        return response()->json($data);
-        return $data;
+        //
     }
 
     /**
@@ -47,6 +44,7 @@ class ReportRequestController extends Controller
      */
     public function store(Storereport_requestRequest $request)
     {
+        // dd($request->subject);
         $validator = $request->validate([
             'fname'=>'required',
             'email' => 'required|email|max:255',
@@ -57,10 +55,12 @@ class ReportRequestController extends Controller
             'designation' => 'required',         
         ]);
         Report_request::create($request->all());
-        $contact = Report_request::latest()->first();
-        Mail::to($request->email)->send(new ReportRequestMail($contact));
-        dd($request);
-        return redirect()->route('rquestSample', $report->slug)->with('success','Message sent Successfully.');
+        $reportRequest = Report_request::latest()->first();
+        // dd($reportRequest->report);
+        Mail::to($request->email)->send(new ReportRequestMail($reportRequest));
+        $redirectRoute = $request->subject == "Asking for Discount" ? 'askForDiscount' : 'rquestSample';
+        // dd($request);
+        return redirect()->route($redirectRoute, $reportRequest->report->slug)->with('success','Message sent Successfully.');
     }
 
     /**

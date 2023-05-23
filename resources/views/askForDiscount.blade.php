@@ -114,7 +114,7 @@ thead {
                     <a href="{{ route('askForDiscount', $report->slug) }}" class="btn-get-started scrollto mr-2 ml-2">
                         <i class="fas fa-eye"></i> Ask for Discount
                     </a>
-                    <a href="{{ route('home') }}" class="btn-get-started scrollto">
+                    <a href="{{ route('rquestSample', $report->slug) }}" class="btn-get-started scrollto">
                         <i class="fas fa-download"></i> Download Free Sample Report
                     </a>
                 </div>
@@ -728,6 +728,12 @@ thead {
                                 </div>
                             </div>
                         </div>
+                        @if ($message = Session::get('success'))
+                        <div class="alert alert-success alert-block">
+                            <button type="button" class="close" data-dismiss="alert">×</button>
+                            <strong>{{ $message }}</strong>
+                        </div>
+                        @endif
                         <div class="d-grid gap-2 col-4 mx-auto">
                             <button type="submit" class="btn btn-primary">Send Message</button>
                         </div>

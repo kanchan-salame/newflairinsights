@@ -22,11 +22,11 @@ class Report extends Model
     }
 
     
-    public function reportData(): HasOne
-    {
-        // return $this->hasOne(Report_request::class, );
-        return $this->hasOne('App\Models\Report_request','foreign_key');
-    }
+    // public function reportData(): HasOne
+    // {
+    //     // return $this->hasOne(Report_request::class, );
+    //     return $this->hasOne('App\Models\Report_request','foreign_key');
+    // }
     
    
 

@@ -8,7 +8,7 @@
 <p>+91-89561 90780</p><br />
 <div >
     <p>Thank You !</b>
-    <p>Someone Send You Enquiry For {{ $maildata->report_id}}</p>
+    <p>Someone Send You Enquiry For <b>{{ $maildata->report->title}}</b></p>
     <P>Full Name : {{ $maildata->fname }},</P>
     <P>Email : <a href="mailto:sales@flairinsights.com?Subject=Flair%20Insight%20Enquiry" target="_top" style=" color:#1a1aff;">{{ $maildata->email }}</a>,</P>
     <P>Phone : {{ $maildata->contact_no}},</P>

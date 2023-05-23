@@ -150,7 +150,7 @@ thead {
                                 </div>
                                 <div class="col">
                                     <input type="text" class="form-control" id="subject" name="subject"
-                                        value="Asking for Discount">
+                                        value="Request Sample Report">
                                 </div>
                             </div>
                         </div>
