@@ -24,22 +24,29 @@
             display: none;
         }
 
-        #accordion-style-1 .card-header .btn .fa.main {
-            background: #172D55;
-            padding: 13px 11px;
-            color: #ffffff;
-            width: 35px;
-            height: 41px;
-            position: absolute;
-            left: -1px;
-            top: 10px;
-            border-top-right-radius: 7px;
-            border-bottom-right-radius: 7px;
-            display: block;
-        }
-    </style>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+#accordion-style-1 .card-header .btn .fa.main {
+    background: #172D55;
+    padding: 13px 11px;
+    color: #ffffff;
+    width: 35px;
+    height: 41px;
+    position: absolute;
+    left: -1px;
+    top: 10px;
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+    display: block;
+}
+.testbtn {
+    top: -21px !important;
+    position: absolute !important;
+    padding-right: 35px !important;
+    padding-top: 15px !important;
+    padding-bottom:22px !important;
+}
+</style>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
@@ -180,13 +187,20 @@
             color: #0869B1;
         }
 
-        thead {
-            background: #0869B1;
-            color: #fff;
-        }
-    </style>
-    <!-- ======= Hero Section ======= -->
-    <section id="hero" class="align-items-center">
+thead {
+    background: #0869B1;
+    color: #fff;
+}
+
+/* alert close button */
+/* .alert-dismissible .btn-close {
+    top: -20px;
+    padding: 0;
+} */
+
+</style>
+<!-- ======= Hero Section ======= -->
+<section id="hero" class="align-items-center">
 
 
         <div class="container">
@@ -751,57 +765,62 @@
                                             </div>
                                         </div>
 
-                                        <div class="row">
-                                            <div class="col-md-3">
-                                                <span class="icon-style">
-                                                    <i class="fas fa-phone-alt"></i>
-                                                </span>
-                                            </div>
-                                            <div class="col-md-9">
-                                                <h5>24/5 Research Support </h5>
-                                                <p>Get Your Queries Resolved From An Industry Expert.</p>
-                                            </div>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <span class="icon-style">
+                                                <i class="fas fa-phone-alt"></i>
+                                            </span>
+                                        </div>
+                                        <div class="col-md-9">
+                                            <h5>24/5 Research Support </h5>
+                                            <p>Get Your Queries Resolved From An Industry Expert.</p>
                                         </div>
                                     </div>
                                 </div>
-                                <br>
-                                <div class="side-contact-us">
-                                    <div class="options">
-                                        <h6>Contact Us</h6>
-                                        <div class="row">
-                                            <form action="" method="post">
-
-                                                <div class="form-group">
-                                                    <div class="col-sm-12">
-                                                        <input type="text" class="form-control" id="fname"
-                                                            placeholder="Full Name" name="fname">
-                                                    </div>
+                            </div>
+                            <br>
+                            <div class=" contact side-contact-us" id="contact">
+                                <div class="options">
+                                    <h6>Contact Us</h6>
+                                    <div class="row">
+                                        <form action="{{ route('contact.store') }}" method="post" role="form"
+                                            class="php-email-form">
+                                            @csrf
+                                            <div class="form-group">
+                                                <div class="col-sm-12">
+                                                    <input type="name" class="form-control" name="name"
+                                                        class="form-control" id="name" required placeholder="Full Name">
                                                 </div>
-                                                <div class="form-group">
-                                                    <div class="col-sm-12">
-                                                        <input type="email" class="form-control" id="email"
-                                                            placeholder="Business Email" name="email">
-                                                    </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="col-sm-12">
+                                                    <input type="text" type="email" class="form-control" name="email"
+                                                        id="email" required placeholder="Business Email">
                                                 </div>
-                                                <div class="form-group">
-                                                    <div class="col-sm-12">
-                                                        <select class="form-control" id="country" name="country">
-                                                            <option value="1">Country 1</option>
-                                                            <option value="2">Country 2</option>
-                                                            <option value="3">Country 3</option>
-                                                        </select>
-                                                    </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="col-sm-12">
+                                                    <textarea class="form-control" placeholder="Write subject..."
+                                                        type="text" name="subject" id="subject" required></textarea>
                                                 </div>
-                                                <div class="form-group">
-                                                    <div class="col-sm-12">
-                                                        <input type="text" class="form-control" id="contact_no"
-                                                            placeholder="Contact Number" name="contact_no">
-                                                    </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="col-sm-12">
+                                                    <textarea class="form-control" placeholder="Write a Massage..."
+                                                        name="message" rows="4" required></textarea>
                                                 </div>
-                                                <div class="form-group">
-                                                    <div class="col-sm-12">
-                                                        <input type="text" class="form-control" id="job_title"
-                                                            placeholder="Job Title" name="job_title">
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="col-sm-12">
+                                                    <div class="loading">Loading</div>
+                                                    <!-- <div id="error-message"
+                                                        class="error-message w-50 alert alert-danger alert-dismissible fade show"
+                                                        style="background-color:green">
+                                                    </div> -->
+                                                    <div id="error-message" class=" error-message alert alert-danger alert-dismissible fade show" style="background-color:green; align-content: center;
+    width: 100%;">
+                                                        <button style="font-size:10px" type="button" class="close test"
+                                                            data-dismiss="alert">×</button>
                                                     </div>
                                                 </div>
                                                 <div class="form-group">

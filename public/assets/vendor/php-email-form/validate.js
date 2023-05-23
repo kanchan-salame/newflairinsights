@@ -78,11 +78,11 @@
     if(error == 'Error: Message sent Successfully')
     { 
       let part = String(error).slice(6,35);
-      thisForm.querySelector('.error-message').innerHTML = part + '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>';
+      thisForm.querySelector('.error-message').innerHTML = part + '<button type="button" class="btn-close testbtn" data-bs-dismiss="alert" aria-label="Close"></button>';
       thisForm.querySelector('.error-message').classList.add('d-block');
       
     }else{
-      thisForm.querySelector('.error-message').innerHTML = error + '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>';
+      thisForm.querySelector('.error-message').innerHTML = error + '<button type="button" class="btn-close testbtn" data-bs-dismiss="alert" aria-label="Close"></button>';
       $('#error-message').css("background-color","red");
       thisForm.querySelector('.error-message').classList.add('d-block');
     }
