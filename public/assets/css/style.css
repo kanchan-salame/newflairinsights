@@ -554,10 +554,10 @@ section {
     font-size: 32px;
     font-weight: bold;
     text-transform: uppercase;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
     padding-bottom: 20px;
     position: relative;
-    color: #37517e;
+    color: #ffffff;
 }
 
 .section-title h2::before {
