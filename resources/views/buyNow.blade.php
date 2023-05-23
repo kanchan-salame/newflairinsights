@@ -627,7 +627,7 @@
                                 <div class="sidebar">
                                     <div class="options">
                                         <h6>Pricing & Purchase Option</h6>
-                                        <button class="btn btn-success">Proceed to buy</button>
+                                        <a href="{{ route('buyNowPage', $report->slug) }}" class="btn btn-success">Proceed to buy</a>
                                     </div>
                                 </div>
                                 <br>

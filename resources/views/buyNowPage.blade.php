@@ -204,7 +204,7 @@
                         <a href="{{ route('askForDiscount', $report->slug) }}" class="btn-get-started scrollto mr-2 ml-2">
                             <i class="fas fa-eye"></i> Ask for Discount
                         </a>
-                        <a href="{{ route('home') }}" class="btn-get-started scrollto">
+                        <a href="{{ route('rquestSample', $report->slug) }}" class="btn-get-started scrollto">
                             <i class="fas fa-download"></i> Download Free Sample Report
                         </a>
                     </div>

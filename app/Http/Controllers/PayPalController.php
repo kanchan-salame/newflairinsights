@@ -38,7 +38,6 @@ class PayPalController extends Controller
             'fname'=>'required',
             'email' => 'required|email|max:255',
             'contact_no' => 'required',
-            // 'phone' => 'nullable|regex:^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$^',
             'company_name' => 'required',
             'city' => 'required',
             'state' => 'required',

@@ -7,7 +7,11 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Storereport_requestRequest;
 use App\Http\Requests\Updatereport_requestRequest;
 use Illuminate\Support\Facades\Mail;
+use App\Models\Report\Report;
+use Illuminate\Http\Request;
+
 use App\Mail\ReportRequestMail;
+use Validator;
 
 class ReportRequestController extends Controller
 {  
@@ -40,11 +44,23 @@ class ReportRequestController extends Controller
      */
     public function store(Storereport_requestRequest $request)
     {
-       
+        // dd($request->subject);
+        $validator = $request->validate([
+            'fname'=>'required',
+            'email' => 'required|email|max:255',
+            'contact_no' => 'required',
+            'company_name' => 'required',
+            'country' => 'required',
+            'requirements' => 'required',
+            'designation' => 'required',         
+        ]);
         Report_request::create($request->all());
-        $contact = Report_request::latest()->first();
-        Mail::to($request->email)->send(new ReportRequestMail($contact));
-        return 'Message sent Successfully';
+        $reportRequest = Report_request::latest()->first();
+        // dd($reportRequest->report);
+        Mail::to($request->email)->send(new ReportRequestMail($reportRequest));
+        $redirectRoute = $request->subject == "Asking for Discount" ? 'askForDiscount' : 'rquestSample';
+        // dd($request);
+        return redirect()->route($redirectRoute, $reportRequest->report->slug)->with('success','Message sent Successfully.');
     }
 
     /**
