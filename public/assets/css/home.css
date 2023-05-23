@@ -74,10 +74,9 @@
 }
 
 #main .main-top p{
-    font-size: 20px;
+    font-size: 18px;
     color: rgb(80, 80, 80);
 }
-
 
 .section-heading,
 .section-heading h2 {
@@ -98,7 +97,7 @@
 .discover-flair,
 .strategic-growth {
     /* background-image: linear-gradient(45deg, #41B5EC 0%, #41B5EC 100%); */
-    background-color:#41B5EC;
+    background-color:#72d2ff;
     /* border-radius: 20px; */
     padding: 10px;
     overflow: hidden;
@@ -135,7 +134,7 @@
 .the-goal-is p,
 .discover-flair p,
 .strategic-growth p  {
-    font-size: 24px;
+    font-size: 18px;
     text-align: justify;
     color: #000;
     font-weight: 500;

@@ -264,14 +264,14 @@
         </div>
     </div>
     <main id="main">
-        <div class="main-top pt-5">
+        <div class="main-top pt-4">
             <section class="we-are-market">
                 <div class="container" data-aos="fade-up">
                     <div class="row content">
                         <div class="col-lg-6 section-img ">
                             <img src="{{ route('home') . '/assets/img/img1.png' }}" alt="" class="mb-2 mt-2">
                         </div>
-                        <div class="col-lg-6 pt-1 ">
+                        <div class="col-lg-6 mb-2">
                             <div class="section-text bg-light p-3 my-4">
                             <div class="section-heading ">
                                 <h2>WE ARE A MARKET RESEARCH EXPERT</h2>
@@ -297,7 +297,7 @@
                 <div class="container" data-aos="fade-up">
                     <div class="row content">
                         <div class="col-lg-6 pt-5 ">
-                        <div class="section-text bg-light p-3 my-5">
+                        <div class="section-text bg-light p-3 mt-5 mb-4">
                             <div class="section-heading pt-2">
                                 <h2>THE GOAL IS TO HELP COMPANIES & CREATE THEIR SUSTAINABLE GROWTH STORIES</h2>
                             </div>
@@ -320,11 +320,11 @@
             <section class="to-assist-clients">
                 <div class="container" data-aos="fade-up">
                     <div class="row content">
-                        <div class="col-lg-6">
+                        <div class="col-lg-6 pt-1">
                             <img src="{{ route('home') . '/assets/img/img3.png' }}" alt="" style="width: 100%;">
                         </div>
                         <div class="col-lg-6">
-                        <div class="section-text bg-light p-3 mt-5 my-4">
+                        <div class="section-text bg-light px-4">
                             <div class="section-heading pt-2">
                                 <h2>TO ASSIST OUR CLIENTS ON STRATEGIC INTELLIGENCE IS AT THE CORE OF WHAT WE DO</h2>
                             </div>
@@ -364,7 +364,7 @@
             </section>
         </div>
 
-        <section class="discover-flair">
+        <section class="discover-flair py-4">
             <div class="container" data-aos="fade-up">
                 <div class="row content">
                     <div class="col-lg-12 text-center">
@@ -383,8 +383,8 @@
             </div>
         </section>
 
-        <section class="strategic-growth">
-            <div class="container" data-aos="fade-up">
+        <section class="strategic-growth py-4">
+            <div class="container pb-4" data-aos="fade-up">
                 <div class="row content">
                     <div class="col-lg-12 text-center">
                         <div class="section-title pt-4">
@@ -408,7 +408,7 @@
         </section>
 
         <!-- ======= Clients Section ======= -->
-        <div class="container-fluid my-5" style="background-color:#01123d">
+        <div class="container-fluid py-3" style="background-color:#172D55">
             <div class="container py-5">
 
                 <section class="customer-logos slider py-3">
