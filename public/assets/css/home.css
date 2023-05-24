@@ -69,6 +69,11 @@
     top:130px;
 }
 
+@media (max-width: 926px) {
+#main .section-img{
+    position:static;
+}
+}
 #main .section-text{
     border:#D97E32 5px solid;
 }

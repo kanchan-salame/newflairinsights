@@ -798,9 +798,7 @@
             </div>
         </section>
     </main><!-- End #main -->
-    <form action="">
-        <button type="submit">submit</button>
-    </form>
+  
 @endsection
 
 

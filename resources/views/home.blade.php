@@ -34,13 +34,6 @@
             style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
-
-
-
-
-
-
-
     <!-- *************Home styles and scripts Page Links************ -->
     <link rel="stylesheet" href="{{ route('home') }}/assets/css/testimonial.css" />
     <link rel="stylesheet" href="{{ route('home') }}/assets/css/home.css" />
@@ -94,7 +87,7 @@
         justify-content: center;
         align-items: center;
 
-        color: #1D3557;
+        color: #0D6EFD;
     }
 
 
@@ -195,13 +188,46 @@
     }
 
     .typing-demo {
-        width: 43ch;
+        width: 44ch;
         animation: typing 2s steps(43), blink .5s step-end infinite alternate;
         white-space: nowrap;
         overflow: hidden;
         border-right: 3px solid;
         font-family: monospace;
         font-size: 2em;
+    }
+
+
+    @media screen and (max-width: 1000px) {
+        .typing-demo {
+            font-size: 25px !important;
+        }
+
+        .roller #rolltext {
+            font-size: 35px;
+        }
+
+        #spare-time {
+            font-size: 22px;
+        }
+    }
+
+    @media screen and (max-width: 1100px) {
+ 
+        .roller #rolltext {
+            font-size: 25px;
+        }
+    }
+
+
+    @media screen and (max-width: 700px) {
+        .typing-demo {
+            font-size: 14px !important;
+        }
+
+        .roller #rolltext {
+            font-size: 20px;
+        }
     }
 
     @keyframes typing {
@@ -273,22 +299,24 @@
                         </div>
                         <div class="col-lg-6 mb-2">
                             <div class="section-text bg-light p-3 my-4">
-                            <div class="section-heading ">
-                                <h2>WE ARE A MARKET RESEARCH EXPERT</h2>
+                                <div class="section-heading ">
+                                    <h2>WE ARE A MARKET RESEARCH EXPERT</h2>
+                                </div>
+                                <p class="text-justify ">
+                                    With our years of expertise in market research we help businesses to identify,
+                                    acquire,
+                                    engage,
+                                    and understand reliable market insights. Our actionable research insights allows
+                                    companies
+                                    to
+                                    uncover new age business complexities and gain competitive advantage. Therefore,
+                                    through
+                                    our
+                                    research and consulting expertise we assist wide range of companies in their growth
+                                    journey.
+                                </p>
                             </div>
-                            <p class="text-justify ">
-                                With our years of expertise in market research we help businesses to identify, acquire,
-                                engage,
-                                and understand reliable market insights. Our actionable research insights allows
-                                companies
-                                to
-                                uncover new age business complexities and gain competitive advantage. Therefore, through
-                                our
-                                research and consulting expertise we assist wide range of companies in their growth
-                                journey.
-                            </p>
                         </div>
-                            </div>
                     </div>
                 </div>
             </section>
@@ -297,19 +325,20 @@
                 <div class="container" data-aos="fade-up">
                     <div class="row content">
                         <div class="col-lg-6 pt-5 ">
-                        <div class="section-text bg-light p-3 mt-5 mb-4">
-                            <div class="section-heading pt-2">
-                                <h2>THE GOAL IS TO HELP COMPANIES & CREATE THEIR SUSTAINABLE GROWTH STORIES</h2>
+                            <div class="section-text bg-light p-3 mt-5 mb-4">
+                                <div class="section-heading pt-2">
+                                    <h2>THE GOAL IS TO HELP COMPANIES & CREATE THEIR SUSTAINABLE GROWTH STORIES</h2>
+                                </div>
+                                <p class="text-justify">
+                                    With our years of expertise in market research we help businesses to identify,
+                                    acquire,
+                                    engage,
+                                    and understand reliable market insights. Our actionable research insights allows
+                                    companies
+                                    to
+                                    uncover new age business complexities and gain competitive advantage.
+                                </p>
                             </div>
-                            <p class="text-justify">
-                                With our years of expertise in market research we help businesses to identify, acquire,
-                                engage,
-                                and understand reliable market insights. Our actionable research insights allows
-                                companies
-                                to
-                                uncover new age business complexities and gain competitive advantage.
-                            </p>
-                        </div>
                         </div>
                         <div class="col-lg-6">
                             <img src="{{ route('home') . '/assets/img/img2.png' }}" alt="">
@@ -319,30 +348,32 @@
             </section>
             <section class="to-assist-clients">
                 <div class="container" data-aos="fade-up">
-                    <div class="row content">
-                        <div class="col-lg-6 pt-1">
+                    <div class="row content mt-5 mt-lg-0">
+                        <div class="col-lg-6 pt-1 mt-5 mt-lg-0">
                             <img src="{{ route('home') . '/assets/img/img3.png' }}" alt="" style="width: 100%;">
                         </div>
                         <div class="col-lg-6">
-                        <div class="section-text bg-light px-4">
-                            <div class="section-heading pt-2">
-                                <h2>TO ASSIST OUR CLIENTS ON STRATEGIC INTELLIGENCE IS AT THE CORE OF WHAT WE DO</h2>
-                            </div>
-                            <p class="text-justify">
-                                Our unconventional research approaches starts by seeing your world through the
-                                analytical
-                                lenses
-                                of leading-edge commerce and innovation, with the sharpest view of technology and its
-                                impact
-                                on
-                                businesses. We facilitate best-fit solutions to companies and keep them ahead on the
-                                technology
-                                curve, propel their growth, identify new opportunities, markets and business models,
-                                answer
-                                their unknowns; and create your Growth Story
-                            </p>
+                            <div class="section-text bg-light px-4 mt-4 mt-lg-0">
+                                <div class="section-heading pt-2">
+                                    <h2>TO ASSIST OUR CLIENTS ON STRATEGIC INTELLIGENCE IS AT THE CORE OF WHAT WE DO
+                                    </h2>
+                                </div>
+                                <p class="text-justify">
+                                    Our unconventional research approaches starts by seeing your world through the
+                                    analytical
+                                    lenses
+                                    of leading-edge commerce and innovation, with the sharpest view of technology and
+                                    its
+                                    impact
+                                    on
+                                    businesses. We facilitate best-fit solutions to companies and keep them ahead on the
+                                    technology
+                                    curve, propel their growth, identify new opportunities, markets and business models,
+                                    answer
+                                    their unknowns; and create your Growth Story
+                                </p>
 
-                        </div>
+                            </div>
                         </div>
 
                         <div class="col-md-6">
