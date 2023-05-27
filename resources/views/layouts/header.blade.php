@@ -12,7 +12,7 @@
 
     <!-- jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    
+
 
     <!-- Favicons -->
     <link href="{{ route('home') }}/assets/img/favicon.ico" rel="icon">
@@ -52,13 +52,13 @@
                                 class="bi bi-chevron-down"></i></a>
                         <div class="dropdown-width">
                             <ul class="row">
-                                @foreach ($categories as $category)
+                                {{-- @foreach ($categories as $category)
                                 <li class="col-md-4 mt-2 mb-2 d-flex">
                                     <a href="{{ route('reports', $category->slug) }}"><i
                                             class="fas {{ $category->category_icon }} cat-icon"></i>
                                         {{ $category->name }}</a>
                                 </li>
-                                @endforeach
+                                @endforeach --}}
                             </ul>
                         </div>
                     </li>
