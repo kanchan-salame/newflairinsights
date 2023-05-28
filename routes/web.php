@@ -61,3 +61,4 @@ Route::post('imports', [App\Http\Controllers\Report\ReportController::class, 'im
 
 Route::get('/checkout',[App\Http\Controllers\Home\HomeController::class, 'checkout'])->name('checkout');
 Route::get('/wireTransferThanks',[App\Http\Controllers\Home\HomeController::class, 'wireTransferThanks'])->name('wireTransferThanks');
+Route::get('/test',[App\Http\Controllers\ReportRequestController::class, 'index'])->name('test');

@@ -12,15 +12,15 @@ use Illuminate\Mail\Mailables\Content;
 class TransactionMail extends Mailable
 {
     use Queueable, SerializesModels;
-
+    public $data;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($data)
     {
-        //
+        $this->data = $data;
     }
 
     /**
@@ -30,7 +30,7 @@ class TransactionMail extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.contact');
+        return $this->markdown('emails.transactions')->with('maildata', $this->data);
     }
 
     public function content()

@@ -18,7 +18,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $categories = Category::all();
+        $categories = '';
+        // Category::all();
         return view('home', compact('categories'));
     }
 
@@ -188,19 +189,19 @@ class HomeController extends Controller
     }
 
     public function checkout()
-    {    
+    {
         $categories = Category::all();
         return view('checkout', compact('categories'));
     }
 
     public function wireTransferThanks()
-    {    
+    {
         $categories = Category::all();
         return view('wireTransferThanks', compact('categories'));
     }
 
     public function thanks()
-    {    
+    {
         $categories = Category::all();
         return view('thanks', compact('categories'));
     }

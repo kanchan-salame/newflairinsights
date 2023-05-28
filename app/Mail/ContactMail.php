@@ -11,15 +11,15 @@ use Illuminate\Mail\Mailables\Content;
 class ContactMail extends Mailable
 {
     use Queueable, SerializesModels;
-
+    public $data;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($data)
     {
-        //
+        $this->data = $data;
     }
 
     /**
@@ -29,7 +29,7 @@ class ContactMail extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.contact');
+        return $this->markdown('emails.contact')->with('maildata', $this->data);
     }
 
     /**
