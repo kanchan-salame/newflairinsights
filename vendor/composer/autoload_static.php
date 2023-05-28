@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit5b8320dfb9cb6484e4798631d636a813
+class ComposerStaticInit9bc2c3f972e9d77830c1588755a52545
 {
     public static $files = array (
         'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
@@ -4552,6 +4552,7 @@ class ComposerStaticInit5b8320dfb9cb6484e4798631d636a813
         'Psy\\Sudo' => __DIR__ . '/..' . '/psy/psysh/src/Sudo.php',
         'Psy\\Sudo\\SudoVisitor' => __DIR__ . '/..' . '/psy/psysh/src/Sudo/SudoVisitor.php',
         'Psy\\SuperglobalsEnv' => __DIR__ . '/..' . '/psy/psysh/src/SuperglobalsEnv.php',
+        'Psy\\SystemEnv' => __DIR__ . '/..' . '/psy/psysh/src/SystemEnv.php',
         'Psy\\TabCompletion\\AutoCompleter' => __DIR__ . '/..' . '/psy/psysh/src/TabCompletion/AutoCompleter.php',
         'Psy\\TabCompletion\\Matcher\\AbstractContextAwareMatcher' => __DIR__ . '/..' . '/psy/psysh/src/TabCompletion/Matcher/AbstractContextAwareMatcher.php',
         'Psy\\TabCompletion\\Matcher\\AbstractDefaultParametersMatcher' => __DIR__ . '/..' . '/psy/psysh/src/TabCompletion/Matcher/AbstractDefaultParametersMatcher.php',
@@ -5815,10 +5816,10 @@ class ComposerStaticInit5b8320dfb9cb6484e4798631d636a813
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit5b8320dfb9cb6484e4798631d636a813::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit5b8320dfb9cb6484e4798631d636a813::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit5b8320dfb9cb6484e4798631d636a813::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit5b8320dfb9cb6484e4798631d636a813::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit9bc2c3f972e9d77830c1588755a52545::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit9bc2c3f972e9d77830c1588755a52545::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit9bc2c3f972e9d77830c1588755a52545::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit9bc2c3f972e9d77830c1588755a52545::$classMap;
 
         }, null, ClassLoader::class);
     }
