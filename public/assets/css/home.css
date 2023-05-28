@@ -64,6 +64,25 @@
     }
 }
 
+#main .section-img{
+    position:relative;
+    top:130px;
+}
+
+@media (max-width: 926px) {
+#main .section-img{
+    position:static;
+}
+}
+#main .section-text{
+    border:#D97E32 5px solid;
+}
+
+#main .main-top p{
+    font-size: 18px;
+    color: rgb(80, 80, 80);
+}
+
 .section-heading,
 .section-heading h2 {
     font-size: 30px;
@@ -74,17 +93,26 @@
     text-align: center;
 }
 
-.we-are-market,
-.the-goal-is,
-.to-assist-clients,
+#main .main-top{
+    background-image:url('/assets/img/homebg.jpg');
+    background-size: contain;
+    /* background-color:red; */
+} 
+
 .discover-flair,
 .strategic-growth {
-    background-image: linear-gradient(45deg, #f5f5f5 0%, #69cff6 100%);
-    border-radius: 20px;
+    /* background-image: linear-gradient(45deg, #41B5EC 0%, #41B5EC 100%); */
+    background-color:#72d2ff;
+    /* border-radius: 20px; */
     padding: 10px;
     overflow: hidden;
 
 }
+
+.discover-flair{
+    background-color:#D97E32;
+}
+
 
 .we-are-market .container,
 .to-assist-clients .container,
@@ -110,8 +138,8 @@
 .we-are-market p,
 .the-goal-is p,
 .discover-flair p,
-.strategic-growth p {
-    font-size: 24px;
+.strategic-growth p  {
+    font-size: 18px;
     text-align: justify;
     color: #000;
     font-weight: 500;
@@ -124,11 +152,19 @@
     font-weight: 500;
 }
 
-.we-are-market img,
-.the-goal-is img,
+.we-are-market img {
+    width: 100%;
+    border-radius: 20px 80px 20px 20px;
+}
+
+.the-goal-is img{
+    width: 100%;
+    border-radius: 80px 20px 20px 20px;
+}
+
 .to-assist-clients img {
     width: 100%;
-    border-radius: 20px;
+    border-radius: 20px 80px 20px 20px;
 }
 
 ul {

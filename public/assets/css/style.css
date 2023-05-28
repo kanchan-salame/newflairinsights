@@ -65,6 +65,10 @@ h6 {
     animation: animate-preloader 1s linear infinite;
 }
 
+.navbar .dropdown div {
+    left: -200px !important;
+}
+
 @-webkit-keyframes animate-preloader {
     0% {
         transform: rotate(0deg);
@@ -554,10 +558,10 @@ section {
     font-size: 32px;
     font-weight: bold;
     text-transform: uppercase;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
     padding-bottom: 20px;
     position: relative;
-    color: #37517e;
+    color: #ffffff;
 }
 
 .section-title h2::before {
