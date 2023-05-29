@@ -18,8 +18,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $categories = '';
-        // Category::all();
+        $categories = Category::all();
         return view('home', compact('categories'));
     }
 
