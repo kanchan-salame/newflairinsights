@@ -9,48 +9,53 @@ use Illuminate\Support\Facades\Validator;
 use Maatwebsite\Excel\Concerns\ToCollection;
 use Illuminate\Support\Collection;
 
-class ReportImport implements ToCollection, WithHeadingRow
+class ReportImport implements ToModel, WithHeadingRow
 {
     /**
     * @param array $row
     *
     * @return \Illuminate\Database\Eloquent\Model|null
     */
-    public function collection(Collection $rows)
+    public function model(array $rows)
     {
-        Validator::make($rows->toArray(), [
+        // Validator::make($rows->toArray(), [
 
-            '*.title' => 'required',
-            '*.keywords' => 'required',
-            '*.category_id' => 'required',
-            '*.type' => 'required',
-            '*.application' => 'required',
-            '*.keyplayers' => 'required',
-            '*.description_one' => 'required',
-            '*.description_two' => 'required',
-            '*.description_three' => 'required',
-            '*.content' => 'required',
-            '*.slug' => 'required',
+        //     '*.title' => 'required',
+        //     '*.keywords' => 'required',
+        //     '*.category_id' => 'required',
+        //     '*.type' => 'required',
+        //     '*.application' => 'required',
+        //     '*.keyplayers' => 'required',
+        //     '*.description_one' => 'required',
+        //     '*.description_two' => 'required',
+        //     '*.description_three' => 'required',
+        //     '*.content' => 'required',
+        //     '*.slug' => 'required',
 
-        ])->validate();
-       foreach ($rows as $row) {
+        // ])->validate();
+    //    foreach ($rows as $row) {
 
-           Report::create([
+        return new Report([
 
-               'title' => $row['title'],
-               'keywords' => $row['keywords'],
-               'category_id' => $row['category_id'],
-               'type' => $row['type'],
-               'application' => $row['application'],
-               'keyplayers' => $row['keyplayers'],
-               'description_one' => $row['description_one'],
-               'description_two' => $row['description_two'],
-               'description_three' => $row['description_three'],
-               'content' => $row['content'],
-               'slug' => $row['slug'],
+               'title' => $rows['title'],
+               'keywords' => $rows['keywords'],
+               'category_id' => $rows['category_id'],
+               'type' => $rows['type'],
+               'application' => $rows['application'],
+               'keyplayers' => $rows['keyplayers'],
+               'description_one' => $rows['description_one'],
+               'description_two' => $rows['description_two'],
+               'description_three' => $rows['description_three'],
+               'content' => $rows['content'],
+               'slug' => $rows['slug'],
 
            ]);
 
-       }
+    //    }
+    }
+
+    public function batchSize(): int
+    {
+        return 1000;
     }
 }

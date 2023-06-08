@@ -190,11 +190,11 @@ class ReportController extends Controller
 
     public function import(Request  $request)
     {
-        dd('hi');
+        // dd('hi');
         $request->validate([
-            'reportfile' => 'required|file|mimes:csc',
+            'reportfile' => 'required|file|mimes:xlsx',
         ]);
-        Excel::import(new ReportImport, $request->file('reportfile'), \Maatwebsite\Excel\Excel::CSV);
+        Excel::import(new ReportImport, $request->file('reportfile'), \Maatwebsite\Excel\Excel::XLSX);
         return redirect()->route('report.index')->with('success', 'Rports Imported Successfully');
     }
 }
