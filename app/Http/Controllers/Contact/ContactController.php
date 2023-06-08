@@ -39,6 +39,7 @@ class ContactController extends Controller
     public function store(Request $request)
     {
         Contact::create($request->all());
+
         $contact = Contact::latest()->first();
         Mail::to($request->email)->cc(['yog@flairinsights.com','thakreyogesh07@gmail.com','hemantsalame54@gmail.com'])->send(new ContactMail($contact));
         return 'Message sent Successfully';
