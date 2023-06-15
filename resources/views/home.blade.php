@@ -242,12 +242,12 @@
         }
 
         .typing-demo-mobile {
-            font-size: 30px !important;
+            font-size: 22px !important;
             display: block;
             width: 100%;
         }
         .herotext h2.frame-5 {
-            font-size: 16px;
+            font-size: 14px;
             line-height: 30px
         }
 
