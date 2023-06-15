@@ -272,10 +272,10 @@ thead {
                     <div class="tab-content">
                         <div id="home" class="container tab-pane active"><br>
                             {!! $report->description_one !!}
-                            <img src="{{ $report->image_one ? route('home') . '/storage/' . $report->image_one : route('home') . '/assets/img/flairInsightslogo.jpg' }}"
+                            <img src="{{ $report->image_one ? route('home') . '/storage/' . $report->image_one : route('home') . '/assets/img/Darts Market Global Outlook 22.jpg' }}"
                                 alt="" class="mb-2 mt-2" style="width: 100%;height: 300px;">
                             {!! $report->description_two !!}
-                            <img src="{{ $report->image_one ? route('home') . '/storage/' . $report->image_one : route('home') . '/assets/img/flairInsightslogo.jpg' }}"
+                            <img src="{{ $report->image_one ? route('home') . '/storage/' . $report->image_one : route('home') . '/assets/img/Darts Market 22 - Copy.jpg' }}"
                                 alt="" class="mb-2 mt-2" style="width: 100%;height: 300px;">
 
                             <div class="mt-3">
@@ -331,7 +331,7 @@ thead {
                                 </table>
                             </div>
                             {!! $report->description_three !!}
-                            <img src="{{ $report->image_one ? route('home') . '/storage/' . $report->image_one : route('home') . '/assets/img/flairInsightslogo.jpg' }}"
+                            <img src="{{ $report->image_one ? route('home') . '/storage/' . $report->image_one : route('home') . '/assets/img/Soil Conditioners Market Global Outlook 22.jpg' }}"
                                 alt="" class="mb-2 mt-2" style="width: 100%;height: 300px;">
 
                             <h3 style="text-align: justify;"><strong>How can this report add value to an
@@ -477,7 +477,7 @@ thead {
                                 <h3 style="text-align: justify;"><strong>Data Triangulation, Panel Discussion, and
                                         Forecasting &nbsp;</strong></h3>
                                 <div class="col-md-6">
-                                    <img src="{{ route('home') . '/assets/img/flairInsightslogo.jpg' }}" alt=""
+                                    <img src="{{ route('home') . '/assets/img/Data Triangulation, Panel Discussion, & Forecasting.png' }}" alt=""
                                         class="mb-2 mt-2" style="width: 100%;height: 300px;">
                                 </div>
                                 <div class="col-md-6">
@@ -520,7 +520,7 @@ thead {
                                 </div>
                                 <h3 style="text-align: justify;"><strong>Report Authoring &nbsp;</strong></h3>
                                 <div class="col-md-6">
-                                    <img src="{{ route('home') . '/assets/img/flairInsightslogo.jpg' }}" alt=""
+                                    <img src="{{ route('home') . '/assets/img/Report Authoring.png' }}" alt=""
                                         class="mb-2 mt-2" style="width: 100%;height: 300px;">
                                 </div>
                                 <div class="col-md-6">

@@ -195,6 +195,19 @@
         border-right: 3px solid;
         font-family: monospace;
         font-size: 2em;
+        font-weight: bold;
+    }
+
+    .typing-demo-mobile {
+        width: 44ch;
+        animation: typing 2s steps(43), blink .5s step-end infinite alternate;
+        white-space: nowrap;
+        overflow: hidden;
+        border-right: 3px solid;
+        font-family: monospace;
+        font-size: 2em;
+        font-weight: bold;
+        display: none;
     }
 
 
@@ -202,6 +215,8 @@
         .typing-demo {
             font-size: 25px !important;
         }
+
+
 
         .roller #rolltext {
             font-size: 35px;
@@ -222,7 +237,18 @@
 
     @media screen and (max-width: 700px) {
         .typing-demo {
-            font-size: 14px !important;
+            /* font-size: 14px !important; */
+            display: none;
+        }
+
+        .typing-demo-mobile {
+            font-size: 30px !important;
+            display: block;
+            width: 100%;
+        }
+        .herotext h2.frame-5 {
+            font-size: 16px;
+            line-height: 30px
         }
 
         .roller #rolltext {
@@ -252,7 +278,7 @@
 	animation: none;
 	color: transparent;
 	text-shadow: 0px 0px 1px #fff;
-    text-transform: uppercase;
+    text-transform: capitalize;
 }
 .herotext h2.frame-5 span {
 	-webkit-animation: blurFadeIn 3s ease-in 3s backwards;
@@ -477,7 +503,11 @@
                         <div class="herotext text-white text-center mobile-text" style="width: 100%;">
                             <div class="wrapper">
                                 <div class="typing-demo">
-                                    WE ARE A NEW AGE GROWTH CONSULTING COMPANY.
+                                    We Are A New Age Growth Consulting Firm
+                                </div>
+
+                                <div class="typing-demo-mobile">
+                                    We Are A New Age <br>Growth Consulting Firm
                                 </div>
                             </div>
                             {{-- <h1 class="word"></h1>  --}}
@@ -497,9 +527,9 @@
                         </marquee> --}}
                         <div class="sp-content">
                             <h2 class="frame-5">
-                                <span>We deep dive track pulse of the market</span><br>
-                                <span>and share value to our clients through</span><br>
-                                <span>hyperintelligence solutions and take them ahead on growth curve</span><br>
+                                <span>We Deep Dive Track Pulse Of The Market</span><br>
+                                <span>And Share Value To Our Clients Through</span><br>
+                                <span>Hyperintelligence Solutions And Take Them Ahead On Growth Curve</span><br>
                                 <span></span><br>
                             </h2>
                         </div>

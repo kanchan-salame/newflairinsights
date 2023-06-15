@@ -1,5 +1,5 @@
-
 /* Carousel styling */
+
 #introCarousel,
 .carousel-inner,
 .carousel-item,
@@ -25,38 +25,34 @@
     background-position: center center;
 }
 
+
 /* Height for devices larger than 576px */
+
 @media (min-width: 992px) {
     #introCarousel {
         margin-top: -58.59px;
     }
-
 }
 
 @media (max-width: 768px) {
     .align-items-center {
         align-items: center !important;
-        width: 80%;
+        width: 85%;
         margin: 0 auto;
     }
-
     .mobile-text h1 {
         font-size: 18px;
         font-weight: bold;
     }
-
     .mobile-text h5 {
         font-size: 14px;
     }
-
     .back-to-top {
         width: 50px;
     }
-
     .rowcss {
         margin-top: 0px !important;
     }
-
     .section_title,
     .colcss {
         margin-top: 0px !important;
@@ -64,21 +60,22 @@
     }
 }
 
-#main .section-img{
-    position:relative;
-    top:130px;
+#main .section-img {
+    position: relative;
+    top: 130px;
 }
 
 @media (max-width: 926px) {
-#main .section-img{
-    position:static;
-}
-}
-#main .section-text{
-    border:#D97E32 5px solid;
+    #main .section-img {
+        position: static;
+    }
 }
 
-#main .main-top p{
+#main .section-text {
+    border: #D97E32 5px solid;
+}
+
+#main .main-top p {
     font-size: 18px;
     color: rgb(80, 80, 80);
 }
@@ -93,31 +90,28 @@
     text-align: center;
 }
 
-#main .main-top{
-    background-image:url('/assets/img/homebg.jpg');
+#main .main-top {
+    background-image: url('/assets/img/homebg.jpg');
     background-size: contain;
     /* background-color:red; */
-} 
+}
 
 .discover-flair,
 .strategic-growth {
     /* background-image: linear-gradient(45deg, #41B5EC 0%, #41B5EC 100%); */
-    background-color:#72d2ff;
+    background-color: #72d2ff;
     /* border-radius: 20px; */
     padding: 10px;
     overflow: hidden;
-
 }
 
-.discover-flair{
-    background-color:#D97E32;
+.discover-flair {
+    background-color: #D97E32;
 }
-
 
 .we-are-market .container,
 .to-assist-clients .container,
 .strategic-growth .container {
-
     background-image: url("{{ route('home') . '/assets/img/Path 401.png' }}");
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -127,7 +121,6 @@
 
 .the-goal-is .container,
 .discover-flair .container {
-
     background-image: url("{{ route('home') . '/assets/img/Path 402.png' }}");
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -138,7 +131,7 @@
 .we-are-market p,
 .the-goal-is p,
 .discover-flair p,
-.strategic-growth p  {
+.strategic-growth p {
     font-size: 18px;
     text-align: justify;
     color: #000;
@@ -157,7 +150,7 @@
     border-radius: 20px 80px 20px 20px;
 }
 
-.the-goal-is img{
+.the-goal-is img {
     width: 100%;
     border-radius: 80px 20px 20px 20px;
 }

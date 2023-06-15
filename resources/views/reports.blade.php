@@ -164,7 +164,7 @@
 
         If it fails to satisfy this primary purpose, it may cause shipping or logistical problems, necessitating the
         item's repair or replacement before
-        
+
         it can be re-delivered. This leads to not just increased expenditures, but
         also a decrease in customer pleasure and reputation. In the long term, taking the effort to ensure that your
         luggage is fully packed for travel can save you money and time.
@@ -207,7 +207,7 @@
                                                     class="img-fluid" alt="">
                                             </div>
                                             <div class="member-info">
-                                                <h4>{{ Str::limit($report->title, 100) }}</h4>
+                                                <h4> <a href="{{ route('reportDescription', $report->slug) }}"> {{ Str::limit($report->title, 100) }}</a></h4>
                                                 <p>{!! Str::limit($report->description_one, 300) !!}</p>
                                                 <br>
                                                 <div class="d-flex">
