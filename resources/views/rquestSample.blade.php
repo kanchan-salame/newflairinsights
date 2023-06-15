@@ -1,5 +1,14 @@
 @extends('layouts.applayout')
 @section('content')
+
+<link rel="stylesheet" href="{{route('home')}}/assets/css/checkout.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.3/css/intlTelInput.min.css" />
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/11.0.9/js/intlTelInput.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.3/js/intlTelInput.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/11.0.9/js/utils.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 
@@ -180,16 +189,18 @@ thead {
                             </div>
 
                         </div>
-                        <div class="form-group">
+                        <div class="mb-3">
                             <div class="row">
                                 <div class="col-3">
-                                    <label for="contact_no">Phone Number:</label>
+                                    <label class="form-label">Phone Number:<span class="text-danger">*</span></label>
                                 </div>
                                 <div class="col">
-                                    <input type="number" class="form-control" id="contact_no"
-                                        placeholder="Enter Contact Number" name="contact_no"
-                                        value="{{ old('contact_no') }}">
-                                    <span style="color:red">@error('contact_no'){{$message}}@enderror</span>
+                                    <div class="form-control">
+                                        <input class=" border-0" name="contact_no" id="phone" style="outline:none" type="tel" value="{{ old('contact_no') }}">
+                                        <span id="valid-msg" class="hide"></span>
+                                        <span id="error-msg" class="hide"></span>
+                                        <span style="color:red">@error('contact_no'){{$message}}@enderror</span>
+                                    </div>
                                 </div>
                             </div>
 
@@ -1073,4 +1084,7 @@ thead {
 <form action="">
     <button type="submit">submit</button>
 </form>
+@endsection
+@section('script')
+ <script src="{{route('home')}}/assets/js/checkout.js"></script>
 @endsection
