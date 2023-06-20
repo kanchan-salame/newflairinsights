@@ -39,12 +39,10 @@
                         <div class="row">
                             @if ($caseStudies)
                             @foreach ($caseStudies as $caseStudy)
+                            <div class="row">
                                 <div class="col-lg-12 mt-4">
-                                    <div class="member d-flex align-items-start aos-init aos-animate" data-aos="zoom-in"
+                                    <div class="member align-items-start aos-init aos-animate" data-aos="zoom-in"
                                         data-aos-delay="300">
-                                        <div class="pic"><img src="{{ $caseStudy->image_one ? route('home') . '/storage/' . $caseStudy->image_one : route('home') . '/assets/img/team/team-3.jpg' }}"
-                                            class="img-fluid" alt="{{ $caseStudy->title }}">
-                                        </div>
                                         <div class="member-info">
                                             <h4>{{ Str::limit($caseStudy->title, 100) }}</h4>
                                             <p>{!! Str::limit($caseStudy->description_one, 300) !!}</p>
@@ -56,6 +54,7 @@
                                         </div>
                                     </div>
                                 </div>
+                            </div>
                             @endforeach
                         </div>
                         <br><br>

@@ -2,10 +2,10 @@
 @section('content')
 
 
- <link rel="stylesheet" href="{{route('home')}}/assets/css/checkout.css"> 
+ <link rel="stylesheet" href="{{route('home')}}/assets/css/checkout.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.3/css/intlTelInput.min.css" />
- <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/11.0.9/js/intlTelInput.js"></script> 
- <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.3/js/intlTelInput.min.js"></script> 
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/11.0.9/js/intlTelInput.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.3/js/intlTelInput.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/11.0.9/js/utils.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 
@@ -14,8 +14,9 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
 <!-- ======= Checkout ======= -->
-<div class="container-fluid checkout-main pt-5">
-    <section class="container pt-5">
+
+<div class="checkout-main pt-5">
+    <section class=" pt-5">
         <form action="{{ route('processTransaction') }}" id="checkout" method="post">
             @csrf
             <div class="row gx-5">
@@ -29,7 +30,7 @@
                     <h6 class=" my-3">Price</h6>
 
                     <p class="">
-                        
+
                         @if( $user_type === "single")
                         {{$report->single_user_price}}
                         @elseif($user_type === "multiple")
@@ -48,7 +49,7 @@
                                 <input type="text" name="fname" class="form-control" value="{{ old('fname') }}">
                                 <span style="color:red">@error('fname'){{$message}}@enderror</span>
                             </div>
-                            
+
                         </div>
                     </div>
                     <div class="mb-3">
@@ -62,7 +63,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="mb-3">
                         <div class="row">
                             <div class="col-3">
@@ -77,7 +78,7 @@
                                 </div>
                             </div>
                         </div>
-                    
+
                     </div>
                     <div class="mb-3">
                         <div class="row">
@@ -89,7 +90,7 @@
                                 <span style="color:red">@error('company_name'){{$message}}@enderror</span>
                             </div>
                         </div>
-                        
+
                     </div>
                     <div class="mb-3">
                         <div class="row">
@@ -101,7 +102,7 @@
                                 <span style="color:red">@error('city'){{$message}}@enderror</span>
                             </div>
                         </div>
-                        
+
                     </div>
                     <div class="mb-3">
                         <div class="row">
@@ -113,7 +114,7 @@
                                 <span style="color:red">@error('state'){{$message}}@enderror</span>
                             </div>
                         </div>
-                        
+
                     </div>
                     <div class="mb-3">
                         <div class="row">
@@ -125,7 +126,7 @@
                                 <span style="color:red">@error('zip_code'){{$message}}@enderror</span>
                             </div>
                         </div>
-                        
+
                     </div>
                     <div class="mb-3 d-none">
                         <div class="row">
@@ -393,7 +394,7 @@
                                     <option value="li" @if(old('country') == 'li') selected @endif data-country-name="Liechtenstein" data-dial-code="423">
                                         Liechtenstein</option>
                                     <option value="lt" @if(old('country') == 'lt') selected @endif data-country-name="Lithuania " data-dial-code="370">Lithuania
-                                    </option> 
+                                    </option>
                                     <option value="lu" @if(old('country') == 'lu') selected @endif data-country-name="Luxembourg" data-dial-code="352">
                                         Luxembourg
                                     </option>
@@ -415,7 +416,7 @@
                                         Marshall Islands</option>
                                     <option value="mq" @if(old('country') == 'mq') selected @endif data-country-name="Martinique" data-dial-code="596">
                                         Martinique
-                                    </option> 
+                                    </option>
                                     <option value="mr" @if(old('country') == 'mr') selected @endif data-country-name="Mauritania " data-dial-code="222">
                                         Mauritania </option>
                                     <option value="mu" @if(old('country') == 'mu') selected @endif data-country-name="Mauritius " data-dial-code="230">Mauritius
@@ -477,7 +478,7 @@
                                     <option value="ps" @if(old('country') == 'ps') selected @endif data-country-name="Palestine " data-dial-code="970">Palestine
                                     </option>
                                     <option value="pa" @if(old('country') == 'pa') selected @endif data-country-name="Panama " data-dial-code="507">Panama
-                                    </option> 
+                                    </option>
                                     <option value="pg" @if(old('country') == 'pg') selected @endif data-country-name="Papua New Guinea" data-dial-code="675">
                                         Papua New Guinea</option>
                                     <option value="py" @if(old('country') == 'py') selected @endif data-country-name="Paraguay" data-dial-code="595">Paraguay
@@ -641,7 +642,7 @@
                                 <span style="color:red">@error('country'){{$message}}@enderror</span>
                             </div>
                         </div>
-                        
+
                     </div>
                     <h6 class="my-3">Choose a Payment Mode (Online Payment/Credit Card)</h6>
                     <div class="row gx-5 px-3">
@@ -681,13 +682,13 @@
 @endsection
 
 @section('script')
- <script src="{{route('home')}}/assets/js/checkout.js"></script> 
-<script>   
+ <script src="{{route('home')}}/assets/js/checkout.js"></script>
+<script>
 $(document).ready(function(){
   $('#processTrn').click(function(){
     $('#checkout').submit();
   })
-}); 
+});
 
 // jquery for paypal and wiretranser image
 $('#wire_tnr_img').click(function() {
@@ -730,4 +731,4 @@ $('#paypal_tnr_img').click(function() {
         <a href="{{ route('processTransaction') }}" class="btn btn-primary mt-3">Pay $224 via Paypal</a>
     </div>
 </body>
-</html> 
+</html>

@@ -180,6 +180,7 @@ class HomeController extends Controller
         return view('buyNowPage', compact('categories', 'report'));
     }
 
+
     public function buyNow($slug)
     {
         $categories = Category::all();

@@ -38,11 +38,6 @@
     display: block;
 }
 </style>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 <style>
 .blink_me {
     animation: blinker 1s linear infinite;
@@ -65,12 +60,6 @@
 }
 
 #team {
-    /* background: #fff; */
-    /* position: fixed; */
-    /* top: 0; */
-    /* left: 0; */
-    /* width: 50%;
-    height: 100%; */
     background: -webkit-linear-gradient(top, #0869B1 10%, #fff 10%);
 }
 
@@ -146,7 +135,6 @@
     font-size: 18px;
     font-weight: 700;
     line-height: 25px;
-    /* color: #fff; */
 }
 
 #hero h1 {
@@ -156,10 +144,6 @@
     line-height: 25px;
     color: #fff;
 }
-
-/* .report-inline {
-            color: #fff;
-        } */
 
 #hero111 .btn-get-started:hover {
     background: #209dd8;
@@ -409,7 +393,6 @@ thead {
 
                                     </p>
                                 </div>
-                                {{-- <h3 style="text-align: justify;"><strong>Secondary Research&nbsp;</strong></h3> --}}
                                 <div class="col-md-6">
                                     <img src="{{ route('home') . '/assets/img/Secondary Research.png' }}" alt=""
                                         class="mb-2 mt-2" style="width: 100%;height: 300px;">
@@ -449,7 +432,6 @@ thead {
                                         macro and micro economic indicators our consultants strive to examine the market
                                         dynamics and behavior to benefit our client. </p>
                                 </div>
-                                {{-- <h3 style="text-align: justify;"><strong>Primary Research &nbsp;</strong></h3> --}}
                                 <div class="col-md-6">
                                     <img src="{{ route('home') . '/assets/img/Primary Research.png' }}" alt=""
                                         class="mb-2 mt-2" style="width: 100%;height: 300px;">
@@ -802,10 +784,6 @@ thead {
                                             <div class="form-group">
                                                 <div class="col-sm-12">
                                                     <div class="loading">Loading</div>
-                                                    <!-- <div id="error-message"
-                                                        class="error-message w-50 alert alert-danger alert-dismissible fade show"
-                                                        style="background-color:green">
-                                                    </div> -->
                                                     <div id="error-message" class=" error-message alert alert-danger alert-dismissible fade show" style="background-color:green; align-content: center;
     width: 100%;">
                                                         <button style="position-relative" type="button" class="close"

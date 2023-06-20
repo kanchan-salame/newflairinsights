@@ -1,7 +1,7 @@
 @extends('layouts.applayout')
 @section('content')
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    {{-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"> --}}
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
@@ -259,7 +259,7 @@
                                             <a href="{{ route('checkout', [ 'slug' => $report->slug, 'user_type' => 'multiple', 'reportSlug' => $report->slug]) }}"><button class="theme-btn vmr-bg text-white">Buy Now<i
                                                     class="la la-arrow-right ml-2"></i></button></a>
                                         </div>
-                                    
+
 
                                     <ul class="list-items price-list mt-4">
                                         <li><i class="la la-check text-success mr-2"></i>1 User Access. (max. 2 IP

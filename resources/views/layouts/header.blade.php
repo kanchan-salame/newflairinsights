@@ -23,6 +23,7 @@
         href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
         rel="stylesheet">
     <link rel="stylesheet" href="{{ route('home') }}/plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 
     <!-- Vendor CSS Files -->
     <link href="{{ route('home') }}/assets/vendor/aos/aos.css" rel="stylesheet">
@@ -92,6 +93,13 @@
     @media (max-width: 768px) {
         .dropdown-width {
             width: 92% !important;
+        }
+
+        .navbar .dropdown div {
+            left: -413px !important;
+        }
+        .navbar-mobile {
+            background: rgba(40, 58, 90, 0.9) !important;
         }
 
         .navbar .dropdown:hover>div {
