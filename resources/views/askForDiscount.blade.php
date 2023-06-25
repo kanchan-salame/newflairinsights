@@ -1,11 +1,31 @@
 @extends('layouts.applayout')
 @section('content')
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
+ <link rel="stylesheet" href="{{route('home')}}/assets/css/checkout.css">
+<!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">-->
+
+
+<!--<link rel="stylesheet" href="{{route('home')}}/assets/css/checkout.css"> -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.3/css/intlTelInput.min.css" />
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/11.0.9/js/intlTelInput.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.3/js/intlTelInput.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/11.0.9/js/utils.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
 <style>
+
+.iti{
+    display:block;
+}
+
+ #hero .hero-img img {
+        width: 100% ;
+    }
+
 .tab-content>.active {
     display: block;
     border-left: 1px solid #dee2e6;
@@ -91,7 +111,7 @@ thead {
             </div>
         </section><!-- End Breadcrumbs -->
         <div class="row">
-            <div class="col-lg-2 order-1 order-lg-1 hero-img">
+            <div class="col-lg-2 order-1 order-lg-1 ">
                 <img src="{{ $report->category->image ? route('home') . '/storage/' . $report->category->image : route('home') . '/assets/img/team/team-3.jpg' }}"
                     class="img-fluid report-img" alt="">
             </div>
@@ -128,11 +148,11 @@ thead {
     <section id="team" class="team section-bg">
         <div class="container aos-init aos-animate" data-aos="fade-up">
             <div class="row">
-                <div class="col-md-8">
+                <div class="col-md-8 pt-4">
                     <h4>Discount is available with the report you wish to purchase.</h4>
                     <form action="{{route('ReportRequest.store')}}" method="post" role="form" class=" mt-5">
                     @csrf
-                    
+
                         <div class="form-group d-none" >
                             <div class="row">
                                 <div class="col-3">
@@ -150,7 +170,7 @@ thead {
                                     <label for="subject">Subject:</label>
                                 </div>
                                 <div class="col">
-                                    <input type="text" class="form-control" id="subject" 
+                                    <input type="text" class="form-control" id="subject"
                                         name="subject" value="Asking for Discount">
                                 </div>
                             </div>
@@ -164,7 +184,7 @@ thead {
                                     <input type="text" class="form-control" id="fname" placeholder="Enter Name"
                                         name="fname" value="{{ old('fname') }}">
                                         <span style="color:red">@error('fname'){{$message}}@enderror</span>
-                                    
+
                                 </div>
                             </div>
                         </div>
@@ -187,8 +207,10 @@ thead {
                                     <label for="contact_no">Phone Number:</label>
                                 </div>
                                 <div class="col">
-                                    <input type="number" class="form-control" id="contact_no"
+                                    <input type="number"  class="form-control w-100" id="phone"
                                         placeholder="Enter Contact Number" name="contact_no" value="{{ old('contact_no') }}">
+                                        <span id="valid-msg" class="hide"></span>
+                                        <span id="error-msg" class="hide"></span>
                                         <span style="color:red">@error('contact_no'){{$message}}@enderror</span>
                                 </div>
                             </div>
@@ -467,7 +489,7 @@ thead {
                                     <option value="li" @if(old('country') == 'li') selected @endif data-country-name="Liechtenstein" data-dial-code="423">
                                         Liechtenstein</option>
                                     <option value="lt" @if(old('country') == 'lt') selected @endif data-country-name="Lithuania " data-dial-code="370">Lithuania
-                                    </option> 
+                                    </option>
                                     <option value="lu" @if(old('country') == 'lu') selected @endif data-country-name="Luxembourg" data-dial-code="352">
                                         Luxembourg
                                     </option>
@@ -489,7 +511,7 @@ thead {
                                         Marshall Islands</option>
                                     <option value="mq" @if(old('country') == 'mq') selected @endif data-country-name="Martinique" data-dial-code="596">
                                         Martinique
-                                    </option> 
+                                    </option>
                                     <option value="mr" @if(old('country') == 'mr') selected @endif data-country-name="Mauritania " data-dial-code="222">
                                         Mauritania </option>
                                     <option value="mu" @if(old('country') == 'mu') selected @endif data-country-name="Mauritius " data-dial-code="230">Mauritius
@@ -551,7 +573,7 @@ thead {
                                     <option value="ps" @if(old('country') == 'ps') selected @endif data-country-name="Palestine " data-dial-code="970">Palestine
                                     </option>
                                     <option value="pa" @if(old('country') == 'pa') selected @endif data-country-name="Panama " data-dial-code="507">Panama
-                                    </option> 
+                                    </option>
                                     <option value="pg" @if(old('country') == 'pg') selected @endif data-country-name="Papua New Guinea" data-dial-code="675">
                                         Papua New Guinea</option>
                                     <option value="py" @if(old('country') == 'py') selected @endif data-country-name="Paraguay" data-dial-code="595">Paraguay
@@ -735,7 +757,7 @@ thead {
                         </div>
                         @endif
                         <div class="d-grid gap-2 col-4 mx-auto">
-                            <button type="submit" class="btn btn-primary">Send Message</button>
+                            <button type="submit" class="btn btn-primary" id="submit-btn">Submit</button>
                         </div>
                     </form>
                 </div>
@@ -750,21 +772,21 @@ thead {
                                 </div>
                             </div>
                             <br>
-                            <div class="speak-to-analyst d-flex">
+                            <div class="speak-to-analyst d-flex p-2">
                                 <img src="{{ route('home') }}/assets/img/hero-img.png" class="" alt="">
-                                <p>Speak to analyst and have exclusive insights tailored for your needs</p>
+                                <p class="text-justify">Speak with an analyst to get exclusive insights tailored to your needs</p>
                             </div>
                             <br>
                             <div class="request-additional text-center">
-                                <h6>Request addional customization in this report</h6>
-                                <a href="#">Click here</a>
+                                <h6>Customize this report to meet your specific needs </h6>
+                                <a href="{{ route('rquestSample', $report->slug) }}" class="btn btn-success">Click here</a>
                             </div>
                             <br>
                             <div class="why-us text-left">
                                 <div class="options" style="
                                     text-align: left;
                                 ">
-                                    <h6>Why Choose Us</h6>
+                                    <h6>Reasons to Select Us</h6>
                                     <div class="row">
                                         <div class="col-md-3">
                                             <span class="icon-style">
@@ -772,10 +794,8 @@ thead {
                                             </span>
                                         </div>
                                         <div class="col-md-9">
-                                            <h5>Insured Buying </h5>
-                                            <p>This Report Has A Service
-                                                Guarantee. We Stand By Our
-                                                Report Quality.</p>
+                                            <h5>Secure Purchase</h5>
+                                            <p>Our Report Comes with a Service Guarantee. We are Committed to Upholding the Quality of Our Report.</p>
                                         </div>
                                     </div>
 
@@ -787,9 +807,7 @@ thead {
                                         </div>
                                         <div class="col-md-9">
                                             <h5>Confidentiality </h5>
-                                            <p>This Report Has A Service
-                                                Guarantee. We Stand By Our
-                                                Report Quality.</p>
+                                            <p>We prioritize confidentiality by taking extensive measures to safeguard information and ensure its strict privacy.</p>
                                         </div>
                                     </div>
 
@@ -801,9 +819,7 @@ thead {
                                         </div>
                                         <div class="col-md-9">
                                             <h5>Custom Research Service </h5>
-                                            <p>We Are In Compliance With
-                                                GDPR & CCPA Norms. All
-                                                Interactions Are Confidential.</p>
+                                            <p>Compliant with GDPR & CCPA regulations, we maintain strict confidentiality for all interactions.</p>
                                         </div>
                                     </div>
 
@@ -814,8 +830,8 @@ thead {
                                             </span>
                                         </div>
                                         <div class="col-md-9">
-                                            <h5>24/5 Research Support </h5>
-                                            <p>Get Your Queries Resolved From An Industry Expert.</p>
+                                            <h5>24/6 Research Support </h5>
+                                            <p>Resolve Your Queries with an Industry Expert's Insightful Assistance.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -829,4 +845,7 @@ thead {
         </div>
     </section>
 </main><!-- End #main -->
+
+
+<script src="{{route('home')}}/assets/js/checkout.js"></script>
 @endsection

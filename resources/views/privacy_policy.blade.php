@@ -6,7 +6,7 @@
             <div class="container" data-aos="fade-up">
 
                 <div class="section-title">
-                    <h2>Privacy Policy</h2>
+                    <h2 style="color: #000;margin-top: 25px;">Privacy Policy</h2>
                 </div>
 
                 <div class="row content mb-5">

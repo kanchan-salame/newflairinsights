@@ -193,8 +193,21 @@
         white-space: nowrap;
         overflow: hidden;
         border-right: 3px solid;
+        font-family: 'Poppins';
+        font-size: 2em;
+        font-weight: bold;
+    }
+
+    .typing-demo-mobile {
+        width: 44ch;
+        animation: typing 2s steps(43), blink .5s step-end infinite alternate;
+        white-space: nowrap;
+        overflow: hidden;
+        border-right: 3px solid;
         font-family: monospace;
         font-size: 2em;
+        font-weight: bold;
+        display: none;
     }
 
 
@@ -202,6 +215,8 @@
         .typing-demo {
             font-size: 25px !important;
         }
+
+
 
         .roller #rolltext {
             font-size: 35px;
@@ -213,7 +228,7 @@
     }
 
     @media screen and (max-width: 1100px) {
- 
+
         .roller #rolltext {
             font-size: 25px;
         }
@@ -222,7 +237,18 @@
 
     @media screen and (max-width: 700px) {
         .typing-demo {
-            font-size: 14px !important;
+            /* font-size: 14px !important; */
+            display: none;
+        }
+
+        .typing-demo-mobile {
+            font-size: 22px !important;
+            display: block;
+            width: 100%;
+        }
+        .herotext h2.frame-5 {
+            font-size: 14px;
+            line-height: 30px
         }
 
         .roller #rolltext {
@@ -241,6 +267,227 @@
             border-color: transparent
         }
     }
+    .slide{
+        padding: 0px;
+    }
+
+    .herotext h2.frame-5 {
+	-webkit-animation: none;
+	-moz-animation: none;
+	-ms-animation: none;
+	animation: none;
+	color: transparent;
+	text-shadow: 0px 0px 1px #fff;
+    text-transform: capitalize;
+}
+.herotext h2.frame-5 span {
+	-webkit-animation: blurFadeIn 3s ease-in 3s backwards;
+	-moz-animation: blurFadeIn 1s ease-in 3s backwards;
+	-ms-animation: blurFadeIn 3s ease-in 3s backwards;
+	animation: blurFadeIn 3s ease-in 3s backwards;
+	color: transparent;
+	text-shadow: 0px 0px 1px #fff;
+}
+.herotext h2.frame-5 span:nth-child(2) {
+	-webkit-animation-delay: 4s;
+	-moz-animation-delay: 4s;
+	-ms-animation-delay: 4s;
+	animation-delay: 4s;
+}
+.herotext h2.frame-5 span:nth-child(3) {
+	-webkit-animation-delay: 5s;
+	-moz-animation-delay: 5s;
+	-ms-animation-delay: 5s;
+	animation-delay: 5s;
+}
+.herotext h2.frame-5 span:nth-child(4) {
+	-webkit-animation-delay: 6s;
+	-moz-animation-delay: 6s;
+	-ms-animation-delay: 6s;
+	animation-delay: 6s;
+}
+.herotext h2.frame-5 span:nth-child(5) {
+	-webkit-animation-delay: 7s;
+	-moz-animation-delay: 7s;
+	-ms-animation-delay: 7s;
+	animation-delay: 7s;
+}
+
+/**/
+
+@-webkit-keyframes blurFadeInOut {
+	0% {
+		opacity: 0;
+		text-shadow: 0px 0px 40px #fff;
+		-webkit-transform: scale(1.3);
+	}
+	20%, 75% {
+		opacity: 1;
+		text-shadow: 0px 0px 1px #fff;
+		-webkit-transform: scale(1);
+	}
+	100% {
+		opacity: 0;
+		text-shadow: 0px 0px 50px #fff;
+		-webkit-transform: scale(0);
+	}
+}
+@-webkit-keyframes blurFadeIn {
+	0% {
+		opacity: 0;
+		text-shadow: 0px 0px 40px #fff;
+		-webkit-transform: scale(1.3);
+	}
+	50% {
+		opacity: 0.5;
+		text-shadow: 0px 0px 10px #fff;
+		-webkit-transform: scale(1.1);
+	}
+	100% {
+		opacity: 1;
+		text-shadow: 0px 0px 1px #fff;
+		-webkit-transform: scale(1);
+	}
+}
+@-webkit-keyframes fadeInBack {
+	0% {
+		opacity: 0;
+		-webkit-transform: scale(0);
+	}
+	50% {
+		opacity: 0.4;
+		-webkit-transform: scale(2);
+	}
+	100% {
+		opacity: 0.2;
+		-webkit-transform: scale(5);
+	}
+}
+@-webkit-keyframes fadeInRotate {
+	0% {
+		opacity: 0;
+		-webkit-transform: scale(0) rotate(360deg);
+	}
+	100% {
+		opacity: 1;
+		-webkit-transform: scale(1) rotate(0deg);
+	}
+}
+/**/
+
+@-moz-keyframes blurFadeInOut {
+	0% {
+		opacity: 0;
+		text-shadow: 0px 0px 40px #fff;
+		-moz-transform: scale(1.3);
+	}
+	20%, 75% {
+		opacity: 1;
+		text-shadow: 0px 0px 1px #fff;
+		-moz-transform: scale(1);
+	}
+	100% {
+		opacity: 0;
+		text-shadow: 0px 0px 50px #fff;
+		-moz-transform: scale(0);
+	}
+}
+@-moz-keyframes blurFadeIn {
+	0% {
+		opacity: 0;
+		text-shadow: 0px 0px 40px #fff;
+		-moz-transform: scale(1.3);
+	}
+	100% {
+		opacity: 1;
+		text-shadow: 0px 0px 1px #fff;
+		-moz-transform: scale(1);
+	}
+}
+@-moz-keyframes fadeInBack {
+	0% {
+		opacity: 0;
+		-moz-transform: scale(0);
+	}
+	50% {
+		opacity: 0.4;
+		-moz-transform: scale(2);
+	}
+	100% {
+		opacity: 0.2;
+		-moz-transform: scale(5);
+	}
+}
+@-moz-keyframes fadeInRotate {
+	0% {
+		opacity: 0;
+		-moz-transform: scale(0) rotate(360deg);
+	}
+	100% {
+		opacity: 1;
+		-moz-transform: scale(1) rotate(0deg);
+	}
+}
+/**/
+
+@keyframes blurFadeInOut {
+	0% {
+		opacity: 0;
+		text-shadow: 0px 0px 40px #fff;
+		transform: scale(1.3);
+	}
+	20%, 75% {
+		opacity: 1;
+		text-shadow: 0px 0px 1px #fff;
+		transform: scale(1);
+	}
+	100% {
+		opacity: 0;
+		text-shadow: 0px 0px 50px #fff;
+		transform: scale(0);
+	}
+}
+@keyframes blurFadeIn {
+	0% {
+		opacity: 0;
+		text-shadow: 0px 0px 40px #fff;
+		transform: scale(1.3);
+	}
+	50% {
+		opacity: 0.5;
+		text-shadow: 0px 0px 10px #fff;
+		transform: scale(1.1);
+	}
+	100% {
+		opacity: 1;
+		text-shadow: 0px 0px 1px #fff;
+		transform: scale(1);
+	}
+}
+@keyframes fadeInBack {
+	0% {
+		opacity: 0;
+		transform: scale(0);
+	}
+	50% {
+		opacity: 0.4;
+		transform: scale(2);
+	}
+	100% {
+		opacity: 0.2;
+		transform: scale(5);
+	}
+}
+@keyframes fadeInRotate {
+	0% {
+		opacity: 0;
+		transform: scale(0) rotate(360deg);
+	}
+	100% {
+		opacity: 1;
+		transform: scale(1) rotate(0deg);
+	}
+}
     </style>
     <!-- Carousel wrapper -->
     <div id="introCarousel" class="carousel slide carousel-fade shadow-2-strong" data-mdb-ride="carousel">
@@ -251,12 +498,16 @@
                 <video style="min-width: 100%; min-height: 100%" playsinline autoplay muted loop>
                     <source class="h-100" src="{{ route('home') }}/assets/video/avc_My Video13.mp4" type="video/mp4" />
                 </video>
-                <div class="mask" style="background-color: rgba(0, 0, 20, 0.8)">
+                <div class="mask" style="background-color: rgba(0, 0, 20, 0.3)">
                     <div class="d-flex justify-content-center align-items-center h-100">
                         <div class="herotext text-white text-center mobile-text" style="width: 100%;">
                             <div class="wrapper">
                                 <div class="typing-demo">
-                                    WE ARE A NEW AGE GROWTH CONSULTING COMPANY.
+                                    We Are A New Age Growth Consulting Firm
+                                </div>
+
+                                <div class="typing-demo-mobile">
+                                    We Are A New Age <br>Growth Consulting Firm
                                 </div>
                             </div>
                             {{-- <h1 class="word"></h1>  --}}
@@ -274,14 +525,23 @@
                             We deep dive - track pulse of the market - and share value to our clients through
                             hyperintelligence solutions and take them ahead on growth curve
                         </marquee> --}}
+                        <div class="sp-content">
+                            <h2 class="frame-5">
+                                <span>We Deep Dive Track Pulse Of The Market</span><br>
+                                <span>And Share Value To Our Clients Through</span><br>
+                                <span>Hyperintelligence Solutions And Take Them Ahead On Growth Curve</span><br>
+                                <span></span><br>
+                            </h2>
+                        </div>
 
-                            <div class="roller">
+
+                            {{-- <div class="roller">
                                 <span id="rolltext">We deep dive<br />
                                     track pulse of the market<br />
                                     and share value to our clients through<br />
                                     <span id="spare-time">hyperintelligence solutions and take them ahead on growth
                                         curve</span><br />
-                            </div>
+                            </div> --}}
                         </div>
 
                     </div>

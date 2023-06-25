@@ -14,8 +14,8 @@ use App\Mail\ReportRequestMail;
 use Validator;
 
 class ReportRequestController extends Controller
-{  
-    
+{
+
     /**
      * Display a listing of the resource.
      *
@@ -52,7 +52,7 @@ class ReportRequestController extends Controller
             'company_name' => 'required',
             'country' => 'required',
             'requirements' => 'required',
-            'designation' => 'required',         
+            'designation' => 'required',
         ]);
         Report_request::create($request->all());
         $reportRequest = Report_request::latest()->first();
@@ -60,7 +60,8 @@ class ReportRequestController extends Controller
         Mail::to($request->email)->send(new ReportRequestMail($reportRequest));
         $redirectRoute = $request->subject == "Asking for Discount" ? 'askForDiscount' : 'rquestSample';
         // dd($request);
-        return redirect()->route($redirectRoute, $reportRequest->report->slug)->with('success','Message sent Successfully.');
+        $msg = 'Thank you for contacting us! We appreciate your input and will take it into consideration. If you have any further questions, feel free to reach out. Thanks again!';
+        return redirect()->route($redirectRoute, $reportRequest->report->slug)->with('success', $msg);
     }
 
     /**

@@ -105,18 +105,18 @@ class CaseStudyController extends Controller
         $caseStudy = CaseStudy::find($id);
         if ($request->file('image_one')) {
             $imageOne = time().'.'.$request->file('image_one')->getClientOriginalName();
-            $imageOneStore = $request->file('image_one')->store('public/case_study_images');
-            $imageOnePath = str_replace('public/', '', $imageOneStore);
+            $imageOneStore = $request->file('image_one')->store('case_study_images');
+            $imageOnePath =$imageOneStore;
         }
         if ($request->file('image_two')) {
             $imageTwo = time().'.'.$request->file('image_two')->getClientOriginalName();
-            $imageTwoStore = $request->file('image_two')->store('public/case_study_images');
-            $imageTwoPath = str_replace('public/', '', $imageTwoStore);
+            $imageTwoStore = $request->file('image_two')->store('case_study_images');
+            $imageTwoPath =$imageTwoStore;
         }
         if ($request->file('image_three')) {
             $imageThree = time().'.'.$request->file('image_three')->getClientOriginalName();
-            $imageThreeStore = $request->file('image_three')->store('public/case_study_images');
-            $imageThreePath = str_replace('public/', '', $imageThreeStore);
+            $imageThreeStore = $request->file('image_three')->store('case_study_images');
+            $imageThreePath =$imageThreeStore;
         }
         $data = [
             'title' => $request->title ?? '',

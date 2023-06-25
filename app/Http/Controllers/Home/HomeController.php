@@ -101,7 +101,7 @@ class HomeController extends Controller
     {
         $categories = Category::all();
         $categoyData = Category::where('slug', $slug)->first();
-        $reports = Report::where('category_id', $categoyData->id)->paginate(10);
+        $reports = Report::where('category_id', $categoyData->id)->limit(50)->paginate(10);
         return view('reports', compact('categories', 'reports', 'categoyData'));
     }
 
