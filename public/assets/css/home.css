@@ -62,7 +62,7 @@
 
 #main .section-img {
     position: relative;
-    top: 130px;
+    top: 18px;
 }
 
 @media (max-width: 926px) {
@@ -72,11 +72,11 @@
 }
 
 #main .section-text {
-    border: #D97E32 5px solid;
+    border: #D97E32 1px solid;
 }
 
 #main .main-top p {
-    font-size: 18px;
+    font-size: 16px;
     color: rgb(80, 80, 80);
 }
 

@@ -1,7 +1,7 @@
 @extends('layouts.applayout')
 @section('content')
 
-    {{-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"> --}}
+    <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">-->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
@@ -181,7 +181,7 @@
                 </div>
             </section><!-- End Breadcrumbs -->
             <div class="row">
-                <div class="col-lg-2 order-1 order-lg-1 hero-img">
+                <div class="col-lg-2 order-1 order-lg-1">
                     <img src="{{ $report->category->image ? route('home') . '/storage/' . $report->category->image : route('home') . '/assets/img/team/team-3.jpg' }}"
                         class="img-fluid report-img" alt="">
                 </div>
@@ -219,13 +219,13 @@
             <div class="container aos-init aos-animate" data-aos="fade-up">
                 <div class="row">
                     <div class="col-md-8">
-                        <div class="row">
+                        <div class="row pt-4">
                             <div class="col-md-6">
                                 <div class="price-item">
                                     <div class="price-head vmr-color">
                                         <center><i class="la la-user vmr-color" style="font-size:56px"></i></center>
                                         <h3 class="price__title text-uppercase vmr-color">Single User</h3>
-                                        <h3 class="price__text">$3,950.00</h3>
+                                        <h3 class="price__text">$2,999.00</h3>
                                     </div><!-- end price-head -->
 
                                     <div class="price-btn-box text-center">
@@ -234,14 +234,13 @@
                                                     class="la la-arrow-right ml-2"></i></button>
                                             </a>
                                         </div>
-                                    <ul class="list-items price-list mt-4">
-                                        <li><i class="la la-check text-success mr-2"></i>1 User Access. (max. 2 IP
-                                            addresses)</li>
-                                        <li><i class="la la-check text-success mr-2"></i>View qualitative PDF report(s)
+                                    <ul class="list-items price-list mt-4" style="list-style-type:disc;">
+                                        <li><i class="la la-check text-success mr-2"></i>Single-user Access </li>
+                                        <li><i class="la la-check text-success mr-2"></i>Access PDF Reports Online
                                             online.</li>
-                                        <li><i class="la la-check text-success mr-2"></i>Upto 25% free report customization.
+                                        <li><i class="la la-check text-success mr-2"></i>20% Free Reports Customization.
                                         </li>
-                                        <li><i class="la la-check text-success mr-2"></i>30 days free analyst support.</li>
+                                        <li><i class="la la-check text-success mr-2"></i>35 Days of Free Analyst Support.</li>
                                     </ul>
 
                                 </div>
@@ -251,7 +250,7 @@
                                     <div class="price-head vmr-color">
                                         <center><i class="la la-user vmr-color" style="font-size:56px"></i></center>
                                         <h3 class="price__title text-uppercase vmr-color">Multiple User</h3>
-                                        <h3 class="price__text">$3,950.00</h3>
+                                        <h3 class="price__text">$5,999.00</h3>
                                     </div><!-- end price-head -->
 
 
@@ -259,16 +258,14 @@
                                             <a href="{{ route('checkout', [ 'slug' => $report->slug, 'user_type' => 'multiple', 'reportSlug' => $report->slug]) }}"><button class="theme-btn vmr-bg text-white">Buy Now<i
                                                     class="la la-arrow-right ml-2"></i></button></a>
                                         </div>
+                                    
 
-
-                                    <ul class="list-items price-list mt-4">
-                                        <li><i class="la la-check text-success mr-2"></i>1 User Access. (max. 2 IP
-                                            addresses)</li>
-                                        <li><i class="la la-check text-success mr-2"></i>View qualitative PDF report(s)
-                                            online.</li>
-                                        <li><i class="la la-check text-success mr-2"></i>Upto 25% free report customization.
+                                    <ul class="list-items price-list mt-4" style="list-style-type:disc;">
+                                        <li><i class="la la-check text-success mr-2"></i>Unlimited user access</li>
+                                        <li><i class="la la-check text-success mr-2"></i>PDF + Excel Reports</li>
+                                        <li><i class="la la-check text-success mr-2"></i>30% free reports customization.
                                         </li>
-                                        <li><i class="la la-check text-success mr-2"></i>30 days free analyst support.</li>
+                                        <li><i class="la la-check text-success mr-2"></i>50 days of free analyst support.</li>
                                     </ul>
 
                                 </div>
@@ -290,12 +287,12 @@
                                 <br>
                                 <div class="speak-to-analyst d-flex">
                                     <img src="{{ route('home') }}/assets/img/hero-img.png" class="" alt="">
-                                    <p>Speak to analyst and have exclusive insights tailored for your needs</p>
+                                    <p>Speak with an analyst to get exclusive insights tailored to your needs.</p>
                                 </div>
                                 <br>
                                 <div class="request-additional text-center">
-                                    <h6>Request addional customization in this report</h6>
-                                    <a href="#">Click here</a>
+                                    <h6>Customize this report to meet your specific needs. </h6>
+                                    <a href="#" class="btn btn-success">Click here</a>
                                 </div>
                                 <br>
                                 <div class="why-us text-left">
@@ -303,7 +300,7 @@
                                         style="
                                     text-align: left;
                                 ">
-                                        <h6>Why Choose Us</h6>
+                                        <h6>Reasons to Select Us</h6>
                                         <div class="row">
                                             <div class="col-md-3">
                                                 <span class="icon-style">
@@ -311,10 +308,8 @@
                                                 </span>
                                             </div>
                                             <div class="col-md-9">
-                                                <h5>Insured Buying </h5>
-                                                <p>This Report Has A Service
-                                                    Guarantee. We Stand By Our
-                                                    Report Quality.</p>
+                                                <h5> Secure Purchase</h5>
+                                                <p>Our Report Comes with a Service Guarantee. We are Committed to Upholding the Quality of Our Report.</p>
                                             </div>
                                         </div>
 
@@ -326,9 +321,7 @@
                                             </div>
                                             <div class="col-md-9">
                                                 <h5>Confidentiality </h5>
-                                                <p>This Report Has A Service
-                                                    Guarantee. We Stand By Our
-                                                    Report Quality.</p>
+                                                <p>We prioritize confidentiality by taking extensive measures to safeguard information and ensure its strict privacy.</p>
                                             </div>
                                         </div>
 
@@ -340,9 +333,7 @@
                                             </div>
                                             <div class="col-md-9">
                                                 <h5>Custom Research Service </h5>
-                                                <p>We Are In Compliance With
-                                                    GDPR & CCPA Norms. All
-                                                    Interactions Are Confidential.</p>
+                                                <p>Compliant with GDPR & CCPA regulations, we maintain strict confidentiality for all interactions.</p>
                                             </div>
                                         </div>
 
@@ -353,8 +344,8 @@
                                                 </span>
                                             </div>
                                             <div class="col-md-9">
-                                                <h5>24/5 Research Support </h5>
-                                                <p>Get Your Queries Resolved From An Industry Expert.</p>
+                                                <h5>24/6 Research Support</h5>
+                                                <p>  Resolve Your Queries with an Industry Expert's Insightful Assistance.</p>
                                             </div>
                                         </div>
                                     </div>

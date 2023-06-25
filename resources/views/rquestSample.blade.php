@@ -1,3 +1,4 @@
+
 @extends('layouts.applayout')
 @section('content')
 
@@ -8,6 +9,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/11.0.9/js/utils.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 
+
+<!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">-->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
@@ -32,6 +35,10 @@
     height: 400px;
     padding-top: 20px !important;
 }
+
+ #hero .hero-img img {
+        width: 100% ;
+    }
 
 .breadcrumbs {
     padding: 30px 0;
@@ -82,6 +89,7 @@ thead {
     color: #fff;
 }
 </style>
+
 <!-- ======= Hero Section ======= -->
 <section id="hero" class="align-items-center">
 
@@ -98,7 +106,7 @@ thead {
             </div>
         </section><!-- End Breadcrumbs -->
         <div class="row">
-            <div class="col-lg-2 order-1 order-lg-1 hero-img">
+            <div class="col-lg-2 order-1 order-lg-1">
                 <img src="{{ $report->category->image ? route('home') . '/storage/' . $report->category->image : route('home') . '/assets/img/team/team-3.jpg' }}"
                     class="img-fluid report-img" alt="">
             </div>
@@ -134,8 +142,8 @@ thead {
     <section id="team" class="team section-bg">
         <div class="container aos-init aos-animate" data-aos="fade-up">
             <div class="row">
-                <div class="col-md-8">
-                    <h2>Express Your Interest</h2>
+                <div class="col-md-8 pt-4">
+                    <h2>Justify Express Your Interest</h2>
                     <form action="{{route('ReportRequest.store')}}" method="post" role="form" class=" mt-5">
                         @csrf
 
@@ -984,7 +992,7 @@ thead {
                         @endif
 
                         <div class="d-grid gap-2 col-4 mx-auto">
-                            <button type="submit" class="btn btn-primary">Send Message</button>
+                            <button type="submit" class="btn btn-primary" id="submit-btn">Submit</button>
                         </div>
 
                     </form>
@@ -1000,21 +1008,21 @@ thead {
                                 </div>
                             </div>
                             <br>
-                            <div class="speak-to-analyst d-flex">
+                             <div class="speak-to-analyst d-flex p-2">
                                 <img src="{{ route('home') }}/assets/img/hero-img.png" class="" alt="">
-                                <p>Speak to analyst and have exclusive insights tailored for your needs</p>
+                                <p class="text-justify">Speak with an analyst to get exclusive insights tailored to your needs</p>
                             </div>
                             <br>
                             <div class="request-additional text-center">
-                                <h6>Request addional customization in this report</h6>
-                                <a href="#">Click here</a>
+                                <h6>Customize this report to meet your specific needs </h6>
+                                <a href="{{ route('rquestSample', $report->slug) }}" class="btn btn-success">Click here</a>
                             </div>
                             <br>
-                            <div class="why-us text-left">
+                            <div class="why-us text-left ps-2">
                                 <div class="options" style="
                                     text-align: left;
                                 ">
-                                    <h6>Why Choose Us</h6>
+                                    <h6>Reasons to Select Us</h6>
                                     <div class="row">
                                         <div class="col-md-3">
                                             <span class="icon-style">
@@ -1022,10 +1030,8 @@ thead {
                                             </span>
                                         </div>
                                         <div class="col-md-9">
-                                            <h5>Insured Buying </h5>
-                                            <p>This Report Has A Service
-                                                Guarantee. We Stand By Our
-                                                Report Quality.</p>
+                                            <h5>Secure Purchase </h5>
+                                            <p>Our Report Comes with a Service Guarantee. We are Committed to Upholding the Quality of Our Report.</p>
                                         </div>
                                     </div>
 
@@ -1037,9 +1043,7 @@ thead {
                                         </div>
                                         <div class="col-md-9">
                                             <h5>Confidentiality </h5>
-                                            <p>This Report Has A Service
-                                                Guarantee. We Stand By Our
-                                                Report Quality.</p>
+                                            <p>We prioritize confidentiality by taking extensive measures to safeguard information and ensure its strict privacy.</p>
                                         </div>
                                     </div>
 
@@ -1051,9 +1055,7 @@ thead {
                                         </div>
                                         <div class="col-md-9">
                                             <h5>Custom Research Service </h5>
-                                            <p>We Are In Compliance With
-                                                GDPR & CCPA Norms. All
-                                                Interactions Are Confidential.</p>
+                                            <p>Compliant with GDPR & CCPA regulations, we maintain strict confidentiality for all interactions.</p>
                                         </div>
                                     </div>
 
@@ -1064,8 +1066,8 @@ thead {
                                             </span>
                                         </div>
                                         <div class="col-md-9">
-                                            <h5>24/5 Research Support </h5>
-                                            <p>Get Your Queries Resolved From An Industry Expert.</p>
+                                            <h5>24/6 Research Support </h5>
+                                            <p>Resolve Your Queries with an Industry Expert's Insightful Assistance.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -1079,9 +1081,7 @@ thead {
         </div>
     </section>
 </main><!-- End #main -->
-<form action="">
-    <button type="submit">submit</button>
-</form>
+
 @endsection
 @section('script')
  <script src="{{route('home')}}/assets/js/checkout.js"></script>

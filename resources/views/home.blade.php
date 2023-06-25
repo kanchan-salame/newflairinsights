@@ -193,7 +193,7 @@
         white-space: nowrap;
         overflow: hidden;
         border-right: 3px solid;
-        font-family: monospace;
+        font-family: 'Poppins';
         font-size: 2em;
         font-weight: bold;
     }

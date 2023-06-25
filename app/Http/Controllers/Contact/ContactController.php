@@ -41,7 +41,7 @@ class ContactController extends Controller
         Contact::create($request->all());
         $contact = Contact::latest()->first();
         Mail::to($request->email)->send(new ContactMail($contact));
-        return 'Message sent Successfully';
+        return 'Thank you for contacting us. We appreciate your interest and will be in touch with you shortly.';
     }
 
     /**

@@ -27,6 +27,8 @@
                                 class="bx bxl-twitter"></i></a>
                         <a href="https://www.linkedin.com/company/flair-insights/about/?viewAsMember=true"
                             target="_blank" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                         <a href="https://www.instagram.com/flair.insights/"
+                            target="_blank" class="linkedin"><i class="bx bxl-instagram"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 footer-links">

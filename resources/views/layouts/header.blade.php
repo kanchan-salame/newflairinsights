@@ -5,8 +5,16 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>{{ config('app.name') }}</title>
-    <meta content="" name="description">
+    <title>
+    @if (Route::is('reportDescription'))
+        {{ $report->keywords }} Size | Forecast 2031
+    @else
+        {{ config('app.name') }}
+    @endif
+    </title>
+    <meta content="@if (Route::is('reportDescription'))
+        The scale of {{ $report->keywords }} has been on a steady upward trend over the past few years, and experts predict a substantial growth trajectory in the forecasted period.
+    @endif" name="description">
     <meta content="" name="keywords">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
@@ -95,19 +103,18 @@
             width: 92% !important;
         }
 
-        .navbar .dropdown div {
-            left: -413px !important;
-        }
-        .navbar-mobile {
-            background: rgba(40, 58, 90, 0.9) !important;
-        }
-
         .navbar .dropdown:hover>div {
             left: 15px !important;
         }
 
         .navbar .dropdown:hover>div {
             left: 0px;
+        }
+        .navbar .dropdown div {
+            left: -413px !important;
+        }
+        .navbar-mobile {
+            background: rgba(40, 58, 90, 0.9) !important;
         }
     }
     </style>
